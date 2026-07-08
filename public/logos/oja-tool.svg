@@ -1,0 +1,77 @@
+<svg width="800" height="340" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Donkerblauw (Fair Work / Social Impact) -->
+    <linearGradient id="glans_blauw" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2A3F6F;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#1a2e4a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0f1e32;stop-opacity:1"/>
+    </linearGradient>
+    <!-- Oranje (Governance) -->
+    <linearGradient id="glans_oranje" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C2A;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#FF6B00;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#CC5200;stop-opacity:1"/>
+    </linearGradient>
+    <!-- Goud (Social Impact) -->
+    <linearGradient id="glans_goud" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5C842;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#D4A017;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#A87900;stop-opacity:1"/>
+    </linearGradient>
+    <!-- Glanslaag wit bovenop blokken -->
+    <linearGradient id="glans_wit" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:white;stop-opacity:0"/>
+    </linearGradient>
+    <!-- Achtergrond -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#f4f6fa;stop-opacity:1"/>
+    </linearGradient>
+    <!-- Accent streep goud -->
+    <linearGradient id="streep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5C842;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#FF6B00;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1a2e4a;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Achtergrond -->
+  <rect width="800" height="340" fill="url(#bg)"/>
+
+  <!-- Accent streep verticaal links — drielaags kleur -->
+  <rect x="80" y="78" width="6" height="144" rx="3" fill="url(#streep)"/>
+
+  <!-- Blok 1 onderste — donkerblauw (Fair Work) -->
+  <rect x="92" y="186" width="124" height="36" rx="5" fill="url(#glans_blauw)"/>
+  <rect x="92" y="186" width="124" height="16" rx="5" fill="url(#glans_wit)"/>
+
+  <!-- Blok 2 midden — oranje (Governance) -->
+  <rect x="106" y="142" width="96" height="36" rx="5" fill="url(#glans_oranje)"/>
+  <rect x="106" y="142" width="96" height="16" rx="5" fill="url(#glans_wit)"/>
+
+  <!-- Blok 3 top — goud (Social Impact) -->
+  <rect x="122" y="98" width="66" height="36" rx="5" fill="url(#glans_goud)"/>
+  <rect x="122" y="98" width="66" height="16" rx="5" fill="url(#glans_wit)"/>
+
+  <!-- Verticale scheidingslijn -->
+  <line x1="252" y1="74" x2="252" y2="228" stroke="#1a2e4a" stroke-width="2"/>
+
+  <!-- OJA tekst -->
+  <text x="276" y="184" font-family="Arial Black, Arial, sans-serif" font-size="74" font-weight="900" fill="#1a2e4a" letter-spacing="-2">OJA</text>
+
+  <!-- Gouden onderlijn -->
+  <rect x="276" y="194" width="142" height="4" rx="2" fill="url(#glans_goud)"/>
+
+  <!-- Open Job Architecture -->
+  <text x="276" y="222" font-family="Arial, sans-serif" font-size="17.5" font-weight="400" fill="#1a2e4a" letter-spacing="1">Open Job Architecture</text>
+
+  <!-- Tagline -->
+  <text x="276" y="252" font-family="Arial, sans-serif" font-size="14.5" font-weight="400" fill="#FF6B00">Structure work.</text>
+  <text x="414" y="252" font-family="Arial, sans-serif" font-size="14.5" font-weight="400" fill="#1a2e4a"> Unlock value.</text>
+
+  <!-- Built for + Powered by -->
+  <text x="276" y="278" font-family="Arial, sans-serif" font-size="11.5" font-weight="400" fill="#8a9bb5" letter-spacing="0.5">Built for Equal Pay Transparency</text>
+  <text x="276" y="296" font-family="Arial, sans-serif" font-size="11.5" font-weight="400" fill="#D4A017" letter-spacing="0.5">Powered by 7LIFE</text>
+
+</svg>

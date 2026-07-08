@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #1a1a1a;
+  background: #F3F1ED;
+  overflow-x: hidden;
+}
+
+.prose-bio h3,
+.prose-bio h4 {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 500;
+  font-size: 19px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.prose-bio a {
+  color: #EE7E06;
+  text-decoration: underline;
+}
