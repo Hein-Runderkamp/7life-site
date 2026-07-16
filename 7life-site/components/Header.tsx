@@ -75,6 +75,7 @@ export default function Header() {
           </span>
           <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/wie-zijn-wij">Wie zijn wij</DdLink>
+            <DdLink href="/methodiek">7LIFE Methodiek</DdLink>
             <DdLink href="/onze-mensen">Onze mensen</DdLink>
             <DdLink href="/leiderschap#academie">Academie</DdLink>
             <DdLink href="/foundation">Foundation</DdLink>

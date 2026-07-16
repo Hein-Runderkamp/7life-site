@@ -225,14 +225,17 @@ export default function OjaPagina() {
               <Image
                 src="/logos/oja-tool.svg"
                 alt="OJA — Open Job Architecture"
-                width={280}
-                height={119}
-                className="w-[240px] sm:w-[280px] h-auto"
+                width={460}
+                height={196}
+                className="w-[340px] sm:w-[460px] h-auto"
               />
             </div>
             <div className="text-center max-w-[720px] mx-auto">
-              <div className="text-[11px] font-semibold tracking-[2px] text-oranje/80 uppercase mb-3">
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje/80 uppercase mb-2">
                 Productpresentatie
+              </div>
+              <div className="text-white/70 text-sm font-medium mb-4">
+                Open Job Architecture
               </div>
               <h1 className="font-serif text-[clamp(30px,4.5vw,46px)] font-light text-white leading-[1.2] mb-5">
                 Het transparante functiehuis voor eerlijk,

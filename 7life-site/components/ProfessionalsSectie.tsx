@@ -126,12 +126,6 @@ export default function ProfessionalsSectie() {
                 <div className="text-white/50 text-xs">{s.l}</div>
               </div>
             ))}
-            <a
-              href="#cta"
-              className="bg-oranje text-white text-center text-sm font-medium rounded-full py-3 mt-1 hover:bg-[#d4710a] transition-colors"
-            >
-              Zoek een professional
-            </a>
             <p className="text-xs text-white/40 text-center">
               Vertel ons je vraagstuk — wij koppelen je aan de juiste
               professional

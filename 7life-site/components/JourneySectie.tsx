@@ -115,39 +115,38 @@ export default function JourneySectie() {
         </p>
 
         {/* Stappen */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
           {stappen.map((s, i) => (
-            <div key={s.nr} className="flex items-center gap-2">
-              <button
-                onClick={() => setActief(i)}
-                style={
-                  {
-                    "--step-color": s.kleur,
-                    "--step-bg": s.bg,
-                  } as React.CSSProperties
-                }
-                className={`text-left rounded-2xl border-[1.5px] p-4 w-[150px] transition-all ${
-                  i === actief
-                    ? "border-[var(--step-color)] bg-kaart"
-                    : "border-white/10 bg-kaart hover:border-[var(--step-color)]"
-                }`}
-              >
-                <div className="text-xs font-semibold text-subtekst mb-1.5">
-                  {s.nr}
-                </div>
-                <div className="text-xl mb-1.5">{s.icon}</div>
-                <div className="text-[11px] uppercase tracking-wide text-subtekst mb-0.5">
-                  {s.fase}
-                </div>
-                <div className="text-sm font-medium text-tekst">{s.naam}</div>
-                <div className="text-xs text-subtekst mt-0.5">{s.sub}</div>
-              </button>
+            <button
+              key={s.nr}
+              onClick={() => setActief(i)}
+              style={
+                {
+                  "--step-color": s.kleur,
+                  "--step-bg": s.bg,
+                } as React.CSSProperties
+              }
+              className={`relative text-left rounded-2xl border-[1.5px] p-4 h-full flex flex-col transition-all ${
+                i === actief
+                  ? "border-[var(--step-color)] bg-kaart"
+                  : "border-white/10 bg-kaart hover:border-[var(--step-color)]"
+              }`}
+            >
+              <div className="text-xs font-semibold text-subtekst mb-1.5">
+                {s.nr}
+              </div>
+              <div className="text-xl mb-1.5">{s.icon}</div>
+              <div className="text-[11px] uppercase tracking-wide text-subtekst mb-0.5">
+                {s.fase}
+              </div>
+              <div className="text-sm font-medium text-tekst">{s.naam}</div>
+              <div className="text-xs text-subtekst mt-0.5">{s.sub}</div>
               {i < stappen.length - 1 && (
-                <span className="text-white/30 text-xl hidden md:inline">
+                <span className="hidden lg:flex absolute top-1/2 -right-[19px] -translate-y-1/2 text-white/30 text-xl z-10">
                   ›
                 </span>
               )}
-            </div>
+            </button>
           ))}
         </div>
 
