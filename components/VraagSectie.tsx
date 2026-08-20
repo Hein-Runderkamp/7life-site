@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const vragen = [
   { tekst: "Goede mensen haken af terwijl ze juist veel potentie hebben.", pijl: "TalentScan", href: "/organisaties#sectoren" },
@@ -9,14 +8,12 @@ const vragen = [
     tekst: "Hoe maken we onze maatschappelijke impact zichtbaar?",
     pijl: "Social Impact Dashboard",
     href: "/social-impact-dashboard",
-    logo: "/logos/social-impact-dashboard.jpeg",
   },
   {
     tekst: "Voldoen we aan de Wet Loontransparantie?",
     pijl: "Open Job Architecture (OJA)",
     href: "/oja",
     oja: true,
-    logo: "/logos/oja-tool.svg",
   },
   { tekst: "Leiderschap verschilt sterk per team.", pijl: "Academie voor Bestuur en Leiderschap", href: "/leiderschap" },
   { tekst: "Jongeren missen richting of motivatie.", pijl: "Student Journey", href: "/jongeren" },
@@ -65,29 +62,7 @@ export default function VraagSectie() {
                 }`}
               />
               <span className="text-sm leading-[1.55] flex flex-col gap-1 w-full">
-                {v.logo && (
-                  <Image
-                    src={v.logo}
-                    alt={v.pijl}
-                    width={120}
-                    height={32}
-                    className="h-6 w-auto object-contain mb-1"
-                  />
-                )}
                 <span className={v.oja ? "font-medium" : ""}>{v.tekst}</span>
-                {v.oja && (
-                  <span className="flex gap-1.5 flex-wrap mt-1">
-                    <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-oranje/10 text-oranje">
-                      EU 2023/970
-                    </span>
-                    <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-blauw/10 text-blauw">
-                      Deadline 2027
-                    </span>
-                    <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-paars/10 text-paars">
-                      SDG 5 · 8 · 10
-                    </span>
-                  </span>
-                )}
                 <span className="text-oranje font-medium text-[13px]">
                   → {v.pijl}
                 </span>

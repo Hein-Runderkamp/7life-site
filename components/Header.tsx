@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navItem =
-  "text-white/65 text-[13px] px-3 py-[7px] rounded-md cursor-pointer whitespace-nowrap transition-all hover:text-white hover:bg-white/[0.07]";
+  "text-white/65 text-[20px] px-3 py-[7px] rounded-md cursor-pointer whitespace-nowrap transition-all hover:text-white hover:bg-white/[0.07]";
 
 export default function Header() {
   return (
@@ -22,7 +22,7 @@ export default function Header() {
         {/* Onze aanpak */}
         <div className="relative group">
           <span className={navItem}>
-            Onze aanpak <span className="ml-1 text-[10px] opacity-50">▾</span>
+            Onze aanpak <span className="ml-1 text-[14px] opacity-50">▾</span>
           </span>
           <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/impact-check">Impact Check</DdLink>
@@ -34,7 +34,7 @@ export default function Header() {
         {/* Oplossingen — mega menu */}
         <div className="relative group">
           <span className={navItem}>
-            Oplossingen <span className="ml-1 text-[10px] opacity-50">▾</span>
+            Oplossingen <span className="ml-1 text-[14px] opacity-50">▾</span>
           </span>
           <div className="absolute top-full left-0 flex gap-6 bg-white rounded-b-xl p-5 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto min-w-[620px]">
             <div className="flex-1">
@@ -66,7 +66,7 @@ export default function Header() {
         {/* Social Impact */}
         <div className="relative group">
           <span className={navItem}>
-            Social Impact <span className="ml-1 text-[10px] opacity-50">▾</span>
+            Social Impact <span className="ml-1 text-[14px] opacity-50">▾</span>
           </span>
           <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/social-impact-dashboard">Social Impact Dashboard</DdLink>
@@ -78,7 +78,7 @@ export default function Header() {
         {/* Over 7LIFE */}
         <div className="relative group">
           <span className={navItem}>
-            Over 7LIFE <span className="ml-1 text-[10px] opacity-50">▾</span>
+            Over 7LIFE <span className="ml-1 text-[14px] opacity-50">▾</span>
           </span>
           <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/wie-zijn-wij">Wie zijn wij</DdLink>

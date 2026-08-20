@@ -4,7 +4,7 @@ const stats = [
   { n: "9.000+", l: "assessments geanalyseerd" },
   { n: "20+", l: "jaar ervaring in ontwikkeling" },
   { n: "40+", l: "gecertificeerde coaches & trainers" },
-  { n: "8 SDG's", l: "geborgd in OJA & Dashboard" },
+  { n: "8 SDG's (Social Development Goals UN)", l: "geborgd in OJA & Dashboard" },
 ];
 
 export default function Hero() {
@@ -12,7 +12,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-end overflow-hidden bg-donker">
       {/* Achtergrondfoto */}
       <Image
-        src="/hero/doordenker.jpg"
+        src="/hero/HR-tool.jpg"
         alt="7LIFE"
         fill
         priority
@@ -76,7 +76,13 @@ export default function Hero() {
                   key={s.n}
                   className="bg-white/[0.06] border border-white/10 rounded-2xl p-4"
                 >
-                  <div className="text-white font-serif text-2xl mb-1">{s.n}</div>
+                  <div
+                    className={`text-white font-serif mb-1 ${
+                      s.n.length > 10 ? "text-base" : "text-2xl"
+                    }`}
+                  >
+                    {s.n}
+                  </div>
                   <div className="text-white/55 text-xs leading-snug">{s.l}</div>
                 </div>
               ))}

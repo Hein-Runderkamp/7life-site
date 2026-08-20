@@ -8,6 +8,7 @@ import VerhalenSectie from "@/components/VerhalenSectie";
 import SitSectie from "@/components/SitSectie";
 import ProfessionalsSectie from "@/components/ProfessionalsSectie";
 import CtaSectie from "@/components/CtaSectie";
+import KlantenCarrousel from "@/components/KlantenCarrousel";
 import ContactSectie from "@/components/ContactSectie";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ export default function Home() {
         <SitSectie />
         <ProfessionalsSectie />
         <CtaSectie />
+        <KlantenCarrousel />
         <ContactSectie />
       </main>
       <Footer />

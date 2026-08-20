@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const cards = [
   {
     icon: "🎓",
@@ -91,7 +94,35 @@ export default function ProfessionalsSectie() {
         </div>
 
         {/* Zoek een professional */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-donker rounded-card p-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 bg-donker rounded-card p-10">
+          <div>
+            <div className="text-[11px] font-semibold tracking-[2px] text-oranje/80 uppercase mb-3">
+              In de spotlight
+            </div>
+            <Link
+              href="/onze-mensen/marc-wilhelmus"
+              className="group flex flex-col gap-3"
+            >
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                <Image
+                  src="/team/marc-wilhelmus.jpg"
+                  alt="Marc Wilhelmus"
+                  fill
+                  className="object-cover group-hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div>
+                <div className="text-white font-serif text-lg">
+                  Marc Wilhelmus
+                </div>
+                <div className="text-white/50 text-sm leading-snug">
+                  Coach GeldScan en auteur van het boek &apos;Voor hetzelfde
+                  geld gelukkig&apos;
+                </div>
+              </div>
+            </Link>
+          </div>
+
           <div>
             <div className="text-[11px] font-semibold tracking-[2px] text-oranje/80 uppercase mb-2">
               Landelijk netwerk

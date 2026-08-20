@@ -1,7 +1,7 @@
 export default function CtaSectie() {
   return (
     <section
-      className="px-[5%] py-24 bg-donker text-center flex flex-col items-center"
+      className="px-[5%] py-[54px] bg-donker text-center flex flex-col items-center"
       id="cta"
     >
       <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-4">

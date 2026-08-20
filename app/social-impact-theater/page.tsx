@@ -40,38 +40,48 @@ export default function SocialImpactTheaterPagina() {
                 "radial-gradient(ellipse 60% 60% at 85% 15%, rgba(238,126,6,0.14) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 5% 85%, rgba(123,94,167,0.1) 0%, transparent 60%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-3">
-              Social Impact Theater
+          <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 items-center">
+            <div>
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-3">
+                Social Impact Theater
+              </div>
+              <h1 className="font-serif text-[clamp(34px,5vw,54px)] font-light text-white leading-[1.12] tracking-[-0.5px] mb-5">
+                Achter elk besluit
+                <br />
+                zit <em className="text-oranje not-italic italic">een mens.</em>
+              </h1>
+              <p className="text-white/55 text-[15.5px] leading-[1.8] mb-8">
+                Een curated leiderschapsplatform voor ondernemers, bestuurders
+                en senior professionals — geen netwerkborrel, geen standaard
+                inspiratieavond, maar een avond waarop leiders samenkomen voor
+                eerlijke gesprekken over leiderschap, diversiteit en sociale
+                impact. Een samenwerking tussen 7LIFE, de Academie voor
+                Bestuur &amp; Leiderschap en Green Offices Harderwijk.
+              </p>
+              <div className="flex gap-2.5 flex-wrap">
+                <a
+                  href="https://www.bestuurenleiderschap.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-oranje text-white px-[26px] py-3 rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors"
+                >
+                  Schrijf je in voor de volgende editie
+                </a>
+                <a
+                  href="#edities"
+                  className="bg-transparent text-white border-[1.5px] border-white/[0.18] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/45 transition-colors"
+                >
+                  Bekijk eerdere edities
+                </a>
+              </div>
             </div>
-            <h1 className="font-serif text-[clamp(34px,5vw,54px)] font-light text-white leading-[1.12] tracking-[-0.5px] mb-5 max-w-[700px]">
-              Achter elk besluit
-              <br />
-              zit <em className="text-oranje not-italic italic">een mens.</em>
-            </h1>
-            <p className="text-white/55 text-[15.5px] leading-[1.8] mb-8 max-w-[620px]">
-              Een curated leiderschapsplatform voor ondernemers, bestuurders
-              en senior professionals — geen netwerkborrel, geen standaard
-              inspiratieavond, maar een avond waarop leiders samenkomen voor
-              eerlijke gesprekken over leiderschap, diversiteit en sociale
-              impact. Een samenwerking tussen 7LIFE, de Academie voor
-              Bestuur &amp; Leiderschap en Green Offices Harderwijk.
-            </p>
-            <div className="flex gap-2.5 flex-wrap">
-              <a
-                href="https://www.bestuurenleiderschap.nl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-oranje text-white px-[26px] py-3 rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors"
-              >
-                Schrijf je in voor de volgende editie
-              </a>
-              <a
-                href="#edities"
-                className="bg-transparent text-white border-[1.5px] border-white/[0.18] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/45 transition-colors"
-              >
-                Bekijk eerdere edities
-              </a>
+            <div className="relative rounded-2xl overflow-hidden min-h-[280px] lg:min-h-[420px]">
+              <Image
+                src="/sit/alex-presenteert.jpg"
+                alt="Social Impact Theater"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
@@ -119,21 +129,21 @@ export default function SocialImpactTheaterPagina() {
               Volgende editie
             </div>
             <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-8">
-              September 2026 — Ethical Leadership
+              19 november 2026 — Humanizing Leadership
             </h2>
             <div className="bg-white/[0.05] border border-white/10 rounded-[20px] p-8 flex flex-col md:flex-row gap-8 md:items-center justify-between">
               <div>
                 <div className="text-xs text-white/40 mb-1.5">
-                  September 2026 · Datum volgt · Green Offices Harderwijk
+                  19 november 2026 · Green Offices Harderwijk
                 </div>
                 <div className="font-serif text-2xl text-white mb-2">
-                  Ethical Leadership
+                  Humanizing Leadership
                 </div>
                 <div className="text-sm text-white/50 mb-1">
                   Met Maroesja van der Pols &amp; Alex ten Cate
                 </div>
                 <div className="text-sm text-white/50">
-                  Keynote spreker: Emmely Lefevre
+                  Keynote spreker: Jo Krill
                 </div>
               </div>
               <a

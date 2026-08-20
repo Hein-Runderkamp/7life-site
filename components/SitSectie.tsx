@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const events = [
   {
     datum: "21 mei 2026 · Green Offices Harderwijk",
@@ -10,17 +12,16 @@ const events = [
     sub: "Diversiteit in leiderschap · Met Steven van den Heuvel",
   },
   {
-    datum: "Volgende editie · datum volgt",
-    naam: "Thema wordt bekendgemaakt",
-    sub: "Meld je aan voor de uitnodiging",
-    aankomend: true,
+    datum: "19 november 2026 · Green Offices Harderwijk",
+    naam: "Humanizing Leadership",
+    sub: "Met Maroesja van der Pols, Alex ten Cate en Jo Krill",
   },
 ];
 
 export default function SitSectie() {
   return (
     <section className="bg-donker px-[5%] py-20">
-      <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1fr_0.85fr] gap-10 items-stretch">
         <div>
           <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-3">
             Social Impact Theater
@@ -57,29 +58,24 @@ export default function SitSectie() {
           {events.map((e) => (
             <div
               key={e.naam}
-              className={`rounded-2xl border p-5 ${
-                e.aankomend
-                  ? "border-oranje/25"
-                  : "border-white/10"
-              }`}
+              className="rounded-2xl border p-5 border-white/10"
             >
-              <div
-                className={`text-xs mb-1.5 ${
-                  e.aankomend ? "text-white/35" : "text-white/50"
-                }`}
-              >
-                {e.datum}
-              </div>
-              <div
-                className={`font-serif text-lg mb-1 ${
-                  e.aankomend ? "text-white/55" : "text-white"
-                }`}
-              >
+              <div className="text-xs mb-1.5 text-white/50">{e.datum}</div>
+              <div className="font-serif text-lg mb-1 text-white">
                 {e.naam}
               </div>
               <div className="text-sm text-white/40">{e.sub}</div>
             </div>
           ))}
+        </div>
+
+        <div className="relative rounded-2xl overflow-hidden min-h-[280px] lg:min-h-0">
+          <Image
+            src="/sit/maroesja-presenteert.jpg"
+            alt="Social Impact Theater"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -88,15 +89,31 @@ export default function ImpactCheckPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[170px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[560px] px-[5%] pt-[170px] pb-16">
+          {/* Achtergrondfoto */}
+          <Image
+            src="/impact-check/achtergrond.jpg"
+            alt="Impact Check"
+            fill
+            priority
+            className="object-cover"
+          />
+          {/* Donkere overlay t.b.v. leesbaarheid */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 60% at 85% 15%, rgba(238,126,6,0.14) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 5% 85%, rgba(62,143,163,0.08) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10 flex flex-wrap gap-10 items-center">
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full flex flex-wrap gap-10 items-end">
             <div className="flex-1 min-w-[280px]">
               <div className="inline-flex w-[60px] h-[60px] rounded-2xl bg-oranje items-center justify-center font-serif text-2xl font-semibold text-white mb-[22px]">
                 01
@@ -128,14 +145,27 @@ export default function ImpactCheckPagina() {
                 </a>
               </div>
             </div>
-            <div className="flex-shrink-0 self-center">
-              <div className="bg-white/[0.06] border border-white/[0.12] rounded-[20px] px-[38px] py-[30px] text-center">
-                <div className="font-serif text-[60px] font-semibold text-oranje leading-none">
+
+            <div className="flex-shrink-0 self-center flex flex-col items-center gap-5">
+              <div className="relative w-[90px] h-[90px] rounded-2xl overflow-hidden bg-white/[0.06] border border-white/[0.12]">
+                <Image
+                  src="/impact-check/logo.jpg"
+                  alt="Impact Check logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="bg-white/[0.06] border border-white/[0.12] rounded-[20px] px-[30px] py-[26px] text-center">
+                <div className="font-serif text-[52px] font-semibold text-oranje leading-none">
                   1
                 </div>
                 <div className="text-sm text-white/50 mt-1">dag</div>
-                <div className="text-xs text-white/30 mt-2.5 leading-[1.4] max-w-[130px] mx-auto">
+                <div className="text-xs text-white/30 mt-2.5 leading-[1.4] max-w-[160px] mx-auto">
                   Van vaag gevoel naar concreet inzicht
+                </div>
+                <div className="text-[11px] text-white/40 mt-3 pt-3 border-t border-white/10 leading-[1.5] max-w-[160px] mx-auto">
+                  5 lenzen: Zelf · Relaties · Leiderschap · Organisatie ·
+                  Context
                 </div>
               </div>
             </div>
