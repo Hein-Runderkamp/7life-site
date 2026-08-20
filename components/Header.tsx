@@ -6,9 +6,16 @@ const navItem =
 
 export default function Header() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-[5%] h-16 bg-donker/[0.97] backdrop-blur-md">
-      <Link href="/" className="flex items-center gap-2.5 py-1">
-        <Image src="/logo.png" alt="7LIFE" height={36} width={130} priority />
+    <nav className="fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-[5%] py-3 bg-donker/[0.97] backdrop-blur-md">
+      <Link href="/" className="flex items-center gap-2.5">
+        <Image
+          src="/logo-badge.png"
+          alt="7LIFE"
+          height={88}
+          width={88}
+          className="rounded-xl h-[88px] w-[88px]"
+          priority
+        />
       </Link>
 
       <div className="hidden lg:flex gap-0.5 items-center">

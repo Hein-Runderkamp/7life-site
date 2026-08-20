@@ -18,7 +18,7 @@ export default function OnzeMensenPagina() {
     <>
       <Header />
       <main>
-        <section className="px-[5%] pt-[140px] pb-16 bg-donker">
+        <section className="px-[5%] pt-[170px] pb-16 bg-donker">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
               Over 7LIFE

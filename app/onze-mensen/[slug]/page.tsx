@@ -26,7 +26,7 @@ export default function MensDetailPagina({ params }: { params: { slug: string } 
     <>
       <Header />
       <main>
-        <section className="px-[5%] pt-[140px] pb-16 bg-donker">
+        <section className="px-[5%] pt-[170px] pb-16 bg-donker">
           <div className="max-w-[760px] mx-auto flex flex-col items-center text-center">
             {persoon.foto ? (
               // eslint-disable-next-line @next/next/no-img-element

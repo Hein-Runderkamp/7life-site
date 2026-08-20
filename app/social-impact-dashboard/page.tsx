@@ -70,7 +70,7 @@ export default function SocialImpactDashboardPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="bg-donker text-white px-[5%] pt-[140px] pb-20 text-center">
+        <section className="bg-donker text-white px-[5%] pt-[170px] pb-20 text-center">
           <div className="max-w-[900px] mx-auto">
             <div className="flex justify-center mb-8">
               <Image

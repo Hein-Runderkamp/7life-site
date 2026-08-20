@@ -41,7 +41,7 @@ export default function FoundationPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker mx-4 mt-4 rounded-[28px] px-[6%] pt-[120px] pb-20 overflow-hidden">
+        <section className="relative bg-donker mx-4 mt-4 rounded-[28px] px-[6%] pt-[150px] pb-20 overflow-hidden">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{

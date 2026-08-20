@@ -35,7 +35,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 w-full px-[5%] pt-[140px] pb-16">
+      <div className="relative z-10 w-full px-[5%] pt-[170px] pb-16">
         <div className="max-w-[1100px] mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-end">
           {/* Tekst */}
           <div>

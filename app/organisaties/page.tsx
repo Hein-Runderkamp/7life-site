@@ -190,7 +190,7 @@ export default function OrganisatiesPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[140px] pb-20 overflow-hidden">
+        <section className="relative bg-donker px-[5%] pt-[170px] pb-20 overflow-hidden">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{

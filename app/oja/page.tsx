@@ -212,7 +212,7 @@ export default function OjaPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[140px] pb-16 overflow-hidden">
+        <section className="relative bg-donker px-[5%] pt-[170px] pb-16 overflow-hidden">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
