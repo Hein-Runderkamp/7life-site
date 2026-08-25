@@ -77,7 +77,7 @@ export default function ImpactCheckPagina() {
         {/* WAAROM DE IMPACT CHECK + WAT LEVERT HET OP */}
         <section className="px-[5%] py-[88px] bg-achtergrond">
           <div className="max-w-[1100px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-start mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-16 items-start">
               <div>
                 <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
                   Waarom de Impact Check
@@ -87,7 +87,7 @@ export default function ImpactCheckPagina() {
                   <br />
                   om dezelfde oplossing.
                 </h2>
-                <div className="max-w-[680px] text-[15px] text-subtekst leading-[1.8] flex flex-col gap-[18px]">
+                <div className="max-w-[680px] text-[15px] text-subtekst leading-[1.8] flex flex-col gap-[18px] mb-16">
                   <p>
                     Verzuim neemt toe. Jongeren missen richting. Teams lopen
                     vast. Ontwikkeling levert te weinig verandering op. De
@@ -106,27 +106,7 @@ export default function ImpactCheckPagina() {
                     een concrete richting voor de volgende stap.
                   </p>
                 </div>
-              </div>
 
-              <div className="flex justify-center lg:justify-end">
-                <div className="bg-kaart border-[1.5px] border-black/[0.07] rounded-[20px] px-[30px] py-[26px] text-center">
-                  <div className="font-serif text-[52px] font-semibold text-oranje leading-none">
-                    1
-                  </div>
-                  <div className="text-sm text-subtekst mt-1">dag</div>
-                  <div className="text-xs text-subtekst/80 mt-2.5 leading-[1.4] max-w-[160px] mx-auto">
-                    Van vaag gevoel naar concreet inzicht
-                  </div>
-                  <div className="text-[11px] text-subtekst mt-3 pt-3 border-t border-black/[0.07] leading-[1.5] max-w-[170px] mx-auto">
-                    5 lenzen: Zelf · Relaties · Leiderschap · Organisatie ·
-                    Context
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
-              <div>
                 <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
                   Wat levert het op
                 </div>
@@ -155,7 +135,7 @@ export default function ImpactCheckPagina() {
                 </div>
               </div>
 
-              <div className="rounded-card overflow-hidden border-[1.5px] border-black/[0.07] bg-kaart">
+              <div className="rounded-card overflow-hidden border-[1.5px] border-black/[0.07] bg-kaart lg:sticky lg:top-[100px]">
                 <div className="relative h-[220px] border-t-4 border-oranje">
                   <Image
                     src="/impact-check/testimonial.jpg"
