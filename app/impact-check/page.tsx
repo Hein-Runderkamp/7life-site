@@ -11,77 +11,7 @@ const opbrengsten = [
   "Advies voor verdieping via de Impact Dynamics Scan (IDS)",
 ];
 
-const stappen = [
-  {
-    nr: "1",
-    kleur: "#EE7E06",
-    titel: "Intakegesprek",
-    tekst: "We starten met een kort gesprek om jouw context, vraagstuk en ambitie te begrijpen. Waar loop je tegenaan? Wat wil je bereiken? Wat is er al geprobeerd?",
-  },
-  {
-    nr: "2",
-    kleur: "#3E8FA3",
-    titel: "Analyse door een 7LIFE-consultant",
-    tekst: "Een consultant analyseert data, gesprekken en observaties langs de vijf lenzen van IDS. We kijken niet alleen naar wat er op papier staat, maar ook naar wat er écht gebeurt — in patronen, gedrag en dynamiek.",
-  },
-  {
-    nr: "3",
-    kleur: "#7B5EA7",
-    titel: "Terugkoppeling & plan",
-    tekst: "Je ontvangt een heldere terugkoppeling met concrete vervolgstappen — klaar om direct mee aan de slag te gaan. Geen rapport dat in een la verdwijnt, maar inzicht dat stuurt.",
-  },
-];
-
-const voorWie = [
-  "merkt dat er iets speelt in je organisatie, maar niet precies weet wát",
-  "wilt weten waar je écht staat vóór je investeert in een groter traject",
-  "een frisse, onafhankelijke blik van buiten wil op je organisatiedynamiek",
-  "een eerste stap wilt zetten richting het IDS-systeem of het Social Impact Dashboard",
-  "je stuurgroep, OR of bestuur wil voeden met concrete inzichten in plaats van aannames",
-];
-
-const lenzen = [
-  {
-    icon: "👤",
-    kleur: "#EE7E06",
-    bg: "rgba(238,126,6,0.15)",
-    naam: "Zelf",
-    vraag: "Hoe zorgen we dat talent niet verloren gaat?",
-    uitleg: "Mensen hebben vaak meer in huis dan zichtbaar wordt. Hoe maak je talent, motivatie en ontwikkelkracht bespreekbaar?",
-  },
-  {
-    icon: "🤝",
-    kleur: "#3E8FA3",
-    bg: "rgba(62,143,163,0.15)",
-    naam: "Relaties",
-    vraag: "Waarom werken mensen langs elkaar heen terwijl iedereen zijn best doet?",
-    uitleg: "Wanneer communicatie stokt, ontstaan misverstanden, frustratie en energieverlies. Wat is er nodig om elkaar weer te vinden?",
-  },
-  {
-    icon: "🧭",
-    kleur: "#EE7E06",
-    bg: "rgba(238,126,6,0.15)",
-    naam: "Leiderschap",
-    vraag: "Waarom ontstaat er zoveel verschil tussen teams?",
-    uitleg: "Dezelfde organisatie, dezelfde doelen, maar totaal verschillende resultaten. Wat vraagt dit van leiderschap?",
-  },
-  {
-    icon: "🏢",
-    kleur: "#3E8FA3",
-    bg: "rgba(62,143,163,0.15)",
-    naam: "Organisatie",
-    vraag: "Waarom blijven veranderingen hangen in plannen?",
-    uitleg: "Er wordt veel geïnvesteerd in ontwikkeling en verandering, maar de beweging blijft uit. Waar zit de blokkade?",
-  },
-  {
-    icon: "🌍",
-    kleur: "#7B5EA7",
-    bg: "rgba(123,94,167,0.15)",
-    naam: "Context",
-    vraag: "Hoe maken we zichtbaar welke impact we werkelijk maken?",
-    uitleg: "Wat leveren inspanningen daadwerkelijk op voor mensen, organisaties en samenleving? En hoe stuur je daarop?",
-  },
-];
+const PDF = "/downloads/impact-check-verdieping.pdf";
 
 export default function ImpactCheckPagina() {
   return (
@@ -89,8 +19,7 @@ export default function ImpactCheckPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative flex items-end overflow-hidden bg-donker min-h-[560px] px-[5%] pt-[170px] pb-16">
-          {/* Achtergrondfoto */}
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
           <Image
             src="/impact-check/achtergrond.jpg"
             alt="Impact Check"
@@ -98,7 +27,6 @@ export default function ImpactCheckPagina() {
             priority
             className="object-cover"
           />
-          {/* Donkere overlay t.b.v. leesbaarheid */}
           <div
             className="absolute inset-0"
             style={{
@@ -113,11 +41,8 @@ export default function ImpactCheckPagina() {
             }}
           />
 
-          <div className="max-w-[1100px] mx-auto relative z-10 w-full flex flex-wrap gap-10 items-end">
-            <div className="flex-1 min-w-[280px]">
-              <div className="inline-flex w-[60px] h-[60px] rounded-2xl bg-oranje items-center justify-center font-serif text-2xl font-semibold text-white mb-[22px]">
-                01
-              </div>
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="flex-1 min-w-[280px] max-w-[620px]">
               <h1 className="font-serif text-[clamp(34px,5vw,54px)] font-light text-white leading-[1.12] tracking-[-0.5px] mb-[18px]">
                 Een goed antwoord
                 <br />
@@ -138,101 +63,122 @@ export default function ImpactCheckPagina() {
                   Plan een Impact Check
                 </a>
                 <a
-                  href="#lenzen"
+                  href={PDF}
+                  download
                   className="bg-transparent text-white border-[1.5px] border-white/[0.18] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/45 transition-colors"
                 >
-                  Bekijk de 5 lenzen
+                  Bekijk de 5 lenzen (PDF)
                 </a>
               </div>
             </div>
-
-            <div className="flex-shrink-0 self-center flex flex-col items-center gap-5">
-              <div className="relative w-[90px] h-[90px] rounded-2xl overflow-hidden bg-white/[0.06] border border-white/[0.12]">
-                <Image
-                  src="/impact-check/logo.jpg"
-                  alt="Impact Check logo"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="bg-white/[0.06] border border-white/[0.12] rounded-[20px] px-[30px] py-[26px] text-center">
-                <div className="font-serif text-[52px] font-semibold text-oranje leading-none">
-                  1
-                </div>
-                <div className="text-sm text-white/50 mt-1">dag</div>
-                <div className="text-xs text-white/30 mt-2.5 leading-[1.4] max-w-[160px] mx-auto">
-                  Van vaag gevoel naar concreet inzicht
-                </div>
-                <div className="text-[11px] text-white/40 mt-3 pt-3 border-t border-white/10 leading-[1.5] max-w-[160px] mx-auto">
-                  5 lenzen: Zelf · Relaties · Leiderschap · Organisatie ·
-                  Context
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* WAAROM DE IMPACT CHECK */}
+        {/* WAAROM DE IMPACT CHECK + WAT LEVERT HET OP */}
         <section className="px-[5%] py-[88px] bg-achtergrond">
           <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Waarom de Impact Check
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5 max-w-[680px]">
-              Niet ieder signaal vraagt
-              <br />
-              om dezelfde oplossing.
-            </h2>
-            <div className="max-w-[680px] text-[15px] text-subtekst leading-[1.8] flex flex-col gap-[18px]">
-              <p>
-                Verzuim neemt toe. Jongeren missen richting. Teams lopen
-                vast. Ontwikkeling levert te weinig verandering op. De vraag
-                lijkt vaak helder, maar de echte uitdaging zit regelmatig een
-                laag dieper.
-              </p>
-              <p>
-                De Impact Check helpt om zichtbaar te maken wat er werkelijk
-                speelt. In een compacte verkenning brengen we signalen,
-                patronen en vraagstukken in kaart. We onderzoeken waar de
-                meeste beweging mogelijk is en welke van de vijf lenzen de
-                meeste aandacht verdient.
-              </p>
-              <p>
-                Zo ontstaat niet alleen inzicht in het vraagstuk, maar ook
-                een concrete richting voor de volgende stap.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* WAT LEVERT HET OP */}
-        <section className="px-[5%] py-[88px] bg-achtergrond">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Wat levert het op
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5">
-              Eén dag. Concrete inzichten.
-            </h2>
-            <p className="text-[15px] text-subtekst leading-[1.7] max-w-[520px] mb-10">
-              De Impact Check brengt samen met een 7LIFE-consultant de
-              belangrijkste vraagstukken, sterktes en ontwikkelkansen van
-              jouw organisatie in kaart.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-              {opbrengsten.map((tekst) => (
-                <div
-                  key={tekst}
-                  className="flex gap-3.5 items-start bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl p-5 hover:border-oranje hover:-translate-y-0.5 transition-all"
-                >
-                  <div className="w-[30px] h-[30px] rounded-full bg-oranje/[0.12] text-oranje flex items-center justify-center text-sm font-semibold flex-shrink-0">
-                    ✓
-                  </div>
-                  <p className="text-[14.5px] text-tekst leading-[1.55] font-medium">
-                    {tekst}
+            <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-start mb-16">
+              <div>
+                <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
+                  Waarom de Impact Check
+                </div>
+                <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5 max-w-[680px]">
+                  Niet ieder signaal vraagt
+                  <br />
+                  om dezelfde oplossing.
+                </h2>
+                <div className="max-w-[680px] text-[15px] text-subtekst leading-[1.8] flex flex-col gap-[18px]">
+                  <p>
+                    Verzuim neemt toe. Jongeren missen richting. Teams lopen
+                    vast. Ontwikkeling levert te weinig verandering op. De
+                    vraag lijkt vaak helder, maar de echte uitdaging zit
+                    regelmatig een laag dieper.
+                  </p>
+                  <p>
+                    De Impact Check helpt om zichtbaar te maken wat er
+                    werkelijk speelt. In een compacte verkenning brengen we
+                    signalen, patronen en vraagstukken in kaart. We
+                    onderzoeken waar de meeste beweging mogelijk is en welke
+                    van de vijf lenzen de meeste aandacht verdient.
+                  </p>
+                  <p>
+                    Zo ontstaat niet alleen inzicht in het vraagstuk, maar ook
+                    een concrete richting voor de volgende stap.
                   </p>
                 </div>
-              ))}
+              </div>
+
+              <div className="flex justify-center lg:justify-end">
+                <div className="bg-kaart border-[1.5px] border-black/[0.07] rounded-[20px] px-[30px] py-[26px] text-center">
+                  <div className="font-serif text-[52px] font-semibold text-oranje leading-none">
+                    1
+                  </div>
+                  <div className="text-sm text-subtekst mt-1">dag</div>
+                  <div className="text-xs text-subtekst/80 mt-2.5 leading-[1.4] max-w-[160px] mx-auto">
+                    Van vaag gevoel naar concreet inzicht
+                  </div>
+                  <div className="text-[11px] text-subtekst mt-3 pt-3 border-t border-black/[0.07] leading-[1.5] max-w-[170px] mx-auto">
+                    5 lenzen: Zelf · Relaties · Leiderschap · Organisatie ·
+                    Context
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
+              <div>
+                <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
+                  Wat levert het op
+                </div>
+                <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5">
+                  Eén dag. Concrete inzichten.
+                </h2>
+                <p className="text-[15px] text-subtekst leading-[1.7] max-w-[520px] mb-10">
+                  De Impact Check brengt samen met een 7LIFE-consultant de
+                  belangrijkste vraagstukken, sterktes en ontwikkelkansen van
+                  jouw organisatie in kaart.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {opbrengsten.map((tekst) => (
+                    <div
+                      key={tekst}
+                      className="flex gap-3.5 items-start bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl p-5 hover:border-oranje hover:-translate-y-0.5 transition-all"
+                    >
+                      <div className="w-[30px] h-[30px] rounded-full bg-oranje/[0.12] text-oranje flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                        ✓
+                      </div>
+                      <p className="text-[14.5px] text-tekst leading-[1.55] font-medium">
+                        {tekst}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-card overflow-hidden border-[1.5px] border-black/[0.07] bg-kaart">
+                <div className="relative h-[220px] border-t-4 border-oranje">
+                  <Image
+                    src="/impact-check/testimonial.jpg"
+                    alt="Ervaring met de Impact Check"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-7">
+                  <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-3">
+                    Midden- en Kleinbedrijf
+                  </div>
+                  <blockquote className="font-serif text-lg italic text-tekst leading-snug mb-4">
+                    &ldquo;Ik kende 7LIFE van de Assessments en de trainingen,
+                    maar hoe fijn is het dat ze in één dag tijd hebben
+                    meegekeken met mijn processen en de kansen voor groei en
+                    verbetering binnen mijn organisatie&rdquo;
+                  </blockquote>
+                  <div className="text-oranje font-medium text-sm">
+                    Inzicht in kansen
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -254,112 +200,6 @@ export default function ImpactCheckPagina() {
           </p>
           <div className="text-oranje text-sm font-medium mt-[18px]">
             Van signaal naar inzicht. Van inzicht naar impact.
-          </div>
-        </section>
-
-        {/* DRIE STAPPEN */}
-        <section className="px-[5%] py-[88px] bg-achtergrond">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Hoe werkt het
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5">
-              Drie stappen naar inzicht
-            </h2>
-            <p className="text-[15px] text-subtekst leading-[1.7] max-w-[520px] mb-10">
-              De Impact Check is bewust compact gehouden — zo kom je snel
-              tot de kern zonder een lang voortraject.
-            </p>
-            <div className="flex flex-col max-w-[760px]">
-              {stappen.map((s, i) => (
-                <div key={s.nr} className="flex relative">
-                  {i < stappen.length - 1 && (
-                    <div className="absolute left-[27px] top-[58px] w-[2px] h-[calc(100%-26px)] bg-black/[0.07]" />
-                  )}
-                  <div
-                    className="w-[54px] h-[54px] rounded-full flex items-center justify-center font-serif font-semibold text-lg text-white flex-shrink-0 z-10"
-                    style={{ background: s.kleur }}
-                  >
-                    {s.nr}
-                  </div>
-                  <div className="flex-1 bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl p-5 ml-[18px] mb-4">
-                    <h3 className="text-base font-medium mb-1.5">{s.titel}</h3>
-                    <p className="text-[13.5px] text-subtekst leading-[1.6]">
-                      {s.tekst}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* VOOR WIE */}
-        <section className="px-[5%] py-[88px] bg-achtergrond">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Voor wie
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-8">
-              De Impact Check is geschikt als je...
-            </h2>
-            <div className="flex flex-col gap-2.5 max-w-[640px]">
-              {voorWie.map((tekst) => (
-                <div
-                  key={tekst}
-                  className="flex items-start gap-3.5 bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-5 py-[17px]"
-                >
-                  <div className="w-2 h-2 rounded-full bg-oranje flex-shrink-0 mt-1.5" />
-                  <p className="text-[14.5px] text-tekst leading-[1.6]">{tekst}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5 LENZEN */}
-        <section className="bg-donker px-[5%] py-20" id="lenzen">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
-              De vijf lenzen
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-2.5">
-              Kies de lens die het beste
-              <br />
-              past bij jouw vraagstuk.
-            </h2>
-            <p className="text-white/50 text-[15px] leading-[1.7] max-w-[620px] mb-10">
-              Iedere vraag heeft een ingang. De vijf lenzen helpen om te
-              bepalen waar de uitdaging werkelijk zit. Kies de vraag die het
-              meest herkenbaar is.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {lenzen.map((l) => (
-                <div
-                  key={l.naam}
-                  className="bg-white/[0.045] border-[1.5px] border-white/10 rounded-2xl p-6 transition-all hover:bg-white/[0.07]"
-                >
-                  <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-4"
-                    style={{ background: l.bg }}
-                  >
-                    {l.icon}
-                  </div>
-                  <div
-                    className="text-[11px] font-bold tracking-[1.5px] uppercase mb-2.5"
-                    style={{ color: l.kleur }}
-                  >
-                    {l.naam}
-                  </div>
-                  <div className="font-serif text-lg text-white leading-[1.3] mb-2.5">
-                    {l.vraag}
-                  </div>
-                  <div className="text-[13.5px] text-white/50 leading-[1.6]">
-                    {l.uitleg}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -385,6 +225,13 @@ export default function ImpactCheckPagina() {
             >
               Meer over IDS
             </Link>
+            <a
+              href={PDF}
+              download
+              className="bg-transparent text-tekst border-[1.5px] border-black/[0.07] px-[26px] py-3 rounded-full text-sm font-medium hover:border-oranje hover:text-oranje transition-colors"
+            >
+              Meer over Impact Check
+            </a>
           </div>
         </section>
       </main>
