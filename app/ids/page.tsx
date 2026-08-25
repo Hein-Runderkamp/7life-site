@@ -102,7 +102,7 @@ export default function IdsPagina() {
             alt="Impact Dynamics Scan"
             fill
             priority
-            className="object-cover scale-90"
+            className="object-cover"
           />
           <div
             className="absolute inset-0"
