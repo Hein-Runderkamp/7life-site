@@ -9,6 +9,7 @@ const opbrengsten = [
   "Keuze voor de meest relevante lens",
   "Concreet advies voor vervolgstappen",
   "Advies voor verdieping via de Impact Dynamics Scan (IDS)",
+  "Altijd op basis van de inzichten uit de 7LIFE Scans",
 ];
 
 const PDF = "/downloads/impact-check-verdieping.pdf";
