@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CtaSectie from "@/components/CtaSectie";
 import Image from "next/image";
 
 const programmas = [
@@ -317,9 +316,34 @@ export default function BuildStrongIndividueelPagina() {
           </div>
         </section>
 
-        <div id="bsi-cta">
-          <CtaSectie />
-        </div>
+        <section className="px-[5%] py-20 text-center bg-achtergrond" id="bsi-cta">
+          <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-4">
+            Start met jouw{" "}
+            <em className="text-oranje not-italic italic">
+              gratis persoonlijke intake.
+            </em>
+          </h2>
+          <p className="text-subtekst text-[15px] leading-[1.7] max-w-[480px] mx-auto mb-8">
+            Eén gesprek, telefonisch of online, met een 7LIFE professional
+            die samen met jou kijkt naar jouw wensen, kansen en
+            ontwikkeldoelen.
+          </p>
+          <div className="flex gap-2.5 flex-wrap justify-center">
+            <a
+              href="mailto:info@7life.nl?subject=Plan een gesprek — Build Strong Individueel"
+              className="bg-oranje text-white px-[26px] py-3 rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors"
+            >
+              Plan een gesprek
+            </a>
+            <a
+              href="/downloads/7life-introductie.pdf"
+              download
+              className="bg-transparent text-tekst border-[1.5px] border-black/[0.1] px-[26px] py-3 rounded-full text-sm font-medium hover:border-oranje hover:text-oranje transition-colors"
+            >
+              7LIFE Introductie (PDF)
+            </a>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
