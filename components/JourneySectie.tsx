@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Benefit = { icon: string; titel: string; tekst: string };
 type Stap = {
@@ -12,11 +13,13 @@ type Stap = {
   icon: string;
   kleur: string;
   bg: string;
-  body: string;
+  body: React.ReactNode;
   logo: string;
   benefits: Benefit[];
   cta?: { label: string; href: string };
 };
+
+const bsLink = "text-tekst underline decoration-paars/40 underline-offset-2 hover:decoration-paars hover:text-paars transition-colors";
 
 const stappen: Stap[] = [
   {
@@ -59,11 +62,37 @@ const stappen: Stap[] = [
     nr: "03",
     fase: "Oplossingen",
     naam: "Build Strong",
-    sub: "Breng mensen in beweging.",
+    sub: "Sterke oplossingen om mensen duurzaam in beweging te brengen.",
     icon: "🧱",
     kleur: "#7B5EA7",
     bg: "rgba(123,94,167,0.1)",
-    body: "Programma's, interventies en ontwikkeling. Op basis van de inzichten uit de scan ontwikkelen we samen gerichte programma's, tools en interventies — voor onderwijs, leiderschap, teams, jongeren en persoonlijke ontwikkeling.",
+    body: (
+      <>
+        Programma&apos;s, Interventies, Tools en Ontwikkeling op basis van de
+        inzichten uit de 7LIFE Scans. Met onze Partners ontwikkelen we
+        oplossingen die werken voor{" "}
+        <Link href="/build-strong-individueel" className={bsLink}>
+          Individuen
+        </Link>
+        ,{" "}
+        <Link href="/jongeren" className={bsLink}>
+          Jongeren
+        </Link>
+        ,{" "}
+        <Link href="/organisaties" className={bsLink}>
+          Organisaties
+        </Link>
+        ,{" "}
+        <Link href="/leiderschap" className={bsLink}>
+          Leiderschap
+        </Link>{" "}
+        en{" "}
+        <Link href="/opleiden" className={bsLink}>
+          Trainers
+        </Link>
+        .
+      </>
+    ),
     logo: "/logos/build-strong.jpeg",
     benefits: [
       { icon: "🧱", titel: "Op maat ontwikkeld", tekst: "Geen standaardpakket, maar interventies die aansluiten op jouw scan-uitkomsten." },
