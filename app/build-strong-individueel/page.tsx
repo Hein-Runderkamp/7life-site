@@ -5,24 +5,20 @@ import Image from "next/image";
 
 const programmas = [
   {
-    icon: "🧭",
-    titel: "Talentontwikkeling",
-    tekst: "Ontdek wat je energie geeft en waar je goed in bent — en zet dat gericht in voor je eigen groei.",
-  },
-  {
-    icon: "💬",
     titel: "Communicatiekracht",
-    tekst: "Een traject rondom jouw persoonlijke communicatiestijl: hoe je overkomt, verbindt en jezelf laat horen.",
+    tekst: "Aan de hand van de 7LIFE Fullscan krijg je inzicht in jouw communicatiekracht, jouw voorkeur voor leren en hoe je omgaat met veranderingen. Altijd samen met een persoonlijke terugkoppeling door een trainer.",
   },
   {
-    icon: "🧗",
-    titel: "Veranderkracht",
-    tekst: "Inzicht in hoe jij omgaat met verandering, en hoe je die kracht bewust kunt inzetten.",
+    titel: "Competenties & talenten",
+    tekst: "Met de 7LIFE Talentscan meteen inzicht in jouw kwaliteiten, valkuilen, motivatie en loopbaan. Samen met een trainer alle handvatten voor jouw ontwikkeling.",
   },
   {
-    icon: "🧑‍💼",
-    titel: "Begeleiding naar passend werk",
+    titel: "Begeleiden naar passend werk",
     tekst: "Persoonlijke begeleiding bij het vinden van werk dat echt bij je past — vanuit wie je bent.",
+  },
+  {
+    titel: "Verzuimbegeleiding",
+    tekst: "Begeleiding bij het reïntegreren, dan wel een 2e Spoor traject op maat. Samen met onze professionals.",
   },
 ];
 
@@ -120,25 +116,48 @@ export default function BuildStrongIndividueelPagina() {
             </h2>
             <p className="text-[15px] text-subtekst leading-[1.7] max-w-[520px] mb-9">
               Geen standaardtraject, maar een aanpak die aansluit bij waar
-              jij nu staat en waar je naartoe wilt.
+              jij nu staat en waar je naartoe wilt. Wij zetten een paar
+              mooie opties voor jou onder elkaar.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-              {programmas.map((p) => (
-                <div
-                  key={p.titel}
-                  className="flex gap-3.5 items-start bg-kaart border border-black/[0.07] rounded-2xl p-6"
-                >
-                  <div className="text-xl flex-shrink-0 mt-0.5">{p.icon}</div>
-                  <div>
-                    <strong className="text-sm font-medium block mb-1">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {programmas.map((p) => (
+                  <div
+                    key={p.titel}
+                    className="bg-kaart border border-black/[0.07] rounded-2xl p-5"
+                  >
+                    <div className="font-serif text-[15px] font-medium mb-2">
                       {p.titel}
-                    </strong>
-                    <p className="text-[13px] text-subtekst leading-[1.5]">
+                    </div>
+                    <div className="text-[12.5px] text-subtekst leading-[1.6]">
                       {p.tekst}
-                    </p>
+                    </div>
                   </div>
+                ))}
+              </div>
+
+              <div className="rounded-card overflow-hidden border-[1.5px] border-black/[0.07] bg-kaart lg:sticky lg:top-[100px]">
+                <div className="relative h-[220px] border-t-4 border-oranje">
+                  <Image
+                    src="/build-strong-individueel/testimonial.jpg"
+                    alt="Ervaring met persoonlijke ontwikkeling bij 7LIFE"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              ))}
+                <div className="p-7">
+                  <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-3">
+                    Persoonlijke ontwikkeling
+                  </div>
+                  <blockquote className="font-serif text-lg italic text-tekst leading-snug">
+                    &ldquo;De 7LIFE Scan was voor mij een echte spiegel
+                    waarin ik op zoek kon gaan naar mijn drijfveren en
+                    kwaliteiten. Door het persoonlijke gesprek met de coach
+                    kon ik alle inzichten meteen toepassen in mijn eigen
+                    praktijk en samen ontwikkelafspraken maken.&rdquo;
+                  </blockquote>
+                </div>
+              </div>
             </div>
           </div>
         </section>
