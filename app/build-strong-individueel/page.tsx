@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CtaSectie from "@/components/CtaSectie";
@@ -9,8 +12,8 @@ const programmas = [
     tekst: "Aan de hand van de 7LIFE Fullscan krijg je inzicht in jouw communicatiekracht, jouw voorkeur voor leren en hoe je omgaat met veranderingen. Altijd samen met een persoonlijke terugkoppeling door een trainer.",
   },
   {
-    titel: "Competenties & talenten",
-    tekst: "Met de 7LIFE Talentscan meteen inzicht in jouw kwaliteiten, valkuilen, motivatie en loopbaan. Samen met een trainer alle handvatten voor jouw ontwikkeling.",
+    titel: "Competenties & Talenten",
+    tekst: "Met de 7LIFE Talentscan krijg je meteen inzicht in belangrijke topics zoals jouw kwaliteiten, motivatie en loopbaan. Ontdek samen met een trainer alle praktische handvatten voor jouw ontwikkeling.",
   },
   {
     titel: "Begeleiden naar passend werk",
@@ -22,30 +25,95 @@ const programmas = [
   },
 ];
 
+const stats = [
+  { n: "9.000+", l: "assessments afgenomen" },
+  { n: "8.000+", l: "cursisten begeleid" },
+  { n: "700+", l: "klanten geholpen" },
+];
+
 const tools = [
   {
-    icon: "🔍",
-    titel: "TalentScan",
-    tekst: "Brengt je talenten, drijfveren en ontwikkelpotentieel in kaart.",
+    nr: "1",
+    naam: "7LIFE Fullscan",
+    punten: [
+      "Inzicht in Communicatiestijlen",
+      "Leervoorkeuren in kaart gebracht",
+      "Veranderkracht in beeld",
+      "Alarmgedrag herkennen",
+      "Inzicht in drijfveren, motivatie en ontwikkeling",
+    ],
   },
   {
-    icon: "🗣️",
-    titel: "Communicatiescan",
-    tekst: "Laat zien hoe jouw communicatiestijl overkomt op anderen — en waar winst te behalen valt.",
+    nr: "2",
+    naam: "7LIFE Talentscan",
+    punten: [
+      "Competenties — waar ben jij goed in?",
+      "Motivatie — wanneer en hoe kom jij in beweging?",
+      "Energie — waar word jij blij van?",
+      "Ontwikkelkansen — hoe stap jij in de loopbaan die bij jou past?",
+      "Omgeving — welke context past bij jou?",
+    ],
   },
   {
-    icon: "🔄",
-    titel: "Veranderkrachtscan",
-    tekst: "Meet hoe jij omgaat met verandering, druk en onzekerheid.",
+    nr: "3",
+    naam: "7LIFE 360 graden feedback scan",
+    punten: [
+      "Hoe ervaren anderen mijn communicatie?",
+      "Welke tips kan ik gebruiken voor mijn ontwikkeling?",
+      "Wanneer sla ik een brug naar de ander?",
+      "Hoe ontstaat ruis in mijn communicatie?",
+      "Hoe krijg ik mezelf en anderen in beweging?",
+    ],
   },
   {
-    icon: "📘",
-    titel: "Persoonlijk ontwikkelplan",
-    tekst: "Vertaalt de inzichten uit de scans naar concrete, haalbare vervolgstappen.",
+    nr: "4",
+    naam: "7LIFE Money Habits Scan",
+    punten: [
+      "Inzicht in mijn geldgedrag",
+      "Wat is mijn 'money mindset'?",
+      "Welke geldgewoontes werken wel en werken niet?",
+      "Wat is mijn persoonlijke geldtype?",
+      "Praktische handvatten voor gezond geldbeheer",
+    ],
+  },
+  {
+    nr: "5",
+    naam: "7LIFE Geldscan",
+    punten: [
+      "Snel en eenvoudig inzicht in mijn geldtype",
+      "Hoe ga ik om met risico's en geldstress?",
+      "Investeren, hoe werkt dat voor mij?",
+      "Korte praktische tips voor slim geldmanagement",
+      "Hoe wil ik advies over mijn geld?",
+    ],
+  },
+  {
+    nr: "6",
+    naam: "7LIFE Mobility Program",
+    punten: [
+      "Mobiliteit en groei in je loopbaan of (nieuwe) functie",
+      "Ondersteund door uitgebreid online programma",
+      "Aan de slag met je talenten en kwaliteiten",
+      "Onder begeleiding van een 7LIFE Mobiliteits Coach",
+      "Inclusief advies over arbeidsmarkt, opleiding en persoonlijke ontwikkeling",
+    ],
+  },
+  {
+    nr: "7",
+    naam: "Het 7LIFE 2e Spoor Traject",
+    punten: [
+      "Reïntegratie begeleiding",
+      "Onderzoeksfase aan de hand van Talentscan",
+      "Ondersteuning naar passend werk bij andere werkgever",
+      "Hulp bij opstarten van eigen bedrijf",
+      "Praktische hulp bij zoekfase",
+    ],
   },
 ];
 
 export default function BuildStrongIndividueelPagina() {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
     <>
       <Header />
@@ -126,7 +194,7 @@ export default function BuildStrongIndividueelPagina() {
                     key={p.titel}
                     className="bg-kaart border border-black/[0.07] rounded-2xl p-5"
                   >
-                    <div className="font-serif text-[15px] font-medium mb-2">
+                    <div className="font-serif text-[15px] font-medium text-oranje mb-2">
                       {p.titel}
                     </div>
                     <div className="text-[12.5px] text-subtekst leading-[1.6]">
@@ -164,34 +232,87 @@ export default function BuildStrongIndividueelPagina() {
 
         {/* 7LIFE TOOLS */}
         <section className="bg-donker px-[5%] py-[72px]" id="tools">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
-              7LIFE Tools
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,42px)] font-light text-white leading-[1.15] mb-3">
-              De scans achter jouw traject
-            </h2>
-            <p className="text-[15px] text-white/50 leading-[1.7] max-w-[520px] mb-9">
-              Elk programma begint met inzicht. Deze tools brengen in kaart
-              waar jij staat, zodat de vervolgstappen echt bij je passen.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-              {tools.map((t) => (
-                <div
-                  key={t.titel}
-                  className="flex gap-3.5 items-start bg-white/[0.05] border border-white/10 rounded-2xl p-6"
-                >
-                  <div className="text-xl flex-shrink-0 mt-0.5">{t.icon}</div>
-                  <div>
-                    <strong className="text-sm font-medium text-white block mb-1">
-                      {t.titel}
-                    </strong>
-                    <p className="text-[13px] text-white/50 leading-[1.5]">
-                      {t.tekst}
-                    </p>
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+            <div>
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
+                De 7LIFE Tools
+              </div>
+              <h2 className="font-serif text-[clamp(28px,4vw,42px)] font-light text-white leading-[1.15] mb-3">
+                Ontdek alle 7LIFE Producten
+              </h2>
+              <p className="text-white/50 text-sm leading-[1.75] mb-6">
+                De 7LIFE Toolkit bestaat uit een groeiend aantal producten,
+                ontwikkeld samen met onze trainers, gericht op jouw
+                praktijk.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-7">
+                {stats.map((s) => (
+                  <div
+                    key={s.n}
+                    className="bg-white/[0.06] border border-white/10 rounded-2xl p-4"
+                  >
+                    <div className="font-serif text-2xl text-white mb-1">
+                      {s.n}
+                    </div>
+                    <div className="text-white/45 text-xs leading-snug">
+                      {s.l}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              <a
+                href="mailto:info@7life.nl?subject=Vraag een gesprek aan"
+                className="inline-block bg-oranje text-white text-[13px] px-5 py-2.5 rounded-full font-medium hover:bg-[#d4710a] transition-colors"
+              >
+                Vraag een gesprek aan →
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              {tools.map((t, i) => {
+                const isOpen = open === i;
+                return (
+                  <div
+                    key={t.naam}
+                    className={`rounded-xl overflow-hidden cursor-pointer border transition-colors ${
+                      isOpen ? "border-oranje" : "border-white/[0.07] hover:border-white/20"
+                    }`}
+                    onClick={() => setOpen(isOpen ? null : i)}
+                  >
+                    <div className="flex items-center gap-3 px-4 py-3.5 bg-white/[0.04]">
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs text-white flex-shrink-0 bg-oranje">
+                        {t.nr}
+                      </div>
+                      <div className="text-[13px] font-semibold text-white flex-1">
+                        {t.naam}
+                      </div>
+                      <div
+                        className={`text-white/30 text-[13px] transition-transform ${
+                          isOpen ? "rotate-90 text-oranje" : ""
+                        }`}
+                      >
+                        ›
+                      </div>
+                    </div>
+                    {isOpen && (
+                      <div className="px-4 pb-4 pl-14 bg-white/[0.03]">
+                        <ul>
+                          {t.punten.map((p) => (
+                            <li
+                              key={p}
+                              className="text-[13px] text-white/50 py-[3px] pl-3 relative before:content-['·'] before:absolute before:left-0 before:text-oranje"
+                            >
+                              {p}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
