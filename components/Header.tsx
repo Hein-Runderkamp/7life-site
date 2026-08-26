@@ -26,40 +26,22 @@ export default function Header() {
           </span>
           <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/impact-check">Impact Check</DdLink>
-            <DdLink href="/ids">IDS</DdLink>
+            <DdLink href="/ids">Impact Dynamics Scan</DdLink>
             <DdLink href="/#flow">Build Strong</DdLink>
           </div>
         </div>
 
-        {/* Oplossingen — mega menu */}
+        {/* Build Strong */}
         <div className="relative group">
           <span className={navItem}>
-            Oplossingen <span className="ml-1 text-[11px] opacity-50">▾</span>
+            Build Strong <span className="ml-1 text-[11px] opacity-50">▾</span>
           </span>
-          <div className="absolute top-full left-0 flex gap-6 bg-white rounded-b-xl p-5 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto min-w-[620px]">
-            <div className="flex-1">
-              <DdLabel>Jongeren &amp; Ontwikkeling</DdLabel>
-              <DdLink href="/jongeren">Kluis7 — Basisonderwijs</DdLink>
-              <DdLink href="/jongeren">Student Journey App — VO</DdLink>
-              <DdLink href="/jongeren">Talentontwikkeling — MBO/HBO</DdLink>
-              <DdLink href="/jongeren">Sociaal-emotionele ontwikkeling</DdLink>
-            </div>
-            <div className="flex-1">
-              <DdLabel>Organisaties &amp; Teams</DdLabel>
-              <DdLink href="/organisaties">Gemeenten &amp; Overheid</DdLink>
-              <DdLink href="/organisaties">Zorg</DdLink>
-              <DdLink href="/organisaties">Bedrijfsleven</DdLink>
-            </div>
-            <div className="flex-1">
-              <DdLabel>Leiderschap &amp; Professionals</DdLabel>
-              <DdLink href="/leiderschap">Leidinggevenden &amp; Bestuurders</DdLink>
-              <DdLink href="/leiderschap">Teamleiders</DdLink>
-              <DdLink href="/leiderschap">Coaches &amp; Adviseurs</DdLink>
-              <DdLabel className="mt-2.5">Opleiden &amp; Certificeren</DdLabel>
-              <DdLink href="/opleiden">Trainer worden</DdLink>
-              <DdLink href="/opleiden">Certificering &amp; Accreditatie</DdLink>
-              <DdLink href="/opleiden">Innovatiepartners</DdLink>
-            </div>
+          <div className="absolute top-full left-0 min-w-[240px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+            <DdLink href="/build-strong-individueel">Build Strong Individueel</DdLink>
+            <DdLink href="/jongeren">Build Strong Jongeren</DdLink>
+            <DdLink href="/organisaties">Build Strong Organisaties</DdLink>
+            <DdLink href="/leiderschap">Build Strong Leiderschap</DdLink>
+            <DdLink href="/opleiden">Build Strong Trainers</DdLink>
           </div>
         </div>
 
