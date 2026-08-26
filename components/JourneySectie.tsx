@@ -57,7 +57,7 @@ const stappen: Stap[] = [
   },
   {
     nr: "03",
-    fase: "Ontwikkeling",
+    fase: "Oplossingen",
     naam: "Build Strong",
     sub: "Breng mensen in beweging.",
     icon: "🧱",
@@ -100,7 +100,7 @@ export default function JourneySectie() {
     <section className="px-[5%] py-[88px] bg-donker" id="flow">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-          Onze aanpak
+          De 7LIFE aanpak
         </div>
         <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5 text-white">
           Van signaal naar
