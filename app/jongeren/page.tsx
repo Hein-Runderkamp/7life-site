@@ -127,7 +127,7 @@ export default function JongerenPagina() {
 
           <div className="max-w-[1100px] mx-auto relative z-10 w-full">
             <div className="flex-1 min-w-[280px] max-w-[620px]">
-              <div className="inline-flex items-center gap-1.5 bg-oranje/10 border border-oranje/[0.22] text-oranje text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
+              <div className="inline-flex items-center gap-1.5 bg-[#F2C12E]/10 border border-[#F2C12E]/[0.22] text-[#F2C12E] text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
                 Jongeren &amp; Ontwikkeling
               </div>
               <h1 className="font-serif text-[clamp(38px,5vw,64px)] font-light text-white leading-[1.1] tracking-[-1px] mb-4">

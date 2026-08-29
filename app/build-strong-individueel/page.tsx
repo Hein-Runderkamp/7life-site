@@ -149,8 +149,8 @@ export default function BuildStrongIndividueelPagina() {
 
           <div className="max-w-[1100px] mx-auto relative z-10 w-full">
             <div className="flex-1 min-w-[280px] max-w-[620px]">
-              <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-3">
-                Build Strong — Individueel
+              <div className="inline-flex items-center gap-1.5 bg-oranje/10 border border-oranje/[0.22] text-oranje text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
+                Persoonlijke ontwikkeling
               </div>
               <h1 className="font-serif text-[clamp(40px,5vw,66px)] font-light text-white leading-[1.05] tracking-[-1px] mb-4">
                 Jij in beweging.

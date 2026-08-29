@@ -47,21 +47,6 @@ const maroesjaFacts = [
   "Meer dan 30 jaar actief in organisatie- en persoonsontwikkeling",
 ];
 
-const heinCards = [
-  {
-    label: "Verantwoordelijkheden",
-    tekst: "Backoffice & operations · Technologie & platform (OJA) · Sales & business development · Marketing & communicatie",
-  },
-  {
-    label: "Rol in 7LIFE",
-    tekst: "Operations Director · Co-architect OJA-platform · Betrokken bij de 7LIFE Foundation",
-  },
-  {
-    label: "Stijl",
-    tekst: "Helder en praktisch. Direct en concreet. Zakelijk maar menselijk. Altijd met de inhoud als fundament.",
-  },
-];
-
 const waarden = [
   { icon: "🙏", naam: "Dankbaar", tekst: "Samenwerken is een voorrecht. Kennis en middelen worden gedeeld — niet gehouden." },
   { icon: "⚙️", naam: "Professioneel", tekst: "Voortdurende ontwikkeling, kwaliteitsbewaking en naleving van wet- en regelgeving." },
@@ -330,54 +315,6 @@ export default function WieZijnWijPagina() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* HEIN */}
-        <section className="bg-donker border-t-4 border-oranje px-[5%] py-[72px]" id="hein">
-          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
-            <div>
-              <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
-                De operationeel directeur
-              </div>
-              <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-6">
-                Hein Runderkamp
-              </h2>
-              <div className="text-[15px] text-white/55 leading-[1.8]">
-                <p className="mb-4">
-                  Hein Runderkamp is operations director van 7LIFE
-                  Nederland. Hij is verantwoordelijk voor backoffice,
-                  technologie, sales en business development — en daarmee
-                  de verbindende schakel tussen de inhoudelijke kracht van
-                  7LIFE en de wereld buiten.
-                </p>
-                <p>
-                  Als co-architect van het OJA-platform combineert hij{" "}
-                  <strong className="text-white font-medium">
-                    commercieel inzicht met technisch leiderschap
-                  </strong>
-                  . Niet door zelf te programmeren, maar door te bouwen in
-                  nauwe samenwerking met de tools en mensen om hem heen.
-                  Resultaatgericht, direct en altijd met de klant in
-                  beeld.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-3.5">
-              {heinCards.map((c) => (
-                <div
-                  key={c.label}
-                  className="bg-white/[0.045] border-[1.5px] border-white/10 rounded-2xl px-6 py-[22px]"
-                >
-                  <div className="text-[11px] font-semibold tracking-[1.5px] text-oranje uppercase mb-2">
-                    {c.label}
-                  </div>
-                  <div className="text-sm text-white/50 leading-[1.6]">
-                    {c.tekst}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
