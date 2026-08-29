@@ -33,6 +33,7 @@ const stats = [
 const tools = [
   {
     nr: "1",
+    kleur: "#EE7E06",
     naam: "7LIFE Fullscan",
     punten: [
       "Inzicht in Communicatiestijlen",
@@ -44,6 +45,7 @@ const tools = [
   },
   {
     nr: "2",
+    kleur: "#1B3B6F",
     naam: "7LIFE Talentscan",
     punten: [
       "Competenties — waar ben jij goed in?",
@@ -55,6 +57,7 @@ const tools = [
   },
   {
     nr: "3",
+    kleur: "#F2C12E",
     naam: "7LIFE 360 graden feedback scan",
     punten: [
       "Hoe ervaren anderen mijn communicatie?",
@@ -66,6 +69,7 @@ const tools = [
   },
   {
     nr: "4",
+    kleur: "#2E7D52",
     naam: "7LIFE Money Habits Scan",
     punten: [
       "Inzicht in mijn geldgedrag",
@@ -77,6 +81,7 @@ const tools = [
   },
   {
     nr: "5",
+    kleur: "#5FAE84",
     naam: "7LIFE Geldscan",
     punten: [
       "Snel en eenvoudig inzicht in mijn geldtype",
@@ -88,6 +93,7 @@ const tools = [
   },
   {
     nr: "6",
+    kleur: "#7B5EA7",
     naam: "7LIFE Mobility Program",
     punten: [
       "Mobiliteit en groei in je loopbaan of (nieuwe) functie",
@@ -99,6 +105,7 @@ const tools = [
   },
   {
     nr: "7",
+    kleur: "#D7263D",
     naam: "Het 7LIFE 2e Spoor Traject",
     punten: [
       "Reïntegratie begeleiding",
@@ -281,7 +288,10 @@ export default function BuildStrongIndividueelPagina() {
                     onClick={() => setOpen(isOpen ? null : i)}
                   >
                     <div className="flex items-center gap-3 px-4 py-3.5 bg-white/[0.04]">
-                      <div className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs text-white flex-shrink-0 bg-oranje">
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs text-white flex-shrink-0"
+                        style={{ background: t.kleur }}
+                      >
                         {t.nr}
                       </div>
                       <div className="text-[13px] font-semibold text-white flex-1">
