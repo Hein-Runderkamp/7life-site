@@ -13,13 +13,13 @@ const vragen = [
   "Ik wil mijn leiderschapsontwikkeling verdiepen via een serieus programma",
   "Ik wil bijdragen aan de ontwikkeling van nieuwe producten en programma's",
   "Ik zoek een plek waar ondernemen en inhoud hand in hand gaan",
-  "",
-  "",
+  "Ik wil een assessment dat gericht is op communicatie, ontwikkeling en veranderkracht",
+  "Ik wil investeren in mensen en organisaties in beweging brengen",
 ];
 
 const oplossingen = [
   {
-    icon: "🎓",
+    icon: "/opleiden/logo-oranje.png",
     titel: "Trainer worden",
     body: "Word gecertificeerd 7LIFE Trainer en bouw je eigen praktijk — met de 7LIFE-methodiek, tools en een actief netwerk als fundament.",
     items: [
@@ -31,7 +31,7 @@ const oplossingen = [
     ],
   },
   {
-    icon: "📋",
+    icon: "/opleiden/logo-blauw.png",
     titel: "Certificering",
     body: "Al trainer? Houd je certificering actueel en verdiep je in nieuwe instrumenten — van de LeiderschapScan tot de GeldScan.",
     items: [
@@ -43,7 +43,7 @@ const oplossingen = [
     ],
   },
   {
-    icon: "🏛",
+    icon: "/opleiden/logo-groen.png",
     titel: "Academie voor Bestuur & Leiderschap",
     body: "Diepgaande leiderschapsontwikkeling voor directeuren, bestuurders en leidinggevenden — gebaseerd op de LeiderschapScan.",
     items: [
@@ -55,7 +55,7 @@ const oplossingen = [
     ],
   },
   {
-    icon: "🤝",
+    icon: "/opleiden/logo-geel.png",
     titel: "Innovatiepartners",
     body: "Co-creëer nieuwe programma's en producten binnen het 7LIFE-ecosysteem. Voor thought leaders die meer willen dan uitvoeren.",
     items: [
@@ -174,12 +174,12 @@ export default function OpleidenPagina() {
             </div>
 
             <div className="bg-kaart border border-black/[0.07] rounded-2xl overflow-hidden flex flex-col">
-              <div className="relative h-[130px] flex-shrink-0">
+              <div className="relative h-[220px] flex-shrink-0">
                 <Image
                   src="/opleiden/testimonial.jpg"
                   alt="Impact in de praktijk"
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_15%]"
                 />
               </div>
               <div className="p-7 flex-1 flex flex-col">
@@ -198,9 +198,6 @@ export default function OpleidenPagina() {
                   leiderschaps- en teamontwikkeling. De combinatie van
                   wetenschappelijke onderbouwing en praktische tools maakt
                   het verschil — voor haar én voor haar klanten.
-                </p>
-                <p className="text-sm text-oranje italic mt-auto pt-3">
-                  — Gecertificeerd 7LIFE Trainer
                 </p>
               </div>
             </div>
@@ -250,7 +247,9 @@ export default function OpleidenPagina() {
                       onClick={() => setOpen(isOpen ? null : i)}
                     >
                       <div className="flex items-center gap-3 px-4 py-3.5 bg-white/[0.04]">
-                        <span className="text-2xl flex-shrink-0">{o.icon}</span>
+                        <div className="relative w-8 h-8 flex-shrink-0 rounded-lg overflow-hidden">
+                          <Image src={o.icon} alt="" fill className="object-cover" />
+                        </div>
                         <div className="text-[15px] font-semibold text-white flex-1">
                           {o.titel}
                         </div>
