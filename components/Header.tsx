@@ -41,7 +41,6 @@ export default function Header() {
             <DdLink href="/organisaties">Build Strong Organisaties</DdLink>
             <DdLink href="/leiderschap">Build Strong Leiderschap</DdLink>
             <DdLink href="/opleiden">Build Strong Trainers</DdLink>
-            <DdLink href="/agenda">Agenda</DdLink>
           </div>
         </div>
 
@@ -70,6 +69,14 @@ export default function Header() {
             <DdLink href="/foundation">Foundation</DdLink>
           </div>
         </div>
+
+        <Link href="/opleidingsaanbod" className={navItem}>
+          Opleidingsaanbod
+        </Link>
+
+        <Link href="/agenda" className={navItem}>
+          Opleidingsagenda
+        </Link>
 
         <Link href="/#contact" className={navItem}>
           Contact &amp; Kwaliteit
