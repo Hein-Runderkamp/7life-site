@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PijlerIcon from "@/components/PijlerIcon";
 
 const pijlers = [
-  { naam: "Fair Work", kleur: "#EE7E06" },
-  { naam: "Ethisch Leiderschap", kleur: "#3E8FA3" },
-  { naam: "Diversiteit & Inclusie", kleur: "#7B5EA7" },
-  { naam: "Money & Meaning", kleur: "#D4A017" },
-  { naam: "Human Development", kleur: "#3a7d5c" },
+  { naam: "Fair Work", kleur: "#EE7E06", icon: "fairwork" },
+  { naam: "Ethisch Leiderschap", kleur: "#3E8FA3", icon: "ethical" },
+  { naam: "Diversiteit & Inclusie", kleur: "#7B5EA7", icon: "diversity" },
+  { naam: "Money & Meaning", kleur: "#D4A017", icon: "money" },
+  { naam: "Human Development", kleur: "#3a7d5c", icon: "human" },
 ];
 
 const programma = [
@@ -32,16 +33,29 @@ export default function SocialImpactTheaterPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[170px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/sit/hero-achtergrond.jpg"
+            alt="Social Impact Theater"
+            fill
+            priority
+            className="object-cover"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 60% at 85% 15%, rgba(238,126,6,0.14) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 5% 85%, rgba(123,94,167,0.1) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 items-center">
-            <div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="max-w-[680px]">
               <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-3">
                 Social Impact Theater
               </div>
@@ -60,19 +74,53 @@ export default function SocialImpactTheaterPagina() {
               </p>
               <div className="flex gap-2.5 flex-wrap">
                 <a
-                  href="https://www.bestuurenleiderschap.nl"
+                  href="https://bestuurenleiderschap.nl/social-impact-theater/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-oranje text-white px-[26px] py-3 rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors"
                 >
                   Schrijf je in voor de volgende editie
                 </a>
-                <a
-                  href="#edities"
-                  className="bg-transparent text-white border-[1.5px] border-white/[0.18] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/45 transition-colors"
-                >
-                  Bekijk eerdere edities
-                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DE 5 PIJLERS */}
+        <section className="px-[5%] py-[88px] bg-achtergrond">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 items-center">
+            <div>
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
+                De inhoudelijke basis
+              </div>
+              <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5">
+                Gebouwd op de vijf pijlers van het
+                Social Impact Dashboard.
+              </h2>
+              <p className="text-[15px] text-subtekst leading-[1.7] mb-8">
+                Deze vijf pijlers vormen de inhoudelijke ruggengraat, de
+                programmering per editie én de marketingstructuur van het
+                Social Impact Theater. Elke editie zoomt in op één of
+                meerdere pijlers — zo ontstaat een doorlopende leerlijn en
+                community. Ook heeft elke editie een andere keynote
+                spreker die ons heeft geïnspireerd en uitgedaagd. Het
+                zijn geen &lsquo;normale&rsquo; netwerkavonden, maar
+                bijeenkomsten die jou daadwerkelijk in beweging brengen.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {pijlers.map((p) => (
+                  <div
+                    key={p.naam}
+                    className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl p-4 text-center"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-blauw/10 flex items-center justify-center mx-auto mb-2.5">
+                      <PijlerIcon type={p.icon} />
+                    </div>
+                    <div className="text-[13px] font-medium text-tekst leading-[1.3]">
+                      {p.naam}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden min-h-[280px] lg:min-h-[420px]">
@@ -86,42 +134,6 @@ export default function SocialImpactTheaterPagina() {
           </div>
         </section>
 
-        {/* DE 5 PIJLERS */}
-        <section className="px-[5%] py-[88px] bg-achtergrond">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              De inhoudelijke basis
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5 max-w-[680px]">
-              Gebouwd op de vijf pijlers van het
-              Social Impact Dashboard.
-            </h2>
-            <p className="text-[15px] text-subtekst leading-[1.7] max-w-[620px] mb-10">
-              Deze vijf pijlers vormen de inhoudelijke ruggengraat, de
-              programmering per editie én de marketingstructuur van het
-              Social Impact Theater. Elke editie zoomt in op één of
-              meerdere pijlers — zo ontstaat een doorlopende leerlijn en
-              community.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
-              {pijlers.map((p) => (
-                <div
-                  key={p.naam}
-                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl p-5 text-center"
-                >
-                  <div
-                    className="w-2.5 h-2.5 rounded-full mx-auto mb-3"
-                    style={{ background: p.kleur }}
-                  />
-                  <div className="text-sm font-medium text-tekst leading-[1.3]">
-                    {p.naam}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* AANKOMENDE EDITIE */}
         <section className="bg-donker px-[5%] py-20">
           <div className="max-w-[1100px] mx-auto">
@@ -131,105 +143,32 @@ export default function SocialImpactTheaterPagina() {
             <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-8">
               19 november 2026 — Humanizing Leadership
             </h2>
-            <div className="bg-white/[0.05] border border-white/10 rounded-[20px] p-8 flex flex-col md:flex-row gap-8 md:items-center justify-between">
+            <div
+              className="rounded-[20px] p-8 flex flex-col md:flex-row gap-8 md:items-center justify-between"
+              style={{ background: "#7C94B3" }}
+            >
               <div>
-                <div className="text-xs text-white/40 mb-1.5">
+                <div className="text-xs text-white/70 mb-1.5">
                   19 november 2026 · Green Offices Harderwijk
                 </div>
                 <div className="font-serif text-2xl text-white mb-2">
                   Humanizing Leadership
                 </div>
-                <div className="text-sm text-white/50 mb-1">
+                <div className="text-sm text-white/85 mb-1">
                   Met Maroesja van der Pols &amp; Alex ten Cate
                 </div>
-                <div className="text-sm text-white/50">
+                <div className="text-sm text-white/85">
                   Keynote spreker: Jo Krill
                 </div>
               </div>
               <a
-                href="https://www.bestuurenleiderschap.nl"
+                href="https://bestuurenleiderschap.nl/social-impact-theater/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-oranje text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors whitespace-nowrap self-start md:self-center"
               >
                 Schrijf je in →
               </a>
-            </div>
-          </div>
-        </section>
-
-        {/* EERDERE EDITIES */}
-        <section className="px-[5%] py-[88px] bg-achtergrond" id="edities">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Terugblik
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-10">
-              Eerdere edities
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Editie 1 */}
-              <div className="bg-kaart border-[1.5px] border-black/[0.07] rounded-card overflow-hidden">
-                <div className="relative w-full aspect-[1200/628]">
-                  <Image
-                    src="/sit/editie-21-mei.png"
-                    alt="Social Impact Theater — 21 mei 2026"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-2">
-                    21 mei 2026 · Green Offices Harderwijk
-                  </div>
-                  <div className="font-serif text-lg mb-2">
-                    Ethisch Leiderschap &amp; Human Development
-                  </div>
-                  <p className="text-sm text-subtekst leading-[1.65] mb-3">
-                    De aftrap-editie, met een keynote van Erik Eerhart
-                    (auteur van &ldquo;Ik ben ook maar een man&rdquo;) over
-                    kwetsbaarheid in leiderschap, morele keuzes en
-                    persoonlijke ontwikkeling. Een volle zaal en openhartige
-                    gesprekken bepaalden de toon voor het vervolg.
-                  </p>
-                  <div className="text-sm text-tekst">
-                    Met Erik Eerhart, Alex ten Cate &amp; Maroesja van der Pols
-                  </div>
-                </div>
-              </div>
-
-              {/* Editie 2 */}
-              <div className="bg-kaart border-[1.5px] border-black/[0.07] rounded-card overflow-hidden">
-                <div className="relative w-full aspect-[1200/628] bg-[#f5f5f3]">
-                  <Image
-                    src="/sit/editie-25-juni.png"
-                    alt="Social Impact Theater — 25 juni 2026"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-2">
-                    25 juni 2026 · Green Offices Harderwijk
-                  </div>
-                  <div className="font-serif text-lg mb-2">
-                    1+1=3 — Leiden als team
-                  </div>
-                  <p className="text-sm text-subtekst leading-[1.65] mb-3">
-                    Over diversiteit in leiderschap, met een keynote van
-                    Steven van den Heuvel (auteur van &ldquo;High Impact
-                    Veranderen&rdquo;) over verandering die begint bij
-                    mensen. Alex ten Cate deelde inzichten over gedeeld
-                    leiderschap: teams die divers leiden presteren
-                    structureel beter.
-                  </p>
-                  <div className="text-sm text-tekst">
-                    Met Steven van den Heuvel, Alex ten Cate &amp; Maroesja
-                    van der Pols
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -311,15 +250,15 @@ export default function SocialImpactTheaterPagina() {
           </p>
           <div className="flex gap-2.5 justify-center flex-wrap">
             <a
-              href="https://www.bestuurenleiderschap.nl"
+              href="https://bestuurenleiderschap.nl/social-impact-theater/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-oranje text-white px-[26px] py-3 rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors"
             >
-              Naar bestuurenleiderschap.nl
+              Ja, ik wil erbij zijn
             </a>
             <a
-              href="mailto:academie@7life.nl?subject=Social Impact Theater — interesse volgende editie"
+              href="mailto:info@bestuurenleiderschap.nl?subject=Social Impact Theater — interesse volgende editie"
               className="bg-transparent text-tekst border-[1.5px] border-black/[0.07] px-[26px] py-3 rounded-full text-sm font-medium hover:border-oranje hover:text-oranje transition-colors"
             >
               Mail de Academie
