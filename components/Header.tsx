@@ -51,7 +51,7 @@ export default function Header() {
           </span>
           <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/social-impact-dashboard">Social Impact Dashboard</DdLink>
-            <DdLink href="/oja">OJA</DdLink>
+            <DdLink href="/oja">Open Job Architecture</DdLink>
             <DdLink href="/social-impact-theater">Social Impact Theater</DdLink>
           </div>
         </div>
