@@ -5,45 +5,39 @@ import Footer from "@/components/Footer";
 
 const vragen = [
   {
-    icon: "🎯",
     titel: "Sturen op wat telt",
     tekst: "Niet rapporteren omdat het moet, maar meten op waarde voor mensen én organisatie.",
   },
   {
-    icon: "🔗",
     titel: "Verbind structuur en gedrag",
     tekst: "Functiestructuur (OJA), leiderschap en gedrag in één integraal inzicht.",
   },
   {
-    icon: "✋",
     titel: "Begeleid beweging",
     tekst: "Meet niet alleen hoe het is — help organisaties echt in beweging te komen.",
   },
 ];
 
 const pijlers = [
-  { icon: "⚖️", titel: "Fair Work", tekst: "Werkt de organisatie voor mensen — of andersom? Salaris, balans, veiligheid." },
-  { icon: "💰", titel: "Money & Meaning", tekst: "Waar geeft werk energie, waar kost het energie? Doel vs. impact op people." },
-  { icon: "📈", titel: "Human Development", tekst: "Kan de organisatie zich aanpassen — of blijft ze hangen? Groei & mobiliteit." },
-  { icon: "🤝", titel: "Ethical Leadership", tekst: "Is leiderschap betrouwbaar en geloofwaardig? Integriteit & transparantie." },
-  { icon: "🌈", titel: "Wellbeing & Inclusion", tekst: "Voelen mensen zich onderdeel — of buitenstaander? Diversiteit & belonging." },
+  { icon: "fairwork", titel: "Fair Work", tekst: "Werkt de organisatie voor mensen — of andersom? Salaris, balans, veiligheid." },
+  { icon: "money", titel: "Money & Meaning", tekst: "Waar geeft werk energie, waar kost het energie? Doel vs. impact op people." },
+  { icon: "human", titel: "Human Development", tekst: "Kan de organisatie zich aanpassen — of blijft ze hangen? Groei & mobiliteit." },
+  { icon: "ethical", titel: "Ethical Leadership", tekst: "Is leiderschap betrouwbaar en geloofwaardig? Integriteit & transparantie." },
+  { icon: "diversity", titel: "Diversity & Inclusion", tekst: "Voelen mensen zich onderdeel — of buitenstaander? Diversiteit & belonging." },
 ];
 
 const lagen = [
   {
-    icon: "👥",
     titel: "Laag 1: Talent & Gedrag",
     tekst: "Wat kunnen mensen, wat willen zij, wat houden zij vol, hoe groeien zij?",
     features: ["Talent (wat kan iemand)", "Motivatie (wat wil iemand)", "Energie (wat houdt iemand vol)", "Fit (werkt het in deze rol)"],
   },
   {
-    icon: "🏗️",
     titel: "Laag 2: Organisatiestructuur",
     tekst: "Hoe is werk ingericht? Functies, rollen, verantwoordelijkheid, OJA.",
     features: ["Functionele architectuur (FuWa)", "Rolprofielen & verantwoordelijkheid", "Governance & span of control", "Salaristransparantie (OJA-koppeling)"],
   },
   {
-    icon: "🎯",
     titel: "Laag 3: Impact & Doelen",
     tekst: "Waar sturen we op? KPI's gekoppeld aan ESG en maatschappelijke impact.",
     features: ["Social Impact Goals", "KPI's per IDAE-domein", "Pay gap, engagement, inclusie", "SDG-afstemming"],
@@ -56,6 +50,100 @@ const impactStats = [
   { n: "15", l: "KPI's in één dashboard" },
   { n: "1", l: "integraal inzicht" },
 ];
+
+function PijlerIcon({ type }: { type: string }) {
+  const common = { width: 24, height: 24, viewBox: "0 0 24 24", fill: "none" };
+  switch (type) {
+    case "fairwork":
+      return (
+        <svg {...common}>
+          <path
+            d="M12 20.5c-2-1.4-7.5-5.1-7.5-9.5A4 4 0 0 1 12 8.3 4 4 0 0 1 19.5 11c0 4.4-5.5 8.1-7.5 9.5Z"
+            stroke="#1B3B6F"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M8 12.5l1.8 1.8L11.5 12l1.2 1.6L15 11"
+            stroke="#1B3B6F"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    case "money":
+      return (
+        <svg {...common}>
+          <path
+            d="M4 19V5M4 19h16"
+            stroke="#1B3B6F"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <rect x="6.5" y="13" width="2.6" height="6" rx="0.5" stroke="#1B3B6F" strokeWidth="1.6" />
+          <rect x="11" y="10" width="2.6" height="9" rx="0.5" stroke="#1B3B6F" strokeWidth="1.6" />
+          <rect x="15.5" y="6.5" width="2.6" height="12.5" rx="0.5" stroke="#1B3B6F" strokeWidth="1.6" />
+          <path d="M14 6l3.3-1.2L18.5 8" stroke="#1B3B6F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "human":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="8" r="3" stroke="#1B3B6F" strokeWidth="1.6" />
+          <path
+            d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"
+            stroke="#1B3B6F"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+    case "ethical":
+      return (
+        <svg {...common}>
+          <path
+            d="M12 3.5l7 2.4v5.3c0 4.7-3 8.1-7 9.3-4-1.2-7-4.6-7-9.3V5.9l7-2.4Z"
+            stroke="#1B3B6F"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M12 8l1.2 2.5 2.7.4-2 1.9.5 2.7L12 14.2l-2.4 1.3.5-2.7-2-1.9 2.7-.4L12 8Z"
+            fill="#EE7E06"
+            stroke="#EE7E06"
+            strokeWidth="1"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    case "diversity":
+      return (
+        <svg {...common}>
+          <circle cx="8.5" cy="8.5" r="2.4" stroke="#1B3B6F" strokeWidth="1.6" />
+          <circle cx="15.5" cy="8.5" r="2.4" stroke="#1B3B6F" strokeWidth="1.6" />
+          <path
+            d="M3.5 19c0-2.8 2.2-4.7 5-4.7s5 1.9 5 4.7"
+            stroke="#1B3B6F"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+          <path
+            d="M13 14.6c2.5.3 4.5 2.1 4.5 4.4"
+            stroke="#1B3B6F"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
+const nummerKleuren = ["#EE7E06", "#F2C12E", "#7B5EA7"];
+const blauwVerloop = ["#3E8FA3", "#2A6478", "#1B3B6F"];
 
 export default function SocialImpactDashboardPagina() {
   return (
@@ -133,7 +221,7 @@ export default function SocialImpactDashboardPagina() {
               Wat raakt het?
             </div>
             <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-5">
-              Organisaties roepen om meer dan loonstijging
+              Organisaties roepen om meer dan winststijging
             </h2>
             <p className="text-[15px] text-white/50 max-w-[580px] mb-10 leading-[1.7]">
               Wie vandaag een organisatie wil sturen, staat voor een
@@ -143,17 +231,21 @@ export default function SocialImpactDashboardPagina() {
               zichtbaar waar die groei gebeurt.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-              {vragen.map((v) => (
+              {vragen.map((v, i) => (
                 <div
                   key={v.titel}
-                  className="bg-white/5 border-[1.5px] border-white/[0.09] rounded-2xl p-6 flex gap-4 hover:border-blauw hover:-translate-y-0.5 transition-all"
+                  className="rounded-2xl p-6 flex gap-4 border-[1.5px] border-white/[0.09] hover:border-oranje hover:-translate-y-0.5 transition-all"
+                  style={{ background: blauwVerloop[i] }}
                 >
-                  <div className="w-10 h-10 rounded-[10px] bg-blauw/15 flex items-center justify-center text-lg flex-shrink-0">
-                    {v.icon}
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center font-serif text-[15px] text-white flex-shrink-0"
+                    style={{ background: nummerKleuren[i] }}
+                  >
+                    {i + 1}
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-white mb-1">{v.titel}</h3>
-                    <p className="text-[13px] text-white/50 leading-[1.5]">
+                    <p className="text-[13px] text-white/60 leading-[1.5]">
                       {v.tekst}
                     </p>
                   </div>
@@ -183,8 +275,8 @@ export default function SocialImpactDashboardPagina() {
                   key={p.titel}
                   className="bg-white border-[1.5px] border-black/[0.07] rounded-2xl p-5 text-center hover:border-oranje transition-all"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blauw/10 flex items-center justify-center text-xl mx-auto mb-3">
-                    {p.icon}
+                  <div className="w-12 h-12 rounded-xl bg-blauw/10 flex items-center justify-center mx-auto mb-3">
+                    <PijlerIcon type={p.icon} />
                   </div>
                   <div className="text-sm font-semibold mb-2">{p.titel}</div>
                   <div className="text-xs text-subtekst leading-[1.5]">
@@ -211,21 +303,27 @@ export default function SocialImpactDashboardPagina() {
               antwoord op &lsquo;waarom&rsquo; voordat je naar &lsquo;wat&rsquo; kijkt.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {lagen.map((l) => (
+              {lagen.map((l, i) => (
                 <div
                   key={l.titel}
-                  className="bg-white/5 border-[1.5px] border-white/[0.09] rounded-2xl p-6 hover:border-blauw hover:-translate-y-0.5 transition-all"
+                  className="rounded-2xl p-6 border-[1.5px] border-white/[0.09] hover:border-oranje hover:-translate-y-0.5 transition-all"
+                  style={{ background: blauwVerloop[i] }}
                 >
-                  <div className="text-[28px] mb-3">{l.icon}</div>
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center font-serif text-[15px] text-white mb-3"
+                    style={{ background: nummerKleuren[i] }}
+                  >
+                    {i + 1}
+                  </div>
                   <h3 className="text-[15px] font-semibold text-white mb-2">{l.titel}</h3>
-                  <p className="text-[13px] text-white/50 leading-[1.6] mb-3.5">
+                  <p className="text-[13px] text-white/60 leading-[1.6] mb-3.5">
                     {l.tekst}
                   </p>
                   <div className="flex flex-col gap-1.5">
                     {l.features.map((f) => (
                       <div
                         key={f}
-                        className="flex gap-2 text-xs text-white/50 items-start before:content-['✓'] before:text-blauw before:font-bold before:flex-shrink-0"
+                        className="flex gap-2 text-xs text-white/60 items-start before:content-['✓'] before:text-white before:font-bold before:flex-shrink-0"
                       >
                         {f}
                       </div>
