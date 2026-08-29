@@ -19,6 +19,8 @@ const vragen = [
   "Samenwerking verloopt stroef, communicatie kost energie",
   "Verzuim en werkdruk nemen toe, betrokkenheid neemt af",
   "We willen impact aantonen richting bestuur of stakeholders",
+  "Wet Loontransparantie staat op de agenda, maar hoe?",
+  "Duurzame inzetbaarheid in de praktijk vraagt een modern mobiliteitsbeleid",
 ];
 
 type Interventie = {
@@ -243,7 +245,7 @@ export default function OrganisatiesPagina() {
 
         {/* DE VRAAG */}
         <section className="px-[5%] py-[72px] bg-achtergrond" id="vraag">
-          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 items-start">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-stretch">
             <div>
               <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
                 De vraag
@@ -268,8 +270,8 @@ export default function OrganisatiesPagina() {
               </div>
             </div>
 
-            <div className="bg-kaart border border-black/[0.07] rounded-2xl overflow-hidden">
-              <div className="relative h-[220px]">
+            <div className="bg-kaart border border-black/[0.07] rounded-2xl overflow-hidden flex flex-col">
+              <div className="relative h-[130px] flex-shrink-0">
                 <Image
                   src="/organisaties/testimonial.jpg"
                   alt="Impact in de praktijk"
@@ -277,7 +279,7 @@ export default function OrganisatiesPagina() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-7">
+              <div className="p-7 flex-1 flex flex-col">
                 <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-3">
                   Impact in de praktijk
                 </div>
@@ -296,7 +298,7 @@ export default function OrganisatiesPagina() {
                   afdelingen ontdekte IDS dat het niet ging om structuur of
                   beleid — maar om communicatiestijlen die botsten.
                 </p>
-                <p className="text-sm text-oranje italic mt-3">
+                <p className="text-sm text-oranje italic mt-auto pt-3">
                   — Zorgorganisatie &amp; Gemeente (7LIFE trajecten)
                 </p>
               </div>
