@@ -14,6 +14,7 @@ const config: Config = {
         blauw: "#3E8FA3",    // --b
         paars: "#7B5EA7",    // --p
         groen: "#0f766e",    // --g
+        olijf: "#6B7B45",    // --ol
         achtergrond: "#F3F1ED", // --bg
         kaart: "#FDFCFA",    // --card
         tekst: "#1a1a1a",    // --t

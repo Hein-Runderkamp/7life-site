@@ -2,14 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const heroStats = [
-  { n: "LeiderschapScan", l: "Wetenschappelijk onderbouwd vertrekpunt voor elke leiderschapsontwikkeling" },
-  { n: "20+ jaar", l: "ervaring in leiderschaps- en professionele ontwikkeling" },
-  { n: "Academie", l: "voor Bestuur & Leiderschap — programma's voor directeuren en bestuurders" },
-];
 
 const vragen = [
   "Ik geef leiding, maar weet niet altijd wat mijn effect is op anderen",
@@ -18,6 +13,8 @@ const vragen = [
   "Als coach of adviseur wil ik werken met een bewezen methodiek",
   "Ik wil impact maken — maar weet niet waar ik het beste kan beginnen",
   "Mijn organisatie vraagt om een andere manier van leidinggeven en ik wil daarin vooroplopen",
+  "",
+  "",
 ];
 
 type Traject = {
@@ -193,12 +190,6 @@ const academieProgrammas = [
   { icon: "🔭", naam: "LeiderschapsScan Traject", body: "Persoonlijk leiderschapsprofiel als vertrekpunt — gevolgd door coaching en programma op maat." },
 ];
 
-const impactStats = [
-  { n: "LeiderschapScan", l: "co-ontwikkeld door Maroesja van der Pols & Alex ten Cate — fundament van elk traject" },
-  { n: "3 rollen", l: "leidinggevenden · teamleiders · coaches — elk een eigen traject op maat" },
-  { n: "Academie", l: "voor Bestuur & Leiderschap — bezoek bestuurenleiderschap.nl voor het volledige aanbod" },
-];
-
 export default function LeiderschapPagina() {
   const [actief, setActief] = useState("leider");
   const rol = rollen.find((r) => r.key === actief)!;
@@ -208,17 +199,30 @@ export default function LeiderschapPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[170px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/leiderschap/hero-achtergrond.jpg"
+            alt="Leiderschap & Professionals"
+            fill
+            priority
+            className="object-cover"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 85% 15%, rgba(123,94,167,0.14) 0%, transparent 60%), radial-gradient(ellipse 40% 60% at 5% 85%, rgba(238,126,6,0.08) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-1.5 bg-paars/[0.12] border border-paars/25 text-paars text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="flex-1 min-w-[280px] max-w-[620px]">
+              <div className="inline-flex items-center gap-1.5 bg-olijf/[0.15] border border-olijf/35 text-olijf text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
                 Leiderschap &amp; Professionals
               </div>
               <h1 className="font-serif text-[clamp(38px,5vw,64px)] font-light text-white leading-[1.1] tracking-[-1px] mb-4">
@@ -248,47 +252,177 @@ export default function LeiderschapPagina() {
                 </a>
               </div>
             </div>
-            <div className="flex flex-col gap-2.5">
-              {heroStats.map((s) => (
-                <div
-                  key={s.n}
-                  className="bg-white/5 border border-white/[0.08] rounded-2xl px-5 py-4"
-                >
-                  <div className="font-serif text-[28px] text-oranje leading-none">
-                    {s.n}
-                  </div>
-                  <div className="text-xs text-white/40 mt-1 leading-[1.4]">
-                    {s.l}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
         {/* DE VRAAG */}
         <section className="px-[5%] py-[72px] bg-achtergrond" id="vraag">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-stretch">
+            <div>
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
+                De vraag
+              </div>
+              <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-3">
+                Wat leiders en professionals ervaren
+              </h2>
+              <p className="text-[15px] text-subtekst leading-[1.7] max-w-[560px] mb-9">
+                Leiderschapsontwikkeling begint niet met een
+                competentiemodel. Het begint met eerlijke vragen.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {vragen.map((v, idx) =>
+                  v ? (
+                    <div
+                      key={v}
+                      className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-5 py-[18px] flex items-start gap-3"
+                    >
+                      <div className="w-[9px] h-[9px] rounded-full border-2 border-oranje flex-shrink-0 mt-1.5" />
+                      <div className="text-sm leading-[1.55]">{v}</div>
+                    </div>
+                  ) : (
+                    <div
+                      key={`placeholder-${idx}`}
+                      className="border-[1.5px] border-dashed border-black/[0.12] rounded-2xl px-5 py-[18px] flex items-center justify-center"
+                    >
+                      <div className="text-xs text-subtekst/50 italic">
+                        Binnenkort ingevuld
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+
+            <div className="bg-kaart border border-black/[0.07] rounded-2xl overflow-hidden flex flex-col">
+              <div className="relative h-[130px] flex-shrink-0">
+                <Image
+                  src="/leiderschap/testimonial.jpg"
+                  alt="Impact in de praktijk"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-7 flex-1 flex flex-col">
+                <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-3">
+                  Impact in de praktijk
+                </div>
+                <blockquote className="font-serif text-lg italic text-tekst leading-snug mb-4">
+                  &ldquo;Ik geloofde dat ik een goede leider was. De
+                  LeiderschapScan liet me zien waar ik onbedoeld de rem
+                  erop zette.&rdquo;
+                </blockquote>
+                <p className="text-sm text-subtekst leading-[1.65]">
+                  Een directeur die al jaren leidinggaf aan een groeiend
+                  team. De scan liet zien dat zijn directe,
+                  resultaatgerichte stijl in zijn beleving duidelijkheid
+                  bood — maar bij zijn team als druk werd ervaren.
+                </p>
+                <p className="text-sm text-subtekst leading-[1.65] mt-3">
+                  Leiderschap verbeteren begint niet met een ander gedrag
+                  aanleren. Het begint met begrijpen waarom je doet wat je
+                  doet — en wat het effect is op de mensen om je heen.
+                </p>
+                <p className="text-sm text-paars italic mt-auto pt-3">
+                  — LeiderschapScan traject, directeur MKB
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ACADEMIE SPOTLIGHT */}
+        <section className="px-[5%] py-[72px] bg-achtergrond" id="academie">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              De vraag
+              Uitgelicht
             </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-3">
-              Wat leiders en professionals ervaren
+            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-8">
+              Academie voor Bestuur &amp; Leiderschap
             </h2>
-            <p className="text-[15px] text-subtekst leading-[1.7] max-w-[560px] mb-9">
-              Leiderschapsontwikkeling begint niet met een
-              competentiemodel. Het begint met eerlijke vragen.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-              {vragen.map((v) => (
-                <div
-                  key={v}
-                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-5 py-[18px] flex items-start gap-3"
-                >
-                  <div className="w-[9px] h-[9px] rounded-full border-2 border-oranje flex-shrink-0 mt-1.5" />
-                  <div className="text-sm leading-[1.55]">{v}</div>
+            <div className="bg-donker rounded-[24px] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-start justify-between gap-5 mb-3">
+                  <div>
+                    <div className="inline-block bg-blauw/[0.12] border border-blauw/25 text-blauw text-[11px] font-semibold tracking-[1.5px] px-3 py-1 rounded-xl uppercase mb-4">
+                      bestuurenleiderschap.nl
+                    </div>
+                    <h3 className="font-serif text-[clamp(24px,3vw,36px)] font-light text-white leading-[1.15]">
+                      Voor leiders die
+                      <br />
+                      anders willen.
+                    </h3>
+                  </div>
+                  <div className="relative w-[84px] h-[84px] flex-shrink-0">
+                    <Image
+                      src="/leiderschap/academie-logo.png"
+                      alt="Academie voor Bestuur & Leiderschap"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
-              ))}
+                <p className="text-white/45 text-sm leading-[1.75] mb-6">
+                  De Academie voor Bestuur &amp; Leiderschap is de plek voor
+                  directeuren, bestuurders en leidinggevenden die diepgang
+                  zoeken. Niet een cursus, maar een programma dat
+                  verandert hoe je kijkt naar jezelf en naar leiderschap.
+                </p>
+                <div className="flex flex-col gap-2 mb-7">
+                  {academieItems.map((it) => (
+                    <div
+                      key={it}
+                      className="flex items-center gap-2.5 text-sm text-white/70"
+                    >
+                      <span className="text-blauw font-bold flex-shrink-0">
+                        ✔
+                      </span>
+                      {it}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex gap-2.5 flex-wrap">
+                  <a
+                    href="https://www.bestuurenleiderschap.nl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blauw text-white px-6 py-[11px] rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+                  >
+                    Bekijk de Academie →
+                  </a>
+                  <a
+                    href="#cta"
+                    className="bg-transparent text-white border-[1.5px] border-white/20 px-6 py-[11px] rounded-full text-sm font-medium hover:border-white/50 transition-colors"
+                  >
+                    Plan een gesprek
+                  </a>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                {academieProgrammas.map((p) => (
+                  <div
+                    key={p.naam}
+                    className="rounded-2xl px-5 py-4 flex items-start gap-3.5"
+                    style={{ background: "#CDA956" }}
+                  >
+                    <div className="relative w-9 h-9 flex-shrink-0 mt-0.5">
+                      <Image
+                        src="/leiderschap/academie-icoon.png"
+                        alt=""
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-donker mb-1">
+                        {p.naam}
+                      </div>
+                      <div className="text-[13px] text-donker/70 leading-[1.5]">
+                        {p.body}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -360,129 +494,6 @@ export default function LeiderschapPagina() {
                   </ul>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ACADEMIE SPOTLIGHT */}
-        <section className="px-[5%] py-[72px] bg-achtergrond" id="academie">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Uitgelicht
-            </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-8">
-              Academie voor Bestuur &amp; Leiderschap
-            </h2>
-            <div className="bg-donker rounded-[24px] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-block bg-blauw/[0.12] border border-blauw/25 text-blauw text-[11px] font-semibold tracking-[1.5px] px-3 py-1 rounded-xl uppercase mb-4">
-                  bestuurenleiderschap.nl
-                </div>
-                <h3 className="font-serif text-[clamp(24px,3vw,36px)] font-light text-white leading-[1.15] mb-3">
-                  Voor leiders die
-                  <br />
-                  anders willen.
-                </h3>
-                <p className="text-white/45 text-sm leading-[1.75] mb-6">
-                  De Academie voor Bestuur &amp; Leiderschap is de plek voor
-                  directeuren, bestuurders en leidinggevenden die diepgang
-                  zoeken. Niet een cursus, maar een programma dat
-                  verandert hoe je kijkt naar jezelf en naar leiderschap.
-                </p>
-                <div className="flex flex-col gap-2 mb-7">
-                  {academieItems.map((it) => (
-                    <div
-                      key={it}
-                      className="flex items-center gap-2.5 text-sm text-white/70"
-                    >
-                      <span className="text-blauw font-bold flex-shrink-0">
-                        ✔
-                      </span>
-                      {it}
-                    </div>
-                  ))}
-                </div>
-                <div className="flex gap-2.5 flex-wrap">
-                  <a
-                    href="https://www.bestuurenleiderschap.nl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blauw text-white px-6 py-[11px] rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
-                  >
-                    Bekijk de Academie →
-                  </a>
-                  <a
-                    href="#cta"
-                    className="bg-transparent text-white border-[1.5px] border-white/20 px-6 py-[11px] rounded-full text-sm font-medium hover:border-white/50 transition-colors"
-                  >
-                    Plan een gesprek
-                  </a>
-                </div>
-              </div>
-              <div className="flex flex-col gap-3">
-                {academieProgrammas.map((p) => (
-                  <div
-                    key={p.naam}
-                    className="bg-white/5 border border-white/[0.08] rounded-2xl px-5 py-4"
-                  >
-                    <div className="text-sm font-semibold text-white mb-1">
-                      {p.icon} {p.naam}
-                    </div>
-                    <div className="text-[13px] text-white/40 leading-[1.5]">
-                      {p.body}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* IMPACT STORY */}
-        <section className="px-[5%] py-[72px] bg-gradient-to-b from-achtergrond to-[#e8e4dc]" id="impact">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Impact in de praktijk
-            </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-9">
-              Wat er verandert als leiders zichzelf begrijpen
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="font-serif text-[clamp(18px,2.5vw,26px)] font-light italic leading-[1.45] border-l-[3px] border-paars pl-6 mb-5">
-                  &ldquo;Ik geloofde dat ik een goede leider was. De
-                  LeiderschapScan liet me zien waar ik onbedoeld de rem
-                  erop zette.&rdquo;
-                </div>
-                <p className="text-sm text-subtekst leading-[1.75]">
-                  Een directeur die al jaren leidinggaf aan een groeiend
-                  team. De scan liet zien dat zijn directe, resultaatgerichte
-                  stijl in zijn beleving duidelijkheid bood — maar bij zijn
-                  team als druk werd ervaren. Dat inzicht veranderde niet
-                  zijn karakter, maar wel zijn bewuste keuzes in contact.
-                </p>
-                <p className="text-sm text-subtekst leading-[1.75] mt-3.5">
-                  Leiderschap verbeteren begint niet met een ander gedrag
-                  aanleren. Het begint met begrijpen waarom je doet wat je
-                  doet — en wat het effect is op de mensen om je heen.
-                </p>
-                <p className="text-sm text-paars italic mt-3">
-                  — LeiderschapScan traject, directeur MKB
-                </p>
-              </div>
-              <div className="flex flex-col gap-3">
-                {impactStats.map((s) => (
-                  <div
-                    key={s.n}
-                    className="bg-kaart border border-black/[0.07] rounded-2xl px-[22px] py-[18px]"
-                  >
-                    <div className="font-serif text-2xl text-paars leading-tight">
-                      {s.n}
-                    </div>
-                    <div className="text-[13px] text-subtekst mt-1">{s.l}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
