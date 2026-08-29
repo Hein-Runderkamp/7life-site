@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -175,12 +176,6 @@ const sectoren: Sector[] = [
   },
 ];
 
-const impactStats = [
-  { n: "3 niveaus", l: "medewerkers · teamleiders · directie — altijd in samenhang" },
-  { n: "Bewezen", l: "actief bij gemeenten, zorginstellingen en bedrijven in Nederland" },
-  { n: "Inzicht → Structuur → Sturing → Impact", l: "het 7LIFE systeem voor duurzame organisatieontwikkeling" },
-];
-
 export default function OrganisatiesPagina() {
   const [actief, setActief] = useState("gemeente");
   const sector = sectoren.find((s) => s.key === actief)!;
@@ -190,16 +185,29 @@ export default function OrganisatiesPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[170px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/organisaties/hero-achtergrond.jpg"
+            alt="Organisaties & Teams"
+            fill
+            priority
+            className="object-cover"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 85% 15%, rgba(62,143,163,0.14) 0%, transparent 60%), radial-gradient(ellipse 40% 60% at 5% 85%, rgba(238,126,6,0.08) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="flex-1 min-w-[280px] max-w-[620px]">
               <div className="inline-flex items-center gap-1.5 bg-blauw/[0.12] border border-blauw/25 text-blauw text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
                 Organisaties &amp; Teams
               </div>
@@ -230,11 +238,80 @@ export default function OrganisatiesPagina() {
                 </a>
               </div>
             </div>
-            <div className="flex flex-col gap-2.5">
+          </div>
+        </section>
+
+        {/* DE VRAAG */}
+        <section className="px-[5%] py-[72px] bg-achtergrond" id="vraag">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 items-start">
+            <div>
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
+                De vraag
+              </div>
+              <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-3">
+                Wat je tegenkomt in de praktijk
+              </h2>
+              <p className="text-[15px] text-subtekst leading-[1.7] max-w-[560px] mb-9">
+                In elke organisatie, in elke sector. De namen en functies
+                veranderen — de patronen blijven hetzelfde.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {vragen.map((v) => (
+                  <div
+                    key={v}
+                    className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-5 py-[18px] flex items-start gap-3"
+                  >
+                    <div className="w-[9px] h-[9px] rounded-full border-2 border-oranje flex-shrink-0 mt-1.5" />
+                    <div className="text-sm leading-[1.55]">{v}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-kaart border border-black/[0.07] rounded-2xl overflow-hidden">
+              <div className="relative h-[220px]">
+                <Image
+                  src="/organisaties/testimonial.jpg"
+                  alt="Impact in de praktijk"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-7">
+                <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-3">
+                  Impact in de praktijk
+                </div>
+                <blockquote className="font-serif text-lg italic text-tekst leading-snug mb-4">
+                  &ldquo;Een zorgorganisatie investeerde in leiderschap. Het
+                  bleek dat teams elkaar simpelweg niet meer
+                  vertrouwden.&rdquo;
+                </blockquote>
+                <p className="text-sm text-subtekst leading-[1.65]">
+                  IDS legde bloot wat in geen enkel rapport stond. Niet een
+                  leiderschapsprobleem — maar een vertrouwensbreuk die
+                  jarenlang was doorgegeven van team op team.
+                </p>
+                <p className="text-sm text-subtekst leading-[1.65] mt-3">
+                  Bij een gemeente die worstelde met samenwerking tussen
+                  afdelingen ontdekte IDS dat het niet ging om structuur of
+                  beleid — maar om communicatiestijlen die botsten.
+                </p>
+                <p className="text-sm text-oranje italic mt-3">
+                  — Zorgorganisatie &amp; Gemeente (7LIFE trajecten)
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTOREN + INTERVENTIES */}
+        <section className="bg-donker px-[5%] py-[72px]" id="sectoren">
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-10 items-start">
+            <div className="flex flex-row lg:flex-col gap-2.5 flex-wrap">
               {heroStats.map((s) => (
                 <div
                   key={s.n}
-                  className="bg-white/5 border border-white/[0.08] rounded-2xl px-5 py-4"
+                  className="bg-white/5 border border-white/[0.08] rounded-2xl px-5 py-4 flex-1 lg:flex-none min-w-[180px]"
                 >
                   <div className="font-serif text-[28px] text-oranje leading-none">
                     {s.n}
@@ -245,157 +322,75 @@ export default function OrganisatiesPagina() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* DE VRAAG */}
-        <section className="px-[5%] py-[72px] bg-achtergrond" id="vraag">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              De vraag
-            </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-3">
-              Wat je tegenkomt in de praktijk
-            </h2>
-            <p className="text-[15px] text-subtekst leading-[1.7] max-w-[560px] mb-9">
-              In elke organisatie, in elke sector. De namen en functies
-              veranderen — de patronen blijven hetzelfde.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-              {vragen.map((v) => (
-                <div
-                  key={v}
-                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-5 py-[18px] flex items-start gap-3"
-                >
-                  <div className="w-[9px] h-[9px] rounded-full border-2 border-oranje flex-shrink-0 mt-1.5" />
-                  <div className="text-sm leading-[1.55]">{v}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTOREN + INTERVENTIES */}
-        <section className="bg-donker px-[5%] py-[72px]" id="sectoren">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
-              Onze aanpak
-            </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
-              Drie sectoren. Één systeem.
-            </h2>
-            <p className="text-white/45 text-[15px] leading-[1.7] mb-7">
-              Selecteer je sector voor een gerichte aanpak.
-            </p>
-
-            <div className="flex gap-2 flex-wrap mb-9">
-              {sectoren.map((s) => (
-                <button
-                  key={s.key}
-                  onClick={() => setActief(s.key)}
-                  className={`px-5 py-2 rounded-full text-[13px] font-medium border transition-colors ${
-                    actief === s.key
-                      ? "bg-oranje border-oranje text-white"
-                      : "bg-transparent border-white/15 text-white/55 hover:text-white hover:border-white/40"
-                  }`}
-                >
-                  {s.label}
-                </button>
-              ))}
-            </div>
-
-            <p className="text-white/50 text-[15px] leading-[1.7] max-w-[640px] mb-9 border-l-[3px] border-oranje pl-[18px]">
-              {sector.intro}
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-              {sector.interventies.map((it, i) => (
-                <div
-                  key={it.naam}
-                  className="relative rounded-[18px] p-[26px] bg-white/5 border border-white/[0.09] hover:bg-white/[0.08] hover:border-oranje transition-all overflow-hidden"
-                  style={{ borderTop: "3px solid #EE7E06" }}
-                >
-                  <div className="text-[11px] font-bold tracking-wide text-oranje uppercase mb-2.5">
-                    Interventie {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <div className="text-[17px] font-semibold text-white mb-1">
-                    {it.naam}
-                  </div>
-                  <div className="text-xs text-white/35 italic mb-3.5">
-                    {it.sub}
-                  </div>
-                  <p className="text-[13px] text-white/50 leading-[1.65] mb-3.5">
-                    {it.body}
-                  </p>
-                  <ul className="flex flex-col mb-3.5">
-                    {it.items.map((li, j) => (
-                      <li
-                        key={li}
-                        className={`text-[13px] text-white/50 py-1 pl-3.5 relative before:content-['·'] before:absolute before:left-0 before:text-oranje ${
-                          j < it.items.length - 1 ? "border-b border-white/[0.05]" : ""
-                        }`}
-                      >
-                        {li}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="bg-oranje/[0.08] border border-oranje/20 rounded-[10px] px-3.5 py-2.5 text-xs text-white/55">
-                    <strong className="block text-[11px] tracking-wide uppercase text-oranje mb-1">
-                      Resultaat
-                    </strong>
-                    {it.resultaat}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* IMPACT STORY */}
-        <section className="px-[5%] py-[72px] bg-achtergrond" id="impact">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              Impact in de praktijk
-            </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-9">
-              Wat er verandert als mensen in beweging komen
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="font-serif text-[clamp(18px,2.5vw,26px)] font-light italic leading-[1.45] border-l-[3px] border-oranje pl-6 mb-5">
-                  &ldquo;Een zorgorganisatie investeerde in leiderschap. Het
-                  bleek dat teams elkaar simpelweg niet meer
-                  vertrouwden.&rdquo;
-                </div>
-                <p className="text-sm text-subtekst leading-[1.75]">
-                  IDS legde bloot wat in geen enkel rapport stond. Niet een
-                  leiderschapsprobleem — maar een vertrouwensbreuk die
-                  jarenlang was doorgegeven van team op team. De aanpak
-                  veranderde daardoor volledig: niet meer trainen op
-                  leiderschapsstijl, maar werken aan de basis van
-                  veiligheid en verbinding.
-                </p>
-                <p className="text-sm text-subtekst leading-[1.75] mt-3.5">
-                  Bij een gemeente die worstelde met samenwerking tussen
-                  afdelingen ontdekte IDS dat het niet ging om structuur of
-                  beleid — maar om communicatiestijlen die botsten. Met een
-                  gemeenschappelijke taal verdween de weerstand als sneeuw
-                  voor de zon.
-                </p>
-                <p className="text-sm text-oranje italic mt-3">
-                  — Zorgorganisatie &amp; Gemeente (7LIFE trajecten)
-                </p>
+            <div>
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
+                Onze aanpak
               </div>
-              <div className="flex flex-col gap-3">
-                {impactStats.map((s) => (
-                  <div
-                    key={s.l}
-                    className="bg-kaart border border-black/[0.07] rounded-2xl px-[22px] py-[18px]"
+              <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
+                Drie sectoren. Één systeem.
+              </h2>
+              <p className="text-white/45 text-[15px] leading-[1.7] mb-7">
+                Selecteer je sector voor een gerichte aanpak.
+              </p>
+
+              <div className="flex gap-2 flex-wrap mb-9">
+                {sectoren.map((s) => (
+                  <button
+                    key={s.key}
+                    onClick={() => setActief(s.key)}
+                    className={`px-5 py-2 rounded-full text-[13px] font-medium border transition-colors ${
+                      actief === s.key
+                        ? "bg-oranje border-oranje text-white"
+                        : "bg-transparent border-white/15 text-white/55 hover:text-white hover:border-white/40"
+                    }`}
                   >
-                    <div className="font-serif text-2xl text-oranje leading-tight">
-                      {s.n}
+                    {s.label}
+                  </button>
+                ))}
+              </div>
+
+              <p className="text-white/50 text-[15px] leading-[1.7] max-w-[640px] mb-9 border-l-[3px] border-oranje pl-[18px]">
+                {sector.intro}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3.5">
+                {sector.interventies.map((it, i) => (
+                  <div
+                    key={it.naam}
+                    className="relative rounded-[18px] p-[26px] bg-white/5 border border-white/[0.09] hover:bg-white/[0.08] hover:border-oranje transition-all overflow-hidden"
+                    style={{ borderTop: "3px solid #EE7E06" }}
+                  >
+                    <div className="text-[11px] font-bold tracking-wide text-oranje uppercase mb-2.5">
+                      Interventie {String(i + 1).padStart(2, "0")}
                     </div>
-                    <div className="text-[13px] text-subtekst mt-1">{s.l}</div>
+                    <div className="text-[17px] font-semibold text-white mb-1">
+                      {it.naam}
+                    </div>
+                    <div className="text-xs text-white/35 italic mb-3.5">
+                      {it.sub}
+                    </div>
+                    <p className="text-[13px] text-white/50 leading-[1.65] mb-3.5">
+                      {it.body}
+                    </p>
+                    <ul className="flex flex-col mb-3.5">
+                      {it.items.map((li, j) => (
+                        <li
+                          key={li}
+                          className={`text-[13px] text-white/50 py-1 pl-3.5 relative before:content-['·'] before:absolute before:left-0 before:text-oranje ${
+                            j < it.items.length - 1 ? "border-b border-white/[0.05]" : ""
+                          }`}
+                        >
+                          {li}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="bg-oranje/[0.08] border border-oranje/20 rounded-[10px] px-3.5 py-2.5 text-xs text-white/55">
+                      <strong className="block text-[11px] tracking-wide uppercase text-oranje mb-1">
+                        Resultaat
+                      </strong>
+                      {it.resultaat}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -404,21 +399,21 @@ export default function OrganisatiesPagina() {
         </section>
 
         {/* CTA */}
-        <section className="relative bg-donker px-[5%] py-20 text-center overflow-hidden" id="cta">
+        <section className="relative bg-achtergrond px-[5%] py-20 text-center overflow-hidden" id="cta">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at 50% 110%, rgba(62,143,163,0.12) 0%, transparent 65%)",
+                "radial-gradient(ellipse 60% 80% at 50% 110%, rgba(62,143,163,0.08) 0%, transparent 65%)",
             }}
           />
           <div className="relative z-10">
-            <h2 className="font-serif text-[clamp(28px,4vw,48px)] font-light text-white leading-[1.1] mb-3">
+            <h2 className="font-serif text-[clamp(28px,4vw,48px)] font-light leading-[1.1] mb-3">
               Wat speelt er in
               <br />
               <em className="text-oranje not-italic italic">jouw organisatie?</em>
             </h2>
-            <p className="text-white/45 text-[15px] max-w-[440px] mx-auto mb-7 leading-[1.7]">
+            <p className="text-subtekst text-[15px] max-w-[440px] mx-auto mb-7 leading-[1.7]">
               We beginnen altijd met luisteren. Vertel ons wat er speelt —
               dan kijken we samen welke aanpak het beste past.
             </p>
@@ -431,7 +426,7 @@ export default function OrganisatiesPagina() {
               </a>
               <Link
                 href="/"
-                className="bg-transparent text-white border-[1.5px] border-white/20 px-6 py-[11px] rounded-full text-sm font-medium hover:border-white/50 transition-colors"
+                className="bg-transparent text-tekst border-[1.5px] border-black/[0.1] px-6 py-[11px] rounded-full text-sm font-medium hover:border-oranje hover:text-oranje transition-colors"
               >
                 Terug naar 7LIFE
               </Link>
