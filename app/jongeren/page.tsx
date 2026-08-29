@@ -1,12 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const heroStats = [
-  { n: "4–22", l: "jaar — programma's voor elke fase van de ontwikkeling" },
-  { n: "9.000+", l: "assessments waaronder duizenden jongeren" },
-  { n: "Wetenschappelijk", l: "onderbouwde methodiek — geen labels, wel inzicht" },
-];
 
 const vragen = [
   "Leerlingen die gedemotiveerd lijken, maar eigenlijk niet weten waar hun kracht ligt",
@@ -104,16 +99,30 @@ export default function JongerenPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[170px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/jongeren/achtergrond.jpg"
+            alt="Jongeren & Ontwikkeling"
+            fill
+            priority
+            className="object-cover"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(238,126,6,0.12) 0%, transparent 60%), radial-gradient(ellipse 40% 60% at 5% 80%, rgba(62,143,163,0.08) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="flex-1 min-w-[280px] max-w-[620px]">
               <div className="inline-flex items-center gap-1.5 bg-oranje/10 border border-oranje/[0.22] text-oranje text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
                 Jongeren &amp; Ontwikkeling
               </div>
@@ -124,7 +133,7 @@ export default function JongerenPagina() {
                 <br />
                 in zichzelf.
               </h1>
-              <p className="text-white/50 text-base leading-[1.75] mb-7">
+              <p className="text-white/55 text-base leading-[1.75] mb-7 max-w-[480px]">
                 Van basisschool tot hoger onderwijs — 7LIFE helpt jongeren
                 hun communicatiestijl, talenten en drijfveren ontdekken.
                 Niet als label, maar als vertrekpunt voor groei.
@@ -143,21 +152,6 @@ export default function JongerenPagina() {
                   Plan een gesprek
                 </a>
               </div>
-            </div>
-            <div className="flex flex-col gap-2.5">
-              {heroStats.map((s) => (
-                <div
-                  key={s.l}
-                  className="bg-white/5 border border-white/[0.08] rounded-2xl px-5 py-4"
-                >
-                  <div className="font-serif text-[32px] text-oranje leading-none">
-                    {s.n}
-                  </div>
-                  <div className="text-xs text-white/40 mt-1 leading-[1.4]">
-                    {s.l}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
