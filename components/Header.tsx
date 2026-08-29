@@ -41,6 +41,7 @@ export default function Header() {
             <DdLink href="/organisaties">Build Strong Organisaties</DdLink>
             <DdLink href="/leiderschap">Build Strong Leiderschap</DdLink>
             <DdLink href="/opleiden">Build Strong Trainers</DdLink>
+            <DdLink href="/agenda">Agenda</DdLink>
           </div>
         </div>
 
