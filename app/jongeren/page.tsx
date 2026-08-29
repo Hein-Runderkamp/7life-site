@@ -21,7 +21,7 @@ const programmas = [
   {
     kleur: "#D7263D",
     leeftijd: "4 — 12 jaar · Basisonderwijs",
-    icon: "🔐",
+    icon: "/jongeren/icoon-kluis7.png",
     naam: "Kluis7",
     sub: "Communicatiestijlen ontdekken voor kinderen",
     body: "Kluis7 helpt kinderen van 4 tot 12 jaar hun eigen communicatiestijl ontdekken — op een speelse, toegankelijke manier. Via het kaartspel, de scan en begeleiding leren kinderen wie ze zijn, hoe ze leren en hoe ze met anderen omgaan.",
@@ -36,7 +36,7 @@ const programmas = [
   {
     kleur: "#3E8FA3",
     leeftijd: "12 — 18 jaar · Middelbaar onderwijs",
-    icon: "🗺️",
+    icon: "/jongeren/icoon-student-journey.png",
     naam: "Student Journey App",
     sub: "Zelfkennis als basis voor studiekeuze",
     body: "De Student Journey App begeleidt middelbare scholieren bij de belangrijkste keuzes in hun schoolcarrière — vanuit zelfkennis. Niet welke opleiding past bij een profiel, maar: wie ben jij, wat drijft jou, en vanuit welke kracht maak jij jouw keuze?",
@@ -51,7 +51,7 @@ const programmas = [
   {
     kleur: "#1B3B6F",
     leeftijd: "16 — 22 jaar · MBO / HBO",
-    icon: "⭐",
+    icon: "/jongeren/icoon-talentontwikkeling.png",
     naam: "Talentontwikkeling voor Jongeren",
     sub: "Van talent naar richting en actie",
     body: "Voor jongeren die weten dat ze meer in huis hebben, maar nog niet precies weten wat. Het programma combineert de TalentScan en ExcelleerScan tot een persoonlijk talentenprofiel — en vertaalt dat naar concrete stappen in opleiding, stage en loopbaan.",
@@ -66,7 +66,7 @@ const programmas = [
   {
     kleur: "#F2C12E",
     leeftijd: "8 — 18 jaar · PO / VO",
-    icon: "💚",
+    icon: "svg:verbinding",
     naam: "Sociaal-Emotionele Ontwikkeling",
     sub: "Verbinding, veiligheid en groei in de groep",
     body: "Groepsdynamieken, pesten, eenzaamheid, gebrek aan verbinding — veel scholen worstelen ermee. Dit programma geeft leerlingen én begeleiders een gemeenschappelijke taal. Inzicht in communicatiestijlen als fundament voor een veilig en verbonden klasklimaat.",
@@ -81,7 +81,7 @@ const programmas = [
   {
     kleur: "#5FAE84",
     leeftijd: "12 — 18 jaar · Middelbaar onderwijs",
-    icon: "💰",
+    icon: "svg:euro",
     naam: "GeldScan",
     sub: "Gezond Geldgedrag voor een financieel gezonde toekomst",
     body: "De GeldScan helpt middelbare scholieren bij het maken van verantwoordelijke financiële keuzes. Door gebruik te maken van het communicatieprofiel van de scholier, worden geldtypes bepaald, die de scholier herkent en helpt om de juiste keuzes te maken. De GeldScan zorgt voor het voorkomen van schulden en het creëren van financiële rust bij de scholier.",
@@ -94,6 +94,43 @@ const programmas = [
     ],
   },
 ];
+
+function IconVerbinding({ color }: { color: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+      <circle cx="18" cy="16" r="6" stroke={color} strokeWidth="2" />
+      <circle cx="32" cy="20" r="5" stroke={color} strokeWidth="2" />
+      <path
+        d="M8 38c0-6.6 4.5-12 10-12s10 5.4 10 12"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M24 36c0-5.2 3.6-9.5 8-9.5s8 4.3 8 9.5"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function IconEuro({ color }: { color: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+      <path
+        d="M32 14c-2.5-2.4-5.3-3.6-8.5-3.6-7 0-12.7 6.1-12.7 13.6s5.7 13.6 12.7 13.6c3.2 0 6-1.2 8.5-3.6"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M6 21h17" stroke={color} strokeWidth="2" strokeLinecap="round" />
+      <path d="M6 27h15" stroke={color} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 const backboneScans = [
   "CommunicatieScan (Full)",
@@ -302,7 +339,25 @@ export default function JongerenPagina() {
                         <div className="text-[11px] font-semibold tracking-wide text-oranje uppercase mb-2.5 mt-1">
                           {p.leeftijd}
                         </div>
-                        <span className="text-2xl mb-2 block">{p.icon}</span>
+                        <div
+                          className="w-12 h-12 rounded-xl bg-white flex items-center justify-center p-2 mb-3 overflow-hidden"
+                        >
+                          {p.icon.startsWith("svg:") ? (
+                            p.icon === "svg:verbinding" ? (
+                              <IconVerbinding color={p.kleur} />
+                            ) : (
+                              <IconEuro color={p.kleur} />
+                            )
+                          ) : (
+                            <Image
+                              src={p.icon}
+                              alt={p.naam}
+                              width={48}
+                              height={48}
+                              className="w-full h-full object-contain"
+                            />
+                          )}
+                        </div>
                         <div className="text-[13px] text-white/45 mb-3 leading-[1.5]">
                           {p.sub}
                         </div>
