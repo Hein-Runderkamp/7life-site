@@ -3,13 +3,6 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const heroStats = [
-  { n: "5", l: "IDAE-domeinen" },
-  { n: "∞", l: "Organisaties" },
-  { n: "15+", l: "KPI's" },
-  { n: "∞", l: "Rapportages" },
-];
-
 const vragen = [
   {
     icon: "🎯",
@@ -70,41 +63,41 @@ export default function SocialImpactDashboardPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="bg-donker text-white px-[5%] pt-[170px] pb-20 text-center">
-          <div className="max-w-[900px] mx-auto">
-            <div className="flex justify-center mb-8">
-              <Image
-                src="/sid/logo.jpeg"
-                alt="Social Impact Dashboard"
-                width={320}
-                height={171}
-                className="w-[260px] sm:w-[320px] h-auto rounded-lg"
-              />
-            </div>
-            <span className="text-[11px] font-bold tracking-[2px] text-oranje uppercase mb-3.5 block">
-              Sturingsinstrument
-            </span>
-            <h1 className="font-serif text-[clamp(36px,6vw,56px)] font-light leading-[1.1] mb-4">
-              Social Impact Dashboard
-            </h1>
-            <p className="text-base text-white/60 max-w-[640px] mx-auto mb-10 leading-[1.7]">
-              Meet en begeleid de weg naar duurzame organisatieverandering.
-              Het Social Impact Dashboard verbindt organisatiestructuur,
-              leiderschap en maatschappelijke impact in één integraal
-              sturingsinstrument.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-12">
-              {heroStats.map((s) => (
-                <div
-                  key={s.l}
-                  className="bg-white/5 border border-white/[0.08] rounded-2xl px-3.5 py-4"
-                >
-                  <div className="font-serif text-[28px] text-oranje leading-none">
-                    {s.n}
-                  </div>
-                  <div className="text-[11px] text-white/40 mt-1">{s.l}</div>
-                </div>
-              ))}
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/sid/hero-achtergrond.jpg"
+            alt="Social Impact Dashboard"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="max-w-[620px]">
+              <div className="inline-flex items-center gap-1.5 bg-oranje/10 border border-oranje/[0.22] text-oranje text-[11px] font-semibold tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
+                Social Impact
+              </div>
+              <h1 className="font-serif text-[clamp(38px,5vw,64px)] font-light text-white leading-[1.1] tracking-[-1px] mb-4">
+                Social Impact Dashboard
+              </h1>
+              <p className="text-white/50 text-base leading-[1.75] mb-7">
+                Meet en begeleid de weg naar duurzame organisatieverandering.
+                Het Social Impact Dashboard verbindt organisatiestructuur,
+                leiderschap en maatschappelijke impact in één integraal
+                sturingsinstrument.
+              </p>
             </div>
           </div>
         </section>
@@ -134,15 +127,15 @@ export default function SocialImpactDashboardPagina() {
         </section>
 
         {/* WAT RAAKT HET */}
-        <section className="px-[5%] py-20 bg-achtergrond">
+        <section className="px-[5%] py-20 bg-donker">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-[11px] font-bold tracking-[2px] text-oranje uppercase mb-2.5">
               Wat raakt het?
             </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-5">
+            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-5">
               Organisaties roepen om meer dan loonstijging
             </h2>
-            <p className="text-[15px] text-subtekst max-w-[580px] mb-10 leading-[1.7]">
+            <p className="text-[15px] text-white/50 max-w-[580px] mb-10 leading-[1.7]">
               Wie vandaag een organisatie wil sturen, staat voor een
               transformatie. Niet alleen getallen hoeven omhoog — de
               betekenis van werk, vertrouwen in leiderschap en echte
@@ -153,14 +146,14 @@ export default function SocialImpactDashboardPagina() {
               {vragen.map((v) => (
                 <div
                   key={v.titel}
-                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl p-6 flex gap-4 hover:border-blauw hover:-translate-y-0.5 transition-all"
+                  className="bg-white/5 border-[1.5px] border-white/[0.09] rounded-2xl p-6 flex gap-4 hover:border-blauw hover:-translate-y-0.5 transition-all"
                 >
-                  <div className="w-10 h-10 rounded-[10px] bg-blauw/10 flex items-center justify-center text-lg flex-shrink-0">
+                  <div className="w-10 h-10 rounded-[10px] bg-blauw/15 flex items-center justify-center text-lg flex-shrink-0">
                     {v.icon}
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold mb-1">{v.titel}</h3>
-                    <p className="text-[13px] text-subtekst leading-[1.5]">
+                    <h3 className="text-sm font-semibold text-white mb-1">{v.titel}</h3>
+                    <p className="text-[13px] text-white/50 leading-[1.5]">
                       {v.tekst}
                     </p>
                   </div>
@@ -177,7 +170,7 @@ export default function SocialImpactDashboardPagina() {
               Kern
             </div>
             <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-5">
-              Het IDAE-framework: vijf domeinen
+              Het Social Impact Dashboard: vijf Pijlers
             </h2>
             <p className="text-[15px] text-subtekst max-w-[580px] mb-10 leading-[1.7]">
               Het Social Impact Dashboard meet vijf elkaar versterkende
@@ -204,15 +197,15 @@ export default function SocialImpactDashboardPagina() {
         </section>
 
         {/* DRIE LAGEN VAN ZICHT */}
-        <section className="px-[5%] py-20 bg-white">
+        <section className="px-[5%] py-20 bg-donker">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-[11px] font-bold tracking-[2px] text-oranje uppercase mb-2.5">
               Hoe werkt het
             </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-5">
+            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-5">
               Drie lagen van zicht
             </h2>
-            <p className="text-[15px] text-subtekst max-w-[580px] mb-10 leading-[1.7]">
+            <p className="text-[15px] text-white/50 max-w-[580px] mb-10 leading-[1.7]">
               Het dashboard werkt van onder naar boven: van mensen-niveau
               naar organisatiestructuur naar impact-doelen. Elke laag geeft
               antwoord op &lsquo;waarom&rsquo; voordat je naar &lsquo;wat&rsquo; kijkt.
@@ -221,18 +214,18 @@ export default function SocialImpactDashboardPagina() {
               {lagen.map((l) => (
                 <div
                   key={l.titel}
-                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl p-6 hover:border-blauw hover:-translate-y-0.5 transition-all"
+                  className="bg-white/5 border-[1.5px] border-white/[0.09] rounded-2xl p-6 hover:border-blauw hover:-translate-y-0.5 transition-all"
                 >
                   <div className="text-[28px] mb-3">{l.icon}</div>
-                  <h3 className="text-[15px] font-semibold mb-2">{l.titel}</h3>
-                  <p className="text-[13px] text-subtekst leading-[1.6] mb-3.5">
+                  <h3 className="text-[15px] font-semibold text-white mb-2">{l.titel}</h3>
+                  <p className="text-[13px] text-white/50 leading-[1.6] mb-3.5">
                     {l.tekst}
                   </p>
                   <div className="flex flex-col gap-1.5">
                     {l.features.map((f) => (
                       <div
                         key={f}
-                        className="flex gap-2 text-xs text-subtekst items-start before:content-['✓'] before:text-blauw before:font-bold before:flex-shrink-0"
+                        className="flex gap-2 text-xs text-white/50 items-start before:content-['✓'] before:text-blauw before:font-bold before:flex-shrink-0"
                       >
                         {f}
                       </div>
