@@ -12,8 +12,8 @@ const vragen = [
   "Als coach of adviseur wil ik werken met een bewezen methodiek",
   "Ik wil impact maken — maar weet niet waar ik het beste kan beginnen",
   "Mijn organisatie vraagt om een andere manier van leidinggeven en ik wil daarin vooroplopen",
-  "",
-  "",
+  "We willen onze teamleiders versterken met een praktisch leiderschapsprogramma op maat",
+  "Hoe kan vrouwelijk leiderschap worden versterkt met het Be Excellent Programma",
 ];
 
 const academieItems = [
@@ -83,8 +83,10 @@ export default function LeiderschapPagina() {
                   Bekijk de trajecten
                 </a>
                 <a
-                  href="#academie"
-                  className="bg-transparent text-white border-[1.5px] border-white/20 px-6 py-[11px] rounded-full text-sm font-medium hover:border-white/50 transition-colors"
+                  href="https://www.bestuurenleiderschap.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-olijf text-white px-6 py-[11px] rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
                 >
                   Ontdek de Academie
                 </a>
@@ -312,10 +314,10 @@ export default function LeiderschapPagina() {
                 Bekijk de Academie
               </a>
               <Link
-                href="/"
+                href="/academie"
                 className="bg-transparent text-white border-[1.5px] border-white/20 px-6 py-[11px] rounded-full text-sm font-medium hover:border-white/50 transition-colors"
               >
-                Terug naar 7LIFE
+                Bekijk ons aanbod
               </Link>
             </div>
           </div>
