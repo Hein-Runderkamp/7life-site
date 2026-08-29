@@ -19,7 +19,7 @@ const vragen = [
 
 const programmas = [
   {
-    kleur: "#8B3FA0",
+    kleur: "#D7263D",
     leeftijd: "4 — 12 jaar · Basisonderwijs",
     icon: "🔐",
     naam: "Kluis7",
@@ -64,7 +64,7 @@ const programmas = [
     ],
   },
   {
-    kleur: "#2E7D52",
+    kleur: "#F2C12E",
     leeftijd: "8 — 18 jaar · PO / VO",
     icon: "💚",
     naam: "Sociaal-Emotionele Ontwikkeling",
@@ -79,7 +79,7 @@ const programmas = [
     ],
   },
   {
-    kleur: "#F2C12E",
+    kleur: "#5FAE84",
     leeftijd: "12 — 18 jaar · Middelbaar onderwijs",
     icon: "💰",
     naam: "GeldScan",
@@ -238,11 +238,28 @@ export default function JongerenPagina() {
               <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
                 Van kleuterklas tot universiteit
               </h2>
-              <p className="text-white/45 text-[15px] leading-[1.7] mb-7">
+              <p className="text-white/45 text-[15px] leading-[1.7] mb-6">
                 Vijf programma&apos;s, elk afgestemd op een specifieke
                 leeftijdsfase en ontwikkelbehoefte. Klik op een programma
                 voor de volledige toelichting.
               </p>
+
+              <div className="grid grid-cols-1 gap-2.5 mb-7">
+                {impactStats.map((s) => (
+                  <div
+                    key={s.l}
+                    className="bg-white/[0.06] border border-white/10 rounded-2xl px-5 py-4"
+                  >
+                    <div className="font-serif text-2xl text-white mb-0.5">
+                      {s.n}
+                    </div>
+                    <div className="text-white/45 text-xs leading-snug">
+                      {s.l}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <a
                 href="#cta"
                 className="inline-block bg-oranje text-white text-[13px] px-5 py-2.5 rounded-full font-medium hover:bg-[#d4710a] transition-colors"
@@ -339,42 +356,27 @@ export default function JongerenPagina() {
             <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-9">
               Wat er verandert als jongeren zichzelf begrijpen
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="font-serif text-[clamp(18px,2.5vw,26px)] font-light italic leading-[1.45] border-l-[3px] border-oranje pl-6 mb-5">
-                  &ldquo;Een jongere kreeg geen studiekeuzeadvies. Hij kreeg
-                  inzicht in zichzelf. Dat verschil maakt de keuze
-                  makkelijker — en blijvender.&rdquo;
-                </div>
-                <p className="text-sm text-subtekst leading-[1.75]">
-                  Via de Student Journey ontdekte hij niet welke opleiding
-                  het best bij zijn profiel paste, maar vanuit welke kracht
-                  hij überhaupt keuzes maakte. Dat inzicht veranderde niet
-                  alleen zijn studiekeuze — het veranderde hoe hij naar
-                  zichzelf keek.
-                </p>
-                <p className="text-sm text-subtekst leading-[1.75] mt-3">
-                  Scholen die werken met de 7LIFE-programma&apos;s zien niet
-                  alleen individuele groei. Ze zien een ander klimaat
-                  ontstaan — meer verbinding, meer begrip, meer richting.
-                </p>
-                <p className="text-sm text-oranje italic mt-3">
-                  — Student Journey, middelbare school
-                </p>
+            <div className="max-w-[680px]">
+              <div className="font-serif text-[clamp(18px,2.5vw,26px)] font-light italic leading-[1.45] border-l-[3px] border-oranje pl-6 mb-5">
+                &ldquo;Een jongere kreeg geen studiekeuzeadvies. Hij kreeg
+                inzicht in zichzelf. Dat verschil maakt de keuze
+                makkelijker — en blijvender.&rdquo;
               </div>
-              <div className="flex flex-col gap-3">
-                {impactStats.map((s) => (
-                  <div
-                    key={s.l}
-                    className="bg-kaart border border-black/[0.07] rounded-2xl px-[22px] py-[18px]"
-                  >
-                    <div className="font-serif text-[36px] text-oranje leading-none">
-                      {s.n}
-                    </div>
-                    <div className="text-[13px] text-subtekst mt-1">{s.l}</div>
-                  </div>
-                ))}
-              </div>
+              <p className="text-sm text-subtekst leading-[1.75]">
+                Via de Student Journey ontdekte hij niet welke opleiding
+                het best bij zijn profiel paste, maar vanuit welke kracht
+                hij überhaupt keuzes maakte. Dat inzicht veranderde niet
+                alleen zijn studiekeuze — het veranderde hoe hij naar
+                zichzelf keek.
+              </p>
+              <p className="text-sm text-subtekst leading-[1.75] mt-3">
+                Scholen die werken met de 7LIFE-programma&apos;s zien niet
+                alleen individuele groei. Ze zien een ander klimaat
+                ontstaan — meer verbinding, meer begrip, meer richting.
+              </p>
+              <p className="text-sm text-oranje italic mt-3">
+                — Student Journey, middelbare school
+              </p>
             </div>
           </div>
         </section>
