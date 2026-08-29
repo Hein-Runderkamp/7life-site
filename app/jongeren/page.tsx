@@ -10,6 +10,8 @@ const vragen = [
   "Scholen die willen investeren in talentontwikkeling maar niet weten hoe",
   "Jongeren die hun unieke kwaliteiten niet kunnen benoemen of inzetten",
   "Ouders en begeleiders die een gemeenschappelijke taal missen met de jongere",
+  "Jongeren die worstelen met gezond geldgedrag",
+  "Scholen die grip willen krijgen op verzuim en uitval van scholieren",
 ];
 
 const programmas = [
