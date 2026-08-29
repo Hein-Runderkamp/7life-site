@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -16,12 +19,11 @@ const vragen = [
 
 const programmas = [
   {
-    kleur: "#EE7E06",
+    kleur: "#8B3FA0",
     leeftijd: "4 — 12 jaar · Basisonderwijs",
     icon: "🔐",
     naam: "Kluis7",
     sub: "Communicatiestijlen ontdekken voor kinderen",
-    scan: "Backbone: 7LIFE LightScan (O7 kindervariant)",
     body: "Kluis7 helpt kinderen van 4 tot 12 jaar hun eigen communicatiestijl ontdekken — op een speelse, toegankelijke manier. Via het kaartspel, de scan en begeleiding leren kinderen wie ze zijn, hoe ze leren en hoe ze met anderen omgaan.",
     items: [
       "Speels en toegankelijk — voor elk kind",
@@ -37,7 +39,6 @@ const programmas = [
     icon: "🗺️",
     naam: "Student Journey App",
     sub: "Zelfkennis als basis voor studiekeuze",
-    scan: "Backbone: 7LIFE 4you (scan voor jongeren)",
     body: "De Student Journey App begeleidt middelbare scholieren bij de belangrijkste keuzes in hun schoolcarrière — vanuit zelfkennis. Niet welke opleiding past bij een profiel, maar: wie ben jij, wat drijft jou, en vanuit welke kracht maak jij jouw keuze?",
     items: [
       "Persoonlijk ontwikkelprofiel per leerling",
@@ -48,12 +49,11 @@ const programmas = [
     ],
   },
   {
-    kleur: "#7B5EA7",
+    kleur: "#1B3B6F",
     leeftijd: "16 — 22 jaar · MBO / HBO",
     icon: "⭐",
     naam: "Talentontwikkeling voor Jongeren",
     sub: "Van talent naar richting en actie",
-    scan: "Backbone: TalentScan + ExcelleerScan",
     body: "Voor jongeren die weten dat ze meer in huis hebben, maar nog niet precies weten wat. Het programma combineert de TalentScan en ExcelleerScan tot een persoonlijk talentenprofiel — en vertaalt dat naar concrete stappen in opleiding, stage en loopbaan.",
     items: [
       "Diepgaand talentenprofiel (TalentScan)",
@@ -64,12 +64,11 @@ const programmas = [
     ],
   },
   {
-    kleur: "#0f766e",
+    kleur: "#2E7D52",
     leeftijd: "8 — 18 jaar · PO / VO",
     icon: "💚",
     naam: "Sociaal-Emotionele Ontwikkeling",
     sub: "Verbinding, veiligheid en groei in de groep",
-    scan: "Backbone: 7LIFE CommunicatieScan (Full)",
     body: "Groepsdynamieken, pesten, eenzaamheid, gebrek aan verbinding — veel scholen worstelen ermee. Dit programma geeft leerlingen én begeleiders een gemeenschappelijke taal. Inzicht in communicatiestijlen als fundament voor een veilig en verbonden klasklimaat.",
     items: [
       "Gemeenschappelijke taal in de groep",
@@ -77,6 +76,21 @@ const programmas = [
       "Interventies voor leraren en coaches",
       "Koppelbaar aan burgerschap en SEL-curricula",
       "Begeleiding door gecertificeerde 7LIFE trainer",
+    ],
+  },
+  {
+    kleur: "#F2C12E",
+    leeftijd: "12 — 18 jaar · Middelbaar onderwijs",
+    icon: "💰",
+    naam: "GeldScan",
+    sub: "Gezond Geldgedrag voor een financieel gezonde toekomst",
+    body: "De GeldScan helpt middelbare scholieren bij het maken van verantwoordelijke financiële keuzes. Door gebruik te maken van het communicatieprofiel van de scholier, worden geldtypes bepaald, die de scholier herkent en helpt om de juiste keuzes te maken. De GeldScan zorgt voor het voorkomen van schulden en het creëren van financiële rust bij de scholier.",
+    items: [
+      "Snel en eenvoudig inzicht in mijn geldtype",
+      "Hoe ga ik om met risico's en geldstress?",
+      "Investeren, hoe werkt dat voor mij?",
+      "Korte praktische tips voor slim geldmanagement",
+      "Hoe wil ik advies over mijn geld?",
     ],
   },
 ];
@@ -87,6 +101,7 @@ const backboneScans = [
   "4you (jongeren)",
   "TalentScan",
   "ExcelleerScan",
+  "GeldScan",
 ];
 
 const impactStats = [
@@ -96,6 +111,8 @@ const impactStats = [
 ];
 
 export default function JongerenPagina() {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
     <>
       <Header />
@@ -213,57 +230,83 @@ export default function JongerenPagina() {
 
         {/* DE PROGRAMMA'S */}
         <section className="bg-donker px-[5%] py-[72px]" id="programmas">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
-              De programma&apos;s
+          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+            <div>
+              <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
+                De programma&apos;s
+              </div>
+              <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
+                Van kleuterklas tot universiteit
+              </h2>
+              <p className="text-white/45 text-[15px] leading-[1.7] mb-7">
+                Vijf programma&apos;s, elk afgestemd op een specifieke
+                leeftijdsfase en ontwikkelbehoefte. Klik op een programma
+                voor de volledige toelichting.
+              </p>
+              <a
+                href="#cta"
+                className="inline-block bg-oranje text-white text-[13px] px-5 py-2.5 rounded-full font-medium hover:bg-[#d4710a] transition-colors"
+              >
+                Vraag een gesprek aan →
+              </a>
             </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
-              Van kleuterklas tot universiteit
-            </h2>
-            <p className="text-white/45 text-[15px] leading-[1.7] max-w-[560px] mb-11">
-              Vier programma&apos;s, elk afgestemd op een specifieke
-              leeftijdsfase en ontwikkelbehoefte. De 7LIFE-scans vormen in
-              elk programma de wetenschappelijke backbone.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {programmas.map((p) => (
-                <div
-                  key={p.naam}
-                  className="relative rounded-[20px] p-7 bg-white/5 border border-white/[0.09] hover:bg-white/[0.08] hover:-translate-y-0.5 transition-all overflow-hidden"
-                  style={{ borderTopColor: p.kleur, borderTopWidth: "3px" }}
-                >
-                  <div className="text-[11px] font-semibold tracking-wide text-oranje uppercase mb-3">
-                    {p.leeftijd}
-                  </div>
-                  <span className="text-[32px] mb-3 block">{p.icon}</span>
-                  <div className="text-lg font-semibold text-white mb-1.5">
-                    {p.naam}
-                  </div>
-                  <div className="text-[13px] text-white/45 mb-4 leading-[1.5]">
-                    {p.sub}
-                  </div>
+
+            <div className="flex flex-col gap-1.5">
+              {programmas.map((p, i) => {
+                const isOpen = open === i;
+                return (
                   <div
-                    className="inline-flex items-center gap-1.5 bg-oranje/[0.12] border border-oranje/25 text-oranje text-[11px] font-semibold px-2.5 py-1 rounded-[10px] mb-3"
+                    key={p.naam}
+                    className={`rounded-xl overflow-hidden cursor-pointer border transition-colors ${
+                      isOpen ? "border-oranje" : "border-white/[0.07] hover:border-white/20"
+                    }`}
+                    onClick={() => setOpen(isOpen ? null : i)}
                   >
-                    {p.scan}
-                  </div>
-                  <p className="text-[13px] text-white/55 leading-[1.65] mb-4">
-                    {p.body}
-                  </p>
-                  <ul className="flex flex-col">
-                    {p.items.map((it, i) => (
-                      <li
-                        key={it}
-                        className={`text-[13px] text-white/50 py-1 pl-3.5 relative before:content-['·'] before:absolute before:left-0 before:text-oranje ${
-                          i < p.items.length - 1 ? "border-b border-white/[0.06]" : ""
+                    <div className="flex items-center gap-3 px-4 py-3.5 bg-white/[0.04]">
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs text-white flex-shrink-0"
+                        style={{ background: p.kleur }}
+                      >
+                        {i + 1}
+                      </div>
+                      <div className="text-[13px] font-semibold text-white flex-1">
+                        {p.naam}
+                      </div>
+                      <div
+                        className={`text-white/30 text-[13px] transition-transform ${
+                          isOpen ? "rotate-90 text-oranje" : ""
                         }`}
                       >
-                        {it}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                        ›
+                      </div>
+                    </div>
+                    {isOpen && (
+                      <div className="px-4 pb-5 pl-14 bg-white/[0.03]">
+                        <div className="text-[11px] font-semibold tracking-wide text-oranje uppercase mb-2.5 mt-1">
+                          {p.leeftijd}
+                        </div>
+                        <span className="text-2xl mb-2 block">{p.icon}</span>
+                        <div className="text-[13px] text-white/45 mb-3 leading-[1.5]">
+                          {p.sub}
+                        </div>
+                        <p className="text-[13px] text-white/55 leading-[1.65] mb-3">
+                          {p.body}
+                        </p>
+                        <ul>
+                          {p.items.map((it) => (
+                            <li
+                              key={it}
+                              className="text-[13px] text-white/50 py-[3px] pl-3 relative before:content-['·'] before:absolute before:left-0 before:text-oranje"
+                            >
+                              {it}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
