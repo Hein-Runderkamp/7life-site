@@ -330,6 +330,32 @@ export default function LeiderschapPagina() {
           </div>
         </section>
 
+        {/* ACADEMIE LINKBALK */}
+        <a
+          href="https://www.bestuurenleiderschap.nl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex items-center justify-center gap-6 bg-donker px-[5%] py-10 overflow-hidden hover:bg-[#232f2d] transition-colors"
+        >
+          <div className="relative w-[76px] h-[76px] flex-shrink-0">
+            <Image
+              src="/leiderschap/academie-logo.png"
+              alt="Academie voor Bestuur & Leiderschap"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="text-white text-[17px] sm:text-xl font-serif font-light leading-snug text-center">
+            Direct naar de website van de{" "}
+            <span className="text-blauw">
+              Academie voor Bestuur &amp; Leiderschap
+            </span>
+            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </div>
+        </a>
+
         {/* ACADEMIE SPOTLIGHT */}
         <section className="px-[5%] py-[72px] bg-achtergrond" id="academie">
           <div className="max-w-[1100px] mx-auto">
@@ -341,26 +367,14 @@ export default function LeiderschapPagina() {
             </h2>
             <div className="bg-donker rounded-[24px] p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="flex items-start justify-between gap-5 mb-3">
-                  <div>
-                    <div className="inline-block bg-blauw/[0.12] border border-blauw/25 text-blauw text-[11px] font-semibold tracking-[1.5px] px-3 py-1 rounded-xl uppercase mb-4">
-                      bestuurenleiderschap.nl
-                    </div>
-                    <h3 className="font-serif text-[clamp(24px,3vw,36px)] font-light text-white leading-[1.15]">
-                      Voor leiders die
-                      <br />
-                      anders willen.
-                    </h3>
-                  </div>
-                  <div className="relative w-[84px] h-[84px] flex-shrink-0">
-                    <Image
-                      src="/leiderschap/academie-logo.png"
-                      alt="Academie voor Bestuur & Leiderschap"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                <div className="inline-block bg-blauw/[0.12] border border-blauw/25 text-blauw text-[11px] font-semibold tracking-[1.5px] px-3 py-1 rounded-xl uppercase mb-4">
+                  bestuurenleiderschap.nl
                 </div>
+                <h3 className="font-serif text-[clamp(24px,3vw,36px)] font-light text-white leading-[1.15] mb-3">
+                  Voor leiders die
+                  <br />
+                  anders willen.
+                </h3>
                 <p className="text-white/45 text-sm leading-[1.75] mb-6">
                   De Academie voor Bestuur &amp; Leiderschap is de plek voor
                   directeuren, bestuurders en leidinggevenden die diepgang
