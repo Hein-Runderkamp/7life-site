@@ -170,16 +170,41 @@ export default function JongerenPagina() {
               vastlopen — niet omdat ze niet willen, maar omdat ze zichzelf
               nog niet kennen.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-              {vragen.map((v) => (
-                <div
-                  key={v}
-                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-5 py-[18px] flex items-start gap-3"
-                >
-                  <div className="w-[9px] h-[9px] rounded-full border-2 border-oranje flex-shrink-0 mt-1.5" />
-                  <div className="text-sm leading-[1.55]">{v}</div>
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {vragen.map((v) => (
+                  <div
+                    key={v}
+                    className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-5 py-[18px] flex items-start gap-3"
+                  >
+                    <div className="w-[9px] h-[9px] rounded-full border-2 border-oranje flex-shrink-0 mt-1.5" />
+                    <div className="text-sm leading-[1.55]">{v}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-card overflow-hidden border-[1.5px] border-black/[0.07] bg-kaart lg:sticky lg:top-[100px]">
+                <div className="relative h-[260px] border-t-4 border-oranje">
+                  <Image
+                    src="/jongeren/testimonial.jpg"
+                    alt="Onze motivatie"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              ))}
+                <div className="p-7">
+                  <div className="text-xs font-semibold text-oranje uppercase tracking-wide mb-3">
+                    Onze motivatie
+                  </div>
+                  <blockquote className="font-serif text-lg italic text-tekst leading-snug">
+                    &ldquo;Wij geloven in ontwikkeling en groei op jouw
+                    eigen wijze. Dat begint met onze kinderen, onze
+                    jongeren en onze jong volwassenen. We zeggen zo vaak
+                    &apos;de jeugd heeft de toekomst&apos;. 7LIFE
+                    investeert in die toekomst.&rdquo;
+                  </blockquote>
+                </div>
+              </div>
             </div>
           </div>
         </section>
