@@ -6,12 +6,6 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const heroStats = [
-  { n: "Gemeenten", l: "o.a. Barneveld en Apeldoorn — teamtrainingen en leiderschapscoaching" },
-  { n: "Zorg", l: "Programma's voor medewerkers, teamleiders en directie" },
-  { n: "Bedrijfsleven", l: "Van individuele coaching tot organisatiebrede ontwikkeling" },
-];
-
 const vragen = [
   "We investeren in verandering, maar mensen bewegen niet mee",
   "Leiderschap is inconsistent — elk team heeft zijn eigen cultuur",
@@ -34,6 +28,9 @@ type Interventie = {
 type Sector = {
   key: string;
   label: string;
+  kleur: string;
+  buttonN: string;
+  buttonL: string;
   intro: string;
   interventies: Interventie[];
 };
@@ -42,6 +39,9 @@ const sectoren: Sector[] = [
   {
     key: "gemeente",
     label: "🏛 Gemeenten & Overheid",
+    kleur: "#0f766e",
+    buttonN: "Gemeenten",
+    buttonL: "o.a. Barneveld en Apeldoorn — teamtrainingen en leiderschapscoaching",
     intro:
       "Gemeenten staan voor complexe maatschappelijke opgaven — en moeten die uitvoeren met teams die onder druk staan. 7LIFE werkt al samen met gemeenten als Barneveld en Apeldoorn aan leiderschapsontwikkeling, teamdynamiek en organisatiecultuur.",
     interventies: [
@@ -88,6 +88,9 @@ const sectoren: Sector[] = [
   {
     key: "zorg",
     label: "🏥 Zorg",
+    kleur: "#D7263D",
+    buttonN: "Zorg",
+    buttonL: "Programma's voor medewerkers, teamleiders en directie",
     intro:
       "De zorg kampt met werkdruk, verzuim en een uitdagende arbeidsmarkt. 7LIFE werkt in zorgorganisaties op drie niveaus tegelijk: medewerkers, teamleiders en directie — want duurzame verandering vraagt om samenhang in de hele organisatie.",
     interventies: [
@@ -133,6 +136,9 @@ const sectoren: Sector[] = [
   {
     key: "bedrijf",
     label: "🏢 Bedrijfsleven",
+    kleur: "#3E8FA3",
+    buttonN: "Bedrijfsleven",
+    buttonL: "Van individuele coaching tot organisatiebrede ontwikkeling",
     intro:
       "Bedrijven die groeien, lopen vroeg of laat vast op mensen en cultuur. 7LIFE begeleidt bedrijven van individuele coaching van medewerkers en teamleiders tot organisatiebrede ontwikkeling — omdat het altijd draait om mensen, beweging en groei.",
     interventies: [
@@ -308,94 +314,111 @@ export default function OrganisatiesPagina() {
 
         {/* SECTOREN + INTERVENTIES */}
         <section className="bg-donker px-[5%] py-[72px]" id="sectoren">
-          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-10 items-start">
-            <div className="flex flex-row lg:flex-col gap-2.5 flex-wrap">
-              {heroStats.map((s) => (
-                <div
-                  key={s.n}
-                  className="bg-white/5 border border-white/[0.08] rounded-2xl px-5 py-4 flex-1 lg:flex-none min-w-[180px]"
-                >
-                  <div className="font-serif text-[28px] text-oranje leading-none">
-                    {s.n}
-                  </div>
-                  <div className="text-xs text-white/40 mt-1 leading-[1.4]">
-                    {s.l}
-                  </div>
-                </div>
-              ))}
+          <div className="max-w-[1100px] mx-auto">
+            <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
+              Onze aanpak
             </div>
+            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
+              Drie sectoren. Één systeem.
+            </h2>
+            <p className="text-white/45 text-[15px] leading-[1.7] mb-6">
+              Selecteer je sector voor een gerichte aanpak.
+            </p>
 
-            <div>
-              <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
-                Onze aanpak
-              </div>
-              <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
-                Drie sectoren. Één systeem.
-              </h2>
-              <p className="text-white/45 text-[15px] leading-[1.7] mb-7">
-                Selecteer je sector voor een gerichte aanpak.
-              </p>
-
-              <div className="flex gap-2 flex-wrap mb-9">
-                {sectoren.map((s) => (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-9">
+              {sectoren.map((s) => {
+                const isActief = actief === s.key;
+                return (
                   <button
                     key={s.key}
                     onClick={() => setActief(s.key)}
-                    className={`px-5 py-2 rounded-full text-[13px] font-medium border transition-colors ${
-                      actief === s.key
-                        ? "bg-oranje border-oranje text-white"
-                        : "bg-transparent border-white/15 text-white/55 hover:text-white hover:border-white/40"
+                    className={`rounded-2xl px-6 py-5 text-left border-[1.5px] transition-all hover:bg-white ${
+                      isActief ? "bg-white" : "bg-transparent"
                     }`}
+                    style={{ borderColor: s.kleur }}
                   >
-                    {s.label}
+                    <div
+                      className="font-serif text-[26px] leading-none"
+                      style={{ color: s.kleur }}
+                    >
+                      {s.buttonN}
+                    </div>
+                    <div
+                      className={`text-xs mt-1.5 leading-[1.4] transition-colors hover:text-tekst/70 ${
+                        isActief ? "text-tekst/70" : "text-white/40"
+                      }`}
+                    >
+                      {s.buttonL}
+                    </div>
                   </button>
-                ))}
-              </div>
+                );
+              })}
+            </div>
 
-              <p className="text-white/50 text-[15px] leading-[1.7] max-w-[640px] mb-9 border-l-[3px] border-oranje pl-[18px]">
-                {sector.intro}
-              </p>
+            <p
+              className="text-white/50 text-[15px] leading-[1.7] max-w-[640px] mb-9 border-l-[3px] pl-[18px]"
+              style={{ borderColor: sector.kleur }}
+            >
+              {sector.intro}
+            </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3.5">
-                {sector.interventies.map((it, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3.5">
+              {sector.interventies.map((it, i) => (
+                <div
+                  key={it.naam}
+                  className="relative rounded-[18px] p-[26px] bg-white/5 border border-white/[0.09] hover:bg-white/[0.08] transition-all overflow-hidden"
+                  style={{ borderTop: `3px solid ${sector.kleur}` }}
+                >
                   <div
-                    key={it.naam}
-                    className="relative rounded-[18px] p-[26px] bg-white/5 border border-white/[0.09] hover:bg-white/[0.08] hover:border-oranje transition-all overflow-hidden"
-                    style={{ borderTop: "3px solid #EE7E06" }}
+                    className="text-[11px] font-bold tracking-wide uppercase mb-2.5"
+                    style={{ color: sector.kleur }}
                   >
-                    <div className="text-[11px] font-bold tracking-wide text-oranje uppercase mb-2.5">
-                      Interventie {String(i + 1).padStart(2, "0")}
-                    </div>
-                    <div className="text-[17px] font-semibold text-white mb-1">
-                      {it.naam}
-                    </div>
-                    <div className="text-xs text-white/35 italic mb-3.5">
-                      {it.sub}
-                    </div>
-                    <p className="text-[13px] text-white/50 leading-[1.65] mb-3.5">
-                      {it.body}
-                    </p>
-                    <ul className="flex flex-col mb-3.5">
-                      {it.items.map((li, j) => (
-                        <li
-                          key={li}
-                          className={`text-[13px] text-white/50 py-1 pl-3.5 relative before:content-['·'] before:absolute before:left-0 before:text-oranje ${
-                            j < it.items.length - 1 ? "border-b border-white/[0.05]" : ""
-                          }`}
-                        >
-                          {li}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="bg-oranje/[0.08] border border-oranje/20 rounded-[10px] px-3.5 py-2.5 text-xs text-white/55">
-                      <strong className="block text-[11px] tracking-wide uppercase text-oranje mb-1">
-                        Resultaat
-                      </strong>
-                      {it.resultaat}
-                    </div>
+                    Interventie {String(i + 1).padStart(2, "0")}
                   </div>
-                ))}
-              </div>
+                  <div className="text-[17px] font-semibold text-white mb-1">
+                    {it.naam}
+                  </div>
+                  <div className="text-xs text-white/35 italic mb-3.5">
+                    {it.sub}
+                  </div>
+                  <p className="text-[13px] text-white/50 leading-[1.65] mb-3.5">
+                    {it.body}
+                  </p>
+                  <ul className="flex flex-col mb-3.5">
+                    {it.items.map((li, j) => (
+                      <li
+                        key={li}
+                        className={`text-[13px] text-white/50 py-1 pl-3.5 relative ${
+                          j < it.items.length - 1 ? "border-b border-white/[0.05]" : ""
+                        }`}
+                      >
+                        <span
+                          className="absolute left-0"
+                          style={{ color: sector.kleur }}
+                        >
+                          ·
+                        </span>
+                        {li}
+                      </li>
+                    ))}
+                  </ul>
+                  <div
+                    className="rounded-[10px] px-3.5 py-2.5 text-xs text-white/55"
+                    style={{
+                      background: `${sector.kleur}14`,
+                      border: `1px solid ${sector.kleur}33`,
+                    }}
+                  >
+                    <strong
+                      className="block text-[11px] tracking-wide uppercase mb-1"
+                      style={{ color: sector.kleur }}
+                    >
+                      Resultaat
+                    </strong>
+                    {it.resultaat}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
