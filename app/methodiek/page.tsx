@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import MensSectie from "@/components/MensSectie";
 
 const lagen = [
-  { nr: "1", naam: "Identity", tekst: "Drijfveren, waarden, overtuigingen — wie iemand werkelijk ís", kleur: "#EE7E06", bg: "rgba(238,126,6,0.12)" },
-  { nr: "2", naam: "Choices", tekst: "Wat iemand wel of niet laat zien in interactie met anderen", kleur: "#7B5EA7", bg: "rgba(123,94,167,0.12)" },
-  { nr: "3", naam: "Behaviour", tekst: "Zichtbaar gedrag, kwaliteiten, competenties in de praktijk", kleur: "#3E8FA3", bg: "rgba(62,143,163,0.12)" },
-  { nr: "4", naam: "Interpretation", tekst: "Hoe anderen jouw gedrag waarnemen en interpreteren", kleur: "#d4ae1a", bg: "rgba(242,193,46,0.1)" },
+  { nr: "1", naam: "Identiteit", tekst: "Drijfveren, waarden, overtuigingen — wie iemand werkelijk ís", kleur: "#EE7E06", bg: "rgba(238,126,6,0.12)" },
+  { nr: "2", naam: "Keuzes", tekst: "Wat iemand wel of niet laat zien in interactie met anderen", kleur: "#7B5EA7", bg: "rgba(123,94,167,0.12)" },
+  { nr: "3", naam: "Gedrag", tekst: "Zichtbaar gedrag, kwaliteiten, competenties in de praktijk", kleur: "#3E8FA3", bg: "rgba(62,143,163,0.12)" },
+  { nr: "4", naam: "Interpretatie", tekst: "Hoe anderen jouw gedrag waarnemen en interpreteren", kleur: "#d4ae1a", bg: "rgba(242,193,46,0.1)" },
   { nr: "5", naam: "Context", tekst: "De omgeving, de cultuur, de situatie die alles kleurt", kleur: "#5aad7e", bg: "rgba(46,125,82,0.12)" },
 ];
 
@@ -38,12 +38,12 @@ const bouwblokken = [
     nr: "03",
     sub: "Transformation Force",
     naam: "Veranderkracht",
-    tekst: "Het vermogen om in beweging te komen én impact te maken. Vier voorwaarden bepalen of verandering lukt: Mission, Self-worth, Safety en Support system. Elk met een score van 0–100.",
+    tekst: "Het vermogen om in beweging te komen én impact te maken. Vier voorwaarden bepalen of verandering lukt. Missie, Eigenwaarde, Veiligheid, en Support Systeem. In totaal met een score van 0–100.",
     items: [
-      "Mission — richting en betekenis",
-      "Self-worth — zelfbeeld en vertrouwen",
-      "Safety — psychologische veiligheid",
-      "Support system — omgeving en steun",
+      "Missie — richting en betekenis",
+      "Eigenwaarde — zelfbeeld en vertrouwen",
+      "Veiligheid — psychologische veiligheid",
+      "Support Systeem — omgeving en steun",
     ],
   },
 ];
@@ -278,15 +278,16 @@ export default function MethodiekPagina() {
                     Factor 8 — De 8e dimensie
                   </div>
                   <div className="font-serif text-xl text-white mb-2">
-                    Veranderkracht
+                    Verandervoorwaarden
                   </div>
                   <p className="text-sm text-white/50 leading-[1.65] max-w-[640px]">
                     Naast de zeven stijlen meet 7LIFE ook hoe iemand
                     omgaat met verandering — het vermogen om in beweging
-                    te komen en impact te maken. Dit is geen aparte stijl,
-                    maar een eigen dimensie die aangeeft hoe groot iemands
-                    verandercapaciteit is en wat daarvoor nodig is. Bij
-                    kinderen heet dit de Ontdekker.
+                    te komen en impact te maken. Onderdeel van
+                    veranderkracht is Factor 8, een eigen dimensie die
+                    aangeeft hoe groot de impact is van de context van de
+                    kandidaat op het omgaan met verandering. We noemen
+                    dat de Verandervoorwaarden.
                   </p>
                 </div>
                 <div className="bg-white/[0.06] rounded-xl px-6 py-5 text-center min-w-[180px]">
