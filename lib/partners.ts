@@ -1,15 +1,16 @@
 export type PartnerProgramma = {
   naam: string;
   kleur: string;
+  link?: string;
 };
 
 export const partnerProgrammas: PartnerProgramma[] = [
-  { naam: "Kluis7", kleur: "#EE7E06" },
-  { naam: "ExcelleerScan", kleur: "#3E8FA3" },
-  { naam: "Academie voor Bestuur & Leiderschap", kleur: "#7B5EA7" },
-  { naam: "Student Journey App", kleur: "#2E7D52" },
-  { naam: "Geldscan", kleur: "#D7263D" },
-  { naam: "MoneyValues", kleur: "#F2C12E" },
+  { naam: "Kluis7", kleur: "#EE7E06", link: "/jongeren#kluis7" },
+  { naam: "ExcelleerScan", kleur: "#3E8FA3", link: "/jongeren#excelleerscan" },
+  { naam: "Academie voor Bestuur & Leiderschap", kleur: "#7B5EA7", link: "/academie" },
+  { naam: "Student Journey App", kleur: "#2E7D52", link: "/jongeren#student-journey-app" },
+  { naam: "Geldscan", kleur: "#D7263D", link: "/jongeren#geldscan" },
+  { naam: "MoneyValues", kleur: "#F2C12E", link: "/onze-mensen/marc-wilhelmus" },
 ];
 
 export type PartnerDetail = {
@@ -27,12 +28,8 @@ export const partnerDetails: PartnerDetail[] = [
     punten: [
       "Managing partner van de Academie voor Bestuur & Leiderschap",
       "Samen met oprichter Maroesja van der Pols ontwikkelaar van de 7LIFE LeiderschapScan",
-      "Ruim twintig jaar management- en bestuurservaring in bedrijfsleven (media, telecom, financiële sector) én not-for-profit (brancheorganisaties, politieke organisatie, kerkgenootschap)",
-      "Executive MBA aan Nyenrode Business Universiteit — thesis over de maatschappelijke rol van organisaties in de private en publieke sector",
-      "Affiliate facilitator voor Core Leadership Institute in 'Leading from Purpose'",
-      "Geaccrediteerd trainer in het 7LIFE Netwerk, verantwoordelijk voor de trainersaccreditatie op de LeiderschapScan",
-      "Verzorgt individuele executive coaching en trajecten voor teamontwikkeling en organisatieverandering — met aandacht voor maatschappelijke impact",
-      "Verzorgt inspiratiesessies en keynotes voor trainers en publieke events",
+      "Ruim twintig jaar management- en bestuurservaring, in zowel bedrijfsleven als not-for-profit organisaties",
+      "Executive MBA aan Nyenrode Business Universiteit",
     ],
   },
   {
@@ -43,6 +40,7 @@ export const partnerDetails: PartnerDetail[] = [
       "Draagt de Kluis7-methodiek uit voor kinderen, scholen en gezinnen",
       "Kindercoach bij Josia",
       "Vertaalt de 7LIFE-communicatiestijlen naar de belevingswereld van kinderen",
+      "Begeleidt scholen en gezinnen bij het herkennen van talent op jonge leeftijd",
     ],
   },
   {
@@ -53,6 +51,7 @@ export const partnerDetails: PartnerDetail[] = [
       "Werkt met de ExcelleerScan, speciaal ontwikkeld voor tieners",
       "Eigenaar van Huiswerkbegeleiding Haarlem",
       "Begeleidt leerlingen en ouders bij het ontdekken van unieke leer- en communicatiestijlen",
+      "Onderwijs, coaching en begeleiding van leerlingen, ouders en stellen",
     ],
   },
   {
@@ -62,6 +61,8 @@ export const partnerDetails: PartnerDetail[] = [
     punten: [
       "Partner in de ontwikkeling van de Student Journey App",
       "Gericht op begeleiding van studenten in het onderwijs",
+      "Vertaalt zelfkennis naar concrete studie- en loopbaankeuzes",
+      "Nauwe samenwerking met scholen in het voortgezet en beroepsonderwijs",
     ],
   },
   {
@@ -71,6 +72,8 @@ export const partnerDetails: PartnerDetail[] = [
     punten: [
       "Adviseur bij de ontwikkeling van de Student Journey App",
       "Eigenaar van BOTH Coaching",
+      "Brengt jarenlange coachingservaring in bij de doorontwikkeling van de app",
+      "Klankbord voor de aansluiting op de praktijk van studiebegeleiding",
     ],
   },
   {
@@ -91,6 +94,8 @@ export const partnerDetails: PartnerDetail[] = [
     punten: [
       "Business strategist en partner bij 7LIFE Nederland",
       "Gericht op organisatieontwikkeling en strategie",
+      "Adviseert over de koers en groei van het 7LIFE-netwerk",
+      "Verbindt commerciële en inhoudelijke ontwikkeling",
     ],
   },
 ];

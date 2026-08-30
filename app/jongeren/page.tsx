@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,6 +19,7 @@ const vragen = [
 const programmas = [
   {
     kleur: "#D7263D",
+    slug: "kluis7",
     leeftijd: "4 — 12 jaar · Basisonderwijs",
     naam: "Kluis7",
     sub: "Communicatiestijlen ontdekken voor kinderen",
@@ -33,6 +34,7 @@ const programmas = [
   },
   {
     kleur: "#3E8FA3",
+    slug: "student-journey-app",
     leeftijd: "12 — 18 jaar · Middelbaar onderwijs",
     naam: "Student Journey App",
     sub: "Zelfkennis als basis voor studiekeuze",
@@ -47,6 +49,7 @@ const programmas = [
   },
   {
     kleur: "#1B3B6F",
+    slug: "excelleerscan",
     leeftijd: "16 — 22 jaar · MBO / HBO",
     naam: "Talentontwikkeling voor Jongeren",
     sub: "Van talent naar richting en actie",
@@ -61,6 +64,7 @@ const programmas = [
   },
   {
     kleur: "#F2C12E",
+    slug: "seo",
     leeftijd: "8 — 18 jaar · PO / VO",
     naam: "Sociaal-Emotionele Ontwikkeling",
     sub: "Verbinding, veiligheid en groei in de groep",
@@ -75,6 +79,7 @@ const programmas = [
   },
   {
     kleur: "#5FAE84",
+    slug: "geldscan",
     leeftijd: "12 — 18 jaar · Middelbaar onderwijs",
     naam: "GeldScan",
     sub: "Gezond Geldgedrag voor een financieel gezonde toekomst",
@@ -97,6 +102,17 @@ const impactStats = [
 
 export default function JongerenPagina() {
   const [open, setOpen] = useState<number | null>(0);
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    const idx = programmas.findIndex((p) => p.slug === hash);
+    if (idx !== -1) {
+      setOpen(idx);
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+    }
+  }, []);
 
   return (
     <>
@@ -259,6 +275,7 @@ export default function JongerenPagina() {
                 return (
                   <div
                     key={p.naam}
+                    id={p.slug}
                     className={`rounded-xl overflow-hidden cursor-pointer border transition-colors ${
                       isOpen ? "border-oranje" : "border-white/[0.07] hover:border-white/20"
                     }`}

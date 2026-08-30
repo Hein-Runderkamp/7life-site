@@ -21,7 +21,13 @@ function initialen(naam: string) {
 export default function OnzeMensenPagina() {
   const [open, setOpen] = useState<number | null>(0);
   const partners = mensen.filter((m) => m.partner);
-  const trainers = mensen.filter((m) => !m.partner);
+  const trainers = mensen
+    .filter((m) => !m.partner)
+    .sort((a, b) => {
+      if (a.foto && !b.foto) return -1;
+      if (!a.foto && b.foto) return 1;
+      return 0;
+    });
 
   return (
     <>
@@ -86,15 +92,59 @@ export default function OnzeMensenPagina() {
         {/* IN DE SPOTLIGHT */}
         <section className="px-[5%] py-16 bg-achtergrond" id="spotlight">
           <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-              In de spotlight
-            </div>
-            <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light leading-[1.15] mb-6">
-              Deze maand uitgelicht
-            </h2>
-            <div className="border-[1.5px] border-dashed border-black/[0.12] rounded-card px-6 py-10 text-center">
-              <div className="text-sm text-subtekst/60 italic">
-                Binnenkort ingevuld
+            <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 bg-donker rounded-card p-10">
+              <Link href="/onze-mensen/marc-wilhelmus" className="group flex flex-col gap-3">
+                <div className="text-[11px] font-semibold tracking-[2px] text-oranje/80 uppercase mb-1">
+                  In de spotlight
+                </div>
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                  <Image
+                    src="/team/marc-wilhelmus.jpg"
+                    alt="Marc Wilhelmus"
+                    fill
+                    className="object-cover group-hover:opacity-90 transition-opacity"
+                  />
+                </div>
+                <div>
+                  <div className="text-white font-serif text-lg">
+                    Marc Wilhelmus
+                  </div>
+                  <div className="text-white/50 text-sm leading-snug">
+                    Coach GeldScan en auteur van het boek &apos;Voor
+                    hetzelfde geld gelukkig&apos;
+                  </div>
+                </div>
+              </Link>
+
+              <div className="flex flex-col justify-center">
+                <h2 className="font-serif text-2xl sm:text-3xl text-white font-light leading-[1.25] mb-4">
+                  Waarom mensen zich niet uitspreken over geld — en hoe
+                  Marc dat doorbreekt.
+                </h2>
+                <p className="text-white/55 text-[15px] leading-[1.75] mb-4">
+                  Marc Wilhelmus zag hoe geldgedrag en de mindset over
+                  geld nauwelijks een plek kregen in financiële
+                  adviesgesprekken — terwijl juist dat vaak de kern van
+                  het probleem is. Vanuit die overtuiging ontwikkelde hij
+                  de 7LIFE Geldtype Scan (MoneyValues): een instrument
+                  dat financieel adviseurs en hun cliënten helpt om
+                  eindelijk het échte gesprek over geld te voeren.
+                </p>
+                <p className="text-white/55 text-[15px] leading-[1.75] mb-6">
+                  Als business partner en trainer begeleidt Marc
+                  financieel adviseurs en planners door heel Nederland,
+                  en schreef hij het boek &apos;Voor hetzelfde geld
+                  gelukkig!&apos; — over hoe je een goede vriend wordt
+                  van je eigen geld. Zijn missie: taboe, schaamte en ego
+                  rondom geld doorbreken, en mensen helpen naar een
+                  gezonde relatie met hun financiën.
+                </p>
+                <Link
+                  href="/onze-mensen/marc-wilhelmus"
+                  className="text-sm font-medium text-oranje hover:underline self-start"
+                >
+                  Lees het volledige profiel →
+                </Link>
               </div>
             </div>
           </div>
@@ -119,9 +169,10 @@ export default function OnzeMensenPagina() {
               {/* Programma-overzicht links */}
               <div className="flex flex-col gap-2.5">
                 {partnerProgrammas.map((p) => (
-                  <div
+                  <Link
                     key={p.naam}
-                    className="rounded-xl px-4 py-3.5"
+                    href={p.link ?? "#"}
+                    className="rounded-xl px-4 py-3.5 flex items-center justify-between gap-2 transition-transform hover:-translate-y-0.5"
                     style={{
                       background: `${p.kleur}18`,
                       border: `1px solid ${p.kleur}40`,
@@ -133,7 +184,10 @@ export default function OnzeMensenPagina() {
                     >
                       {p.naam}
                     </div>
-                  </div>
+                    <span className="text-xs flex-shrink-0" style={{ color: p.kleur }}>
+                      →
+                    </span>
+                  </Link>
                 ))}
               </div>
 
@@ -195,7 +249,7 @@ export default function OnzeMensenPagina() {
                         <div className="px-4 pb-5 pt-1 bg-white/[0.03]">
                           <div className="flex flex-col sm:flex-row gap-5">
                             {partner.foto && (
-                              <div className="relative w-full sm:w-[120px] h-[140px] sm:h-[120px] rounded-xl overflow-hidden flex-shrink-0">
+                              <div className="relative w-[120px] h-[120px] mx-auto sm:mx-0 rounded-full overflow-hidden flex-shrink-0">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={partner.foto}
