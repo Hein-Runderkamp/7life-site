@@ -3,12 +3,6 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const heroStats = [
-  { n: "40+", l: "gecertificeerde professionals in ons netwerk" },
-  { n: "3", l: "labels — methodiek, leiderschap en social impact" },
-  { n: "10+", l: "jaar ervaring in organisatieontwikkeling" },
-];
-
 const labels = [
   {
     kleur: "#EE7E06",
@@ -84,16 +78,29 @@ export default function WieZijnWijPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker mx-4 mt-4 rounded-[28px] px-[6%] pt-[150px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/wie-zijn-wij/hero-achtergrond.jpg"
+            alt="Over 7LIFE"
+            fill
+            priority
+            className="object-cover object-[center_45%]"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 65% 55% at 90% 10%, rgba(238,126,6,0.14) 0%, transparent 60%), radial-gradient(ellipse 45% 60% at 5% 90%, rgba(62,143,163,0.08) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-14 items-center">
-            <div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="max-w-[620px]">
               <div className="inline-flex items-center gap-1.5 bg-oranje/10 border border-oranje/[0.22] text-oranje text-[11px] font-medium tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-6 uppercase">
                 Over 7LIFE
               </div>
@@ -124,21 +131,6 @@ export default function WieZijnWijPagina() {
                   Wie we zijn
                 </a>
               </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              {heroStats.map((s) => (
-                <div
-                  key={s.n}
-                  className="bg-white/5 border border-white/10 rounded-2xl px-6 py-[22px]"
-                >
-                  <div className="font-serif text-4xl font-semibold text-oranje leading-none">
-                    {s.n}
-                  </div>
-                  <div className="text-[13px] text-white/50 mt-1 leading-[1.4]">
-                    {s.l}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
