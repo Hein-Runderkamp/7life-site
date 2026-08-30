@@ -26,6 +26,12 @@ export default function CtaSectie() {
         >
           Vraag een demo aan
         </a>
+        <a
+          href="/opleidingsaanbod"
+          className="bg-transparent text-white border-[1.5px] border-white/[0.18] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/45 transition-colors"
+        >
+          Bekijk het opleidingsaanbod
+        </a>
       </div>
     </section>
   );

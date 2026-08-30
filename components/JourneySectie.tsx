@@ -29,14 +29,14 @@ const stappen: Stap[] = [
     sub: "Zie wat speelt.",
     icon: "🔍",
     kleur: "#EE7E06",
-    bg: "rgba(238,126,6,0.1)",
+    bg: "#FDEDDC",
     body: "We voelen dat er iets speelt, maar weten niet precies wat. De Impact Check is een compacte analyse die de belangrijkste vraagstukken, sterktes en ontwikkelkansen in kaart brengt — uitgevoerd door een 7LIFE-consultant.",
     foto: "/impact-check/achtergrond.jpg",
     benefits: [
       { titel: "Eerste analyse", tekst: "We brengen de kern van de uitdaging scherp in beeld." },
       { titel: "Meest relevante lens", tekst: "We bepalen welke van de vijf lenzen de meeste aandacht verdient." },
       { titel: "Concrete vervolgrichting", tekst: "Je ontvangt een helder advies voor de volgende stap." },
-      { titel: "Gebruikbare inzichten", tekst: "Praktisch, toepasbaar en direct waardevol voor je organisatie." },
+      { titel: "Bruikbare inzichten", tekst: "Praktisch, toepasbaar en direct waardevol voor je organisatie." },
     ],
     cta: { label: "Start jouw Impact Check →", href: "/impact-check" },
   },
@@ -47,7 +47,7 @@ const stappen: Stap[] = [
     sub: "Ontdek wat eronder zit.",
     icon: "🎯",
     kleur: "#3E8FA3",
-    bg: "rgba(62,143,163,0.1)",
+    bg: "#E4EFF2",
     body: "Vijf lenzen. Eén dynamiek. De IDS analyseert wat er onder de oppervlakte speelt door vijf lenzen tegelijk te combineren: Ik · Wij · Leiding · Organisatie · Wereld. Niet één stukje, maar het geheel.",
     foto: "/ids/achtergrond.jpg",
     benefits: [
@@ -65,7 +65,7 @@ const stappen: Stap[] = [
     sub: "Sterke oplossingen om mensen duurzaam in beweging te brengen.",
     icon: "🧱",
     kleur: "#7B5EA7",
-    bg: "rgba(123,94,167,0.1)",
+    bg: "#EDE8F3",
     body: (
       <>
         Programma&apos;s, Interventies, Tools en Ontwikkeling op basis van de
@@ -95,7 +95,7 @@ const stappen: Stap[] = [
     ),
     foto: "/leiderschap/hero-achtergrond.jpg",
     benefits: [
-      { titel: "Op maat ontwikkeld", tekst: "Geen standaardpakket, maar interventies die aansluiten op jouw scan-uitkomsten." },
+      { titel: "Op maat", tekst: "Geen standaardpakket, maar interventies die aansluiten op jouw scan-uitkomsten." },
       { titel: "Breed inzetbaar", tekst: "Voor onderwijs, leiderschap, teams, jongeren en persoonlijke ontwikkeling." },
       { titel: "Samen ontwikkeld", tekst: "7LIFE-consultants en jouw organisatie bouwen het programma samen." },
       { titel: "Direct in beweging", tekst: "Van inzicht naar concrete actie — geen los rapport, maar echte verandering." },
@@ -108,7 +108,7 @@ const stappen: Stap[] = [
     sub: "Maak verschil zichtbaar.",
     icon: "🌱",
     kleur: "#3a7d5c",
-    bg: "rgba(58,125,92,0.1)",
+    bg: "#E3EDE8",
     body: "Impact meten, leren en verbeteren. Het Social Impact Dashboard integreert inzichten uit de Impact Check en IDS met real-time data, en vertaalt dat naar inzichten die richting geven aan keuzes.",
     foto: "/sid/hero-achtergrond.jpg",
     benefits: [
@@ -155,10 +155,10 @@ export default function JourneySectie() {
                   "--step-bg": s.bg,
                 } as React.CSSProperties
               }
-              className={`relative text-left rounded-2xl border-[1.5px] p-4 h-full flex flex-col transition-all ${
+              className={`relative text-left rounded-2xl border-[1.5px] p-4 h-full flex flex-col transition-all bg-[var(--step-bg)] ${
                 i === actief
-                  ? "border-[var(--step-color)] bg-kaart"
-                  : "border-white/10 bg-kaart hover:border-[var(--step-color)]"
+                  ? "border-[var(--step-color)]"
+                  : "border-transparent hover:border-[var(--step-color)]"
               }`}
             >
               <div className="text-xs font-semibold text-subtekst mb-1.5">

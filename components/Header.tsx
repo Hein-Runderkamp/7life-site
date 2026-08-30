@@ -71,12 +71,20 @@ export default function Header() {
         </Link>
       </div>
 
-      <a
-        href="#cta"
-        className="ml-3.5 bg-oranje text-white border-none px-5 py-2 rounded-full text-[13px] font-medium hover:bg-[#d4710a] transition-colors"
-      >
-        Plan een gesprek
-      </a>
+      <div className="flex items-center gap-2">
+        <Link
+          href="/opleidingsaanbod"
+          className="hidden sm:inline-flex ml-3.5 bg-transparent text-white border-[1.5px] border-white/25 px-5 py-[7px] rounded-full text-[13px] font-medium hover:border-white/50 transition-colors whitespace-nowrap"
+        >
+          Trainer of partner worden?
+        </Link>
+        <a
+          href="#cta"
+          className="bg-oranje text-white border-none px-5 py-2 rounded-full text-[13px] font-medium hover:bg-[#d4710a] transition-colors"
+        >
+          Plan een gesprek
+        </a>
+      </div>
     </nav>
   );
 }

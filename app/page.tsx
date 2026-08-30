@@ -6,7 +6,6 @@ import VerhalenSectie from "@/components/VerhalenSectie";
 import SpotlightSectie from "@/components/SpotlightSectie";
 import CtaSectie from "@/components/CtaSectie";
 import KlantenCarrousel from "@/components/KlantenCarrousel";
-import TrainerBanner from "@/components/TrainerBanner";
 import ContactSectie from "@/components/ContactSectie";
 import Footer from "@/components/Footer";
 
@@ -21,7 +20,6 @@ export default function Home() {
         <VerhalenSectie />
         <SpotlightSectie />
         <KlantenCarrousel />
-        <TrainerBanner />
         <CtaSectie />
         <ContactSectie />
       </main>
