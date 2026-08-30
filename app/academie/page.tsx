@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const paginas = [
   { naam: "Build Strong Leiderschap", tekst: "Leiderschap begint bij jezelf — voor leidinggevenden, bestuurders en professionals.", href: "/leiderschap" },
-  { naam: "Academie voor Bestuur & Leiderschap", tekst: "Masterclasses, leergangen en coaching voor directeuren en bestuurders.", href: "/bestuur-en-leiderschap" },
+  { naam: "Academie voor Bestuur & Leiderschap", tekst: "Masterclasses, leergangen en coaching voor directeuren en bestuurders.", href: "https://www.bestuurenleiderschap.nl" },
   { naam: "Social Impact Theater", tekst: "Avonden over leiderschap, ethiek en maatschappelijke impact.", href: "/social-impact-theater" },
   { naam: "Trainer worden", tekst: "Word gecertificeerd 7LIFE Trainer en bouw je eigen praktijk.", href: "/opleiden" },
   { naam: "Opleidingsaanbod", tekst: "Het volledige 7LIFE-opleidingsaanbod voor trainers en coaches.", href: "/opleidingsaanbod" },
@@ -62,21 +62,37 @@ export default function AcademieHubPagina() {
         <section className="px-[5%] py-[72px] bg-achtergrond">
           <div className="max-w-[1100px] mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {paginas.map((p) => (
-                <Link
-                  key={p.naam}
-                  href={p.href}
-                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-card p-6 flex flex-col hover:border-olijf transition-colors"
-                >
-                  <div className="font-serif text-lg mb-2">{p.naam}</div>
-                  <p className="text-sm text-subtekst leading-[1.6] mb-4">
-                    {p.tekst}
-                  </p>
-                  <span className="mt-auto text-sm font-medium text-olijf">
-                    Meer informatie →
-                  </span>
-                </Link>
-              ))}
+              {paginas.map((p) => {
+                const extern = p.href.startsWith("http");
+                const cardClass =
+                  "bg-kaart border-[1.5px] border-black/[0.07] rounded-card p-6 flex flex-col hover:border-olijf transition-colors";
+                const inhoud = (
+                  <>
+                    <div className="font-serif text-lg mb-2">{p.naam}</div>
+                    <p className="text-sm text-subtekst leading-[1.6] mb-4">
+                      {p.tekst}
+                    </p>
+                    <span className="mt-auto text-sm font-medium text-olijf">
+                      Meer informatie →
+                    </span>
+                  </>
+                );
+                return extern ? (
+                  <a
+                    key={p.naam}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cardClass}
+                  >
+                    {inhoud}
+                  </a>
+                ) : (
+                  <Link key={p.naam} href={p.href} className={cardClass}>
+                    {inhoud}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

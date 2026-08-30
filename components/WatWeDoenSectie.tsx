@@ -59,7 +59,7 @@ const gebouwd: {
     watermerk: "/wie-zijn-wij/watermerken/academie-olijf.png",
     items: [
       { naam: "Build Strong Leiderschap", link: "/leiderschap" },
-      { naam: "Academie voor Bestuur & Leiderschap", link: "/bestuur-en-leiderschap" },
+      { naam: "Academie voor Bestuur & Leiderschap", link: "https://www.bestuurenleiderschap.nl" },
       { naam: "Social Impact Theater", link: "/social-impact-theater" },
       { naam: "Trainer worden", link: "/opleiden" },
       { naam: "Opleidingsaanbod", link: "/opleidingsaanbod" },
@@ -141,25 +141,41 @@ export default function WatWeDoenSectie() {
                   {g.tekst}
                 </p>
                 <div className="flex flex-col gap-1.5 mb-2">
-                  {g.items.map((it) =>
-                    it.link ? (
+                  {g.items.map((it) => {
+                    const itemClass =
+                      "text-[13px] font-medium hover:opacity-70 pl-3.5 relative before:content-['·'] before:absolute before:left-0 before:text-subtekst transition-opacity";
+                    if (!it.link) {
+                      return (
+                        <div
+                          key={it.naam}
+                          className="text-[13px] text-subtekst pl-3.5 relative before:content-['·'] before:absolute before:left-0"
+                        >
+                          {it.naam}
+                        </div>
+                      );
+                    }
+                    return it.link.startsWith("http") ? (
+                      <a
+                        key={it.naam}
+                        href={it.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={itemClass}
+                        style={{ color: g.kleur }}
+                      >
+                        {it.naam} →
+                      </a>
+                    ) : (
                       <Link
                         key={it.naam}
                         href={it.link}
-                        className="text-[13px] font-medium hover:opacity-70 pl-3.5 relative before:content-['·'] before:absolute before:left-0 before:text-subtekst transition-opacity"
+                        className={itemClass}
                         style={{ color: g.kleur }}
                       >
                         {it.naam} →
                       </Link>
-                    ) : (
-                      <div
-                        key={it.naam}
-                        className="text-[13px] text-subtekst pl-3.5 relative before:content-['·'] before:absolute before:left-0"
-                      >
-                        {it.naam}
-                      </div>
-                    )
-                  )}
+                    );
+                  })}
                 </div>
                 {g.link && g.linkTekst && (
                   <Link

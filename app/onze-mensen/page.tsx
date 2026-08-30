@@ -169,27 +169,46 @@ export default function OnzeMensenPagina() {
             <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 items-start">
               {/* Programma-overzicht links */}
               <div className="flex flex-col gap-2.5">
-                {partnerProgrammas.map((p) => (
-                  <Link
-                    key={p.naam}
-                    href={p.link ?? "#"}
-                    className="rounded-xl px-4 py-3.5 flex items-center justify-between gap-2 transition-transform hover:-translate-y-0.5"
-                    style={{
-                      background: `${p.kleur}18`,
-                      border: `1px solid ${p.kleur}40`,
-                    }}
-                  >
-                    <div
-                      className="text-[13px] font-semibold"
-                      style={{ color: p.kleur }}
+                {partnerProgrammas.map((p) => {
+                  const extern = (p.link ?? "#").startsWith("http");
+                  const itemClass =
+                    "rounded-xl px-4 py-3.5 flex items-center justify-between gap-2 transition-transform hover:-translate-y-0.5";
+                  const itemStyle = {
+                    background: `${p.kleur}18`,
+                    border: `1px solid ${p.kleur}40`,
+                  };
+                  const inhoud = (
+                    <>
+                      <div className="text-[13px] font-semibold" style={{ color: p.kleur }}>
+                        {p.naam}
+                      </div>
+                      <span className="text-xs flex-shrink-0" style={{ color: p.kleur }}>
+                        →
+                      </span>
+                    </>
+                  );
+                  return extern ? (
+                    <a
+                      key={p.naam}
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={itemClass}
+                      style={itemStyle}
                     >
-                      {p.naam}
-                    </div>
-                    <span className="text-xs flex-shrink-0" style={{ color: p.kleur }}>
-                      →
-                    </span>
-                  </Link>
-                ))}
+                      {inhoud}
+                    </a>
+                  ) : (
+                    <Link
+                      key={p.naam}
+                      href={p.link ?? "#"}
+                      className={itemClass}
+                      style={itemStyle}
+                    >
+                      {inhoud}
+                    </Link>
+                  );
+                })}
               </div>
 
               {/* Uitklappers rechts */}

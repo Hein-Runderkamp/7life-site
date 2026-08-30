@@ -54,7 +54,15 @@ export default function Header() {
           </Link>
           <div className="absolute top-full left-0 min-w-[260px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/leiderschap" dotKleur="#6B7B45">Build Strong Leiderschap</DdLink>
-            <DdLink href="/bestuur-en-leiderschap" dotKleur="#6B7B45">Academie voor Bestuur en Leiderschap</DdLink>
+            <a
+              href="https://www.bestuurenleiderschap.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] text-tekst hover:bg-achtergrond transition-colors"
+            >
+              <span className="w-[5px] h-[5px] rounded-full flex-shrink-0" style={{ background: "#6B7B45" }} />
+              Academie voor Bestuur en Leiderschap
+            </a>
             <DdLink href="/social-impact-theater" dotKleur="#6B7B45">Social Impact Theater</DdLink>
             <DdLink href="/opleiden" dotKleur="#6B7B45">Trainer worden</DdLink>
             <DdLink href="/opleidingsaanbod" dotKleur="#6B7B45">Opleidingsaanbod</DdLink>
