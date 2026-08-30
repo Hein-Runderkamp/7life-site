@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CtaSectie from "@/components/CtaSectie";
+import StandaardCta from "@/components/StandaardCta";
 import Link from "next/link";
 import { mensen } from "@/lib/mensen";
 import { partnerProgrammas, partnerDetails } from "@/lib/partners";
@@ -125,10 +125,11 @@ export default function OnzeMensenPagina() {
                   Marc Wilhelmus zag hoe geldgedrag en de mindset over
                   geld nauwelijks een plek kregen in financiële
                   adviesgesprekken — terwijl juist dat vaak de kern van
-                  het probleem is. Vanuit die overtuiging ontwikkelde hij
-                  de 7LIFE Geldtype Scan (MoneyValues): een instrument
-                  dat financieel adviseurs en hun cliënten helpt om
-                  eindelijk het échte gesprek over geld te voeren.
+                  het probleem is. Vanuit die overtuiging werkt hij met
+                  de 7LIFE Geldtype Scan en de MoneyValues Scan: een
+                  instrument dat financieel adviseurs en hun cliënten
+                  helpt om eindelijk het échte gesprek over geld te
+                  voeren.
                 </p>
                 <p className="text-white/55 text-[15px] leading-[1.75] mb-6">
                   Als business partner en trainer begeleidt Marc
@@ -332,7 +333,7 @@ export default function OnzeMensenPagina() {
           </div>
         </section>
 
-        <CtaSectie />
+        <StandaardCta />
       </main>
       <Footer />
     </>

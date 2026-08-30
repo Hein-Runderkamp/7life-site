@@ -9,7 +9,7 @@ export const partnerProgrammas: PartnerProgramma[] = [
   { naam: "ExcelleerScan", kleur: "#3E8FA3", link: "/jongeren#excelleerscan" },
   { naam: "Academie voor Bestuur & Leiderschap", kleur: "#7B5EA7", link: "/academie" },
   { naam: "Student Journey App", kleur: "#2E7D52", link: "/jongeren#student-journey-app" },
-  { naam: "Geldscan", kleur: "#D7263D", link: "/jongeren#geldscan" },
+  { naam: "Geldscan", kleur: "#D7263D", link: "/build-strong-individueel#geldscan" },
   { naam: "MoneyValues", kleur: "#F2C12E", link: "/onze-mensen/marc-wilhelmus" },
 ];
 
@@ -81,7 +81,7 @@ export const partnerDetails: PartnerDetail[] = [
     programma: "Geldscan & MoneyValues",
     kleur: "#D7263D",
     punten: [
-      "Ontwikkelaar van de 7LIFE Geldtype Scan (MoneyValues) — voor échte gesprekken over geld",
+      "Ontwikkelaar van de training in de 7LIFE Geldtype Scan (MoneyValues) — voor échte gesprekken over geld",
       "Business partner en trainer voor financieel adviseurs en planners",
       "Auteur van het boek 'Voor hetzelfde geld gelukkig!'",
       "Ontwikkelde het praktische trainingsprogramma 'Geld gedrag en adviseren met geldtypen'",

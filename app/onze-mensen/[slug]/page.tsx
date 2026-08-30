@@ -1,7 +1,7 @@
 import { mensen } from "@/lib/mensen";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CtaSectie from "@/components/CtaSectie";
+import StandaardCta from "@/components/StandaardCta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -72,7 +72,7 @@ export default function MensDetailPagina({ params }: { params: { slug: string } 
           </div>
         </section>
 
-        <CtaSectie />
+        <StandaardCta />
       </main>
       <Footer />
     </>

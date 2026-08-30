@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -33,6 +33,7 @@ const stats = [
 const tools = [
   {
     nr: "1",
+    slug: "fullscan",
     kleur: "#EE7E06",
     naam: "7LIFE Fullscan",
     punten: [
@@ -45,6 +46,7 @@ const tools = [
   },
   {
     nr: "2",
+    slug: "talentscan",
     kleur: "#1B3B6F",
     naam: "7LIFE Talentscan",
     punten: [
@@ -57,6 +59,7 @@ const tools = [
   },
   {
     nr: "3",
+    slug: "360-feedback-scan",
     kleur: "#F2C12E",
     naam: "7LIFE 360 graden feedback scan",
     punten: [
@@ -69,6 +72,7 @@ const tools = [
   },
   {
     nr: "4",
+    slug: "money-habits-scan",
     kleur: "#2E7D52",
     naam: "7LIFE Money Habits Scan",
     punten: [
@@ -81,6 +85,7 @@ const tools = [
   },
   {
     nr: "5",
+    slug: "geldscan",
     kleur: "#5FAE84",
     naam: "7LIFE Geldscan",
     punten: [
@@ -93,6 +98,7 @@ const tools = [
   },
   {
     nr: "6",
+    slug: "mobility-program",
     kleur: "#7B5EA7",
     naam: "7LIFE Mobility Program",
     punten: [
@@ -105,6 +111,7 @@ const tools = [
   },
   {
     nr: "7",
+    slug: "2e-spoor-traject",
     kleur: "#D7263D",
     naam: "Het 7LIFE 2e Spoor Traject",
     punten: [
@@ -119,6 +126,19 @@ const tools = [
 
 export default function BuildStrongIndividueelPagina() {
   const [open, setOpen] = useState<number | null>(null);
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+    const index = tools.findIndex((t) => t.slug === hash);
+    if (index !== -1) {
+      setOpen(index);
+      const el = document.getElementById(hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -282,7 +302,8 @@ export default function BuildStrongIndividueelPagina() {
                 return (
                   <div
                     key={t.naam}
-                    className={`rounded-xl overflow-hidden cursor-pointer border transition-colors ${
+                    id={t.slug}
+                    className={`rounded-xl overflow-hidden cursor-pointer border transition-colors scroll-mt-32 ${
                       isOpen ? "border-oranje" : "border-white/[0.07] hover:border-white/20"
                     }`}
                     onClick={() => setOpen(isOpen ? null : i)}
