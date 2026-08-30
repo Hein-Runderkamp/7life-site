@@ -79,7 +79,7 @@ export default function Header() {
           Trainer of partner worden?
         </Link>
         <a
-          href="#cta"
+          href="mailto:info@7life.nl?subject=Plan een gesprek"
           className="bg-oranje text-white border-none px-5 py-2 rounded-full text-[13px] font-medium hover:bg-[#d4710a] transition-colors"
         >
           Plan een gesprek
