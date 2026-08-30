@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import MensSectie from "@/components/MensSectie";
 
 const lagen = [
-  { nr: "1", naam: "Identity", tekst: "Drijfveren, waarden, overtuigingen — wie iemand werkelijk ís", kleur: "#EE7E06", bg: "rgba(238,126,6,0.12)" },
-  { nr: "2", naam: "Choices", tekst: "Wat iemand wel of niet laat zien in interactie met anderen", kleur: "#7B5EA7", bg: "rgba(123,94,167,0.12)" },
-  { nr: "3", naam: "Behaviour", tekst: "Zichtbaar gedrag, kwaliteiten, competenties in de praktijk", kleur: "#3E8FA3", bg: "rgba(62,143,163,0.12)" },
-  { nr: "4", naam: "Interpretation", tekst: "Hoe anderen jouw gedrag waarnemen en interpreteren", kleur: "#d4ae1a", bg: "rgba(242,193,46,0.1)" },
+  { nr: "1", naam: "Identiteit", tekst: "Drijfveren, waarden, overtuigingen — wie iemand werkelijk ís", kleur: "#EE7E06", bg: "rgba(238,126,6,0.12)" },
+  { nr: "2", naam: "Keuzes", tekst: "Wat iemand wel of niet laat zien in interactie met anderen", kleur: "#7B5EA7", bg: "rgba(123,94,167,0.12)" },
+  { nr: "3", naam: "Gedrag", tekst: "Zichtbaar gedrag, kwaliteiten, competenties in de praktijk", kleur: "#3E8FA3", bg: "rgba(62,143,163,0.12)" },
+  { nr: "4", naam: "Interpretatie", tekst: "Hoe anderen jouw gedrag waarnemen en interpreteren", kleur: "#d4ae1a", bg: "rgba(242,193,46,0.1)" },
   { nr: "5", naam: "Context", tekst: "De omgeving, de cultuur, de situatie die alles kleurt", kleur: "#5aad7e", bg: "rgba(46,125,82,0.12)" },
 ];
 
@@ -38,24 +38,24 @@ const bouwblokken = [
     nr: "03",
     sub: "Transformation Force",
     naam: "Veranderkracht",
-    tekst: "Het vermogen om in beweging te komen én impact te maken. Vier voorwaarden bepalen of verandering lukt: Mission, Self-worth, Safety en Support system. Elk met een score van 0–100.",
+    tekst: "Het vermogen om in beweging te komen én impact te maken. Vier voorwaarden bepalen of verandering lukt. Missie, Eigenwaarde, Veiligheid, en Support Systeem. In totaal met een score van 0–100.",
     items: [
-      "Mission — richting en betekenis",
-      "Self-worth — zelfbeeld en vertrouwen",
-      "Safety — psychologische veiligheid",
-      "Support system — omgeving en steun",
+      "Missie — richting en betekenis",
+      "Eigenwaarde — zelfbeeld en vertrouwen",
+      "Veiligheid — psychologische veiligheid",
+      "Support Systeem — omgeving en steun",
     ],
   },
 ];
 
 const stijlen = [
-  { icoon: "/iconen/pionier.png", naam: "Pionier", kernwoord: "Vernieuwen · Durven · Actie", tekst: "Gaat voorop. Daagt uit. Zegt wat anderen denken maar niet durven te zeggen. Houdt van snelheid en haat stilstand.", bg: "rgba(27,59,111,0.2)", rand: "rgba(27,59,111,0.4)", naamKleur: "#7a9fd4", kwKleur: "#5e7fbf" },
-  { icoon: "/iconen/doener.png", naam: "Doener", kernwoord: "Afronden · Kwaliteit · Praktisch", tekst: "Maakt dingen af. Let op details. Betrouwbaar en precies. Liever goed dan snel — maar ook graag concrete resultaten.", bg: "rgba(139,63,160,0.14)", rand: "rgba(139,63,160,0.3)", naamKleur: "#c98fdb", kwKleur: "#8B3FA0" },
-  { icoon: "/iconen/zorger.png", naam: "Zorger", kernwoord: "Warmte · Invoelend · Passie", tekst: "Voelt aan wat anderen nodig hebben. Loyaal en betrokken. Geeft energie aan mensen — en vraagt er ook om.", bg: "rgba(215,38,61,0.12)", rand: "rgba(215,38,61,0.25)", naamKleur: "#e87085", kwKleur: "#D7263D" },
-  { icoon: "/iconen/verbinder.png", naam: "Verbinder", kernwoord: "Contact · Enthousiasme · Netwerk", tekst: "Brengt mensen samen. Bruist van energie. Lost conflicten op door te verbinden. Houdt van samenwerking en variatie.", bg: "rgba(242,193,46,0.1)", rand: "rgba(242,193,46,0.2)", naamKleur: "#d4c250", kwKleur: "#d4ae1a" },
-  { icoon: "/iconen/strateeg.png", naam: "Strateeg", kernwoord: "Doelgericht · Overzicht · Plan", tekst: "Denkt in systemen. Wil excelleren. Heeft altijd een plan B. Stuurt op resultaat en houdt overzicht waar anderen de weg kwijtraken.", bg: "rgba(62,143,163,0.14)", rand: "rgba(62,143,163,0.3)", naamKleur: "#7ec4d4", kwKleur: "#3E8FA3" },
-  { icoon: "/iconen/beheerder.png", naam: "Beheerder", kernwoord: "Balans · Investeren · Vindingrijk", tekst: "Weegt af. Investeert verstandig — in mensen, middelen en relaties. Creatief in oplossingen, standvastig in waarden.", bg: "rgba(138,138,138,0.14)", rand: "rgba(138,138,138,0.3)", naamKleur: "#b3b3b3", kwKleur: "#8a8a8a" },
-  { icoon: "/iconen/doordenker.png", naam: "Doordenker", kernwoord: "Analyseren · Diepgang · Kennis", tekst: "Onderzoekt voor hij spreekt. Heeft altijd vragen. Houdt van diepte, haat oppervlakkigheid. Zijn inzichten zijn goud — als je er de tijd voor neemt.", bg: "rgba(46,125,82,0.12)", rand: "rgba(46,125,82,0.25)", naamKleur: "#6ac090", kwKleur: "#2E7D52" },
+  { icoon: "/iconen/wit/pionier.png", naam: "Pionier", kernwoord: "Vernieuwen · Durven · Actie", tekst: "Gaat voorop. Daagt uit. Zegt wat anderen denken maar niet durven te zeggen. Houdt van snelheid en haat stilstand.", bg: "rgba(27,59,111,0.2)", rand: "rgba(27,59,111,0.4)", naamKleur: "#7a9fd4", kwKleur: "#5e7fbf" },
+  { icoon: "/iconen/wit/doener.png", naam: "Doener", kernwoord: "Afronden · Kwaliteit · Praktisch", tekst: "Maakt dingen af. Let op details. Betrouwbaar en precies. Liever goed dan snel — maar ook graag concrete resultaten.", bg: "rgba(139,63,160,0.14)", rand: "rgba(139,63,160,0.3)", naamKleur: "#c98fdb", kwKleur: "#8B3FA0" },
+  { icoon: "/iconen/wit/zorger.png", naam: "Zorger", kernwoord: "Warmte · Invoelend · Passie", tekst: "Voelt aan wat anderen nodig hebben. Loyaal en betrokken. Geeft energie aan mensen — en vraagt er ook om.", bg: "rgba(215,38,61,0.12)", rand: "rgba(215,38,61,0.25)", naamKleur: "#e87085", kwKleur: "#D7263D" },
+  { icoon: "/iconen/wit/verbinder.png", naam: "Verbinder", kernwoord: "Contact · Enthousiasme · Netwerk", tekst: "Brengt mensen samen. Bruist van energie. Lost conflicten op door te verbinden. Houdt van samenwerking en variatie.", bg: "rgba(242,193,46,0.1)", rand: "rgba(242,193,46,0.2)", naamKleur: "#d4c250", kwKleur: "#d4ae1a" },
+  { icoon: "/iconen/wit/strateeg.png", naam: "Strateeg", kernwoord: "Doelgericht · Overzicht · Plan", tekst: "Denkt in systemen. Wil excelleren. Heeft altijd een plan B. Stuurt op resultaat en houdt overzicht waar anderen de weg kwijtraken.", bg: "rgba(62,143,163,0.14)", rand: "rgba(62,143,163,0.3)", naamKleur: "#7ec4d4", kwKleur: "#3E8FA3" },
+  { icoon: "/iconen/wit/beheerder.png", naam: "Beheerder", kernwoord: "Balans · Investeren · Vindingrijk", tekst: "Weegt af. Investeert verstandig — in mensen, middelen en relaties. Creatief in oplossingen, standvastig in waarden.", bg: "rgba(138,138,138,0.14)", rand: "rgba(138,138,138,0.3)", naamKleur: "#b3b3b3", kwKleur: "#8a8a8a" },
+  { icoon: "/iconen/wit/doordenker.png", naam: "Doordenker", kernwoord: "Analyseren · Diepgang · Kennis", tekst: "Onderzoekt voor hij spreekt. Heeft altijd vragen. Houdt van diepte, haat oppervlakkigheid. Zijn inzichten zijn goud — als je er de tijd voor neemt.", bg: "rgba(46,125,82,0.12)", rand: "rgba(46,125,82,0.25)", naamKleur: "#6ac090", kwKleur: "#2E7D52" },
 ];
 
 const scanOnderdelen = [
@@ -278,22 +278,29 @@ export default function MethodiekPagina() {
                     Factor 8 — De 8e dimensie
                   </div>
                   <div className="font-serif text-xl text-white mb-2">
-                    Veranderkracht
+                    Verandervoorwaarden
                   </div>
                   <p className="text-sm text-white/50 leading-[1.65] max-w-[640px]">
                     Naast de zeven stijlen meet 7LIFE ook hoe iemand
                     omgaat met verandering — het vermogen om in beweging
-                    te komen en impact te maken. Dit is geen aparte stijl,
-                    maar een eigen dimensie die aangeeft hoe groot iemands
-                    verandercapaciteit is en wat daarvoor nodig is. Bij
-                    kinderen heet dit de Ontdekker.
+                    te komen en impact te maken. Onderdeel van
+                    veranderkracht is Factor 8, een eigen dimensie die
+                    aangeeft hoe groot de impact is van de context van de
+                    kandidaat op het omgaan met verandering. We noemen
+                    dat de Verandervoorwaarden.
                   </p>
                 </div>
-                <div className="bg-white/[0.06] rounded-xl px-6 py-5 text-center min-w-[180px]">
-                  <div className="font-serif text-5xl font-semibold text-white/30 leading-none">
+                <div
+                  className="rounded-xl px-6 py-5 text-center min-w-[180px]"
+                  style={{
+                    background: "rgba(238,126,6,0.14)",
+                    border: "1px solid rgba(238,126,6,0.3)",
+                  }}
+                >
+                  <div className="font-serif text-5xl font-semibold text-white leading-none">
                     8
                   </div>
-                  <div className="text-xs text-white/35 mt-1.5">
+                  <div className="text-xs text-oranje mt-1.5 font-medium">
                     dimensies
                     <br />
                     één profiel

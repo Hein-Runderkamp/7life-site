@@ -99,15 +99,6 @@ export default function MensSectie() {
             </div>
           </div>
         </div>
-
-        <div className="text-center mt-11">
-          <a
-            href="#bouwblokken"
-            className="text-oranje text-sm font-medium no-underline hover:underline"
-          >
-            Ontdek de 7LIFE-methodiek →
-          </a>
-        </div>
       </div>
     </section>
   );
