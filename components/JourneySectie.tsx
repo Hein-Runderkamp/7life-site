@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Benefit = { icon: string; titel: string; tekst: string };
+type Benefit = { titel: string; tekst: string };
 type Stap = {
   nr: string;
   fase: string;
@@ -14,7 +14,7 @@ type Stap = {
   kleur: string;
   bg: string;
   body: React.ReactNode;
-  logo: string;
+  foto: string;
   benefits: Benefit[];
   cta?: { label: string; href: string };
 };
@@ -31,12 +31,12 @@ const stappen: Stap[] = [
     kleur: "#EE7E06",
     bg: "rgba(238,126,6,0.1)",
     body: "We voelen dat er iets speelt, maar weten niet precies wat. De Impact Check is een compacte analyse die de belangrijkste vraagstukken, sterktes en ontwikkelkansen in kaart brengt — uitgevoerd door een 7LIFE-consultant.",
-    logo: "/logos/impact-check.jpeg",
+    foto: "/impact-check/achtergrond.jpg",
     benefits: [
-      { icon: "🔍", titel: "Eerste analyse", tekst: "We brengen de kern van de uitdaging scherp in beeld." },
-      { icon: "🎯", titel: "Meest relevante lens", tekst: "We bepalen welke van de vijf lenzen de meeste aandacht verdient." },
-      { icon: "🧭", titel: "Concrete vervolgrichting", tekst: "Je ontvangt een helder advies voor de volgende stap." },
-      { icon: "📈", titel: "Gebruikbare inzichten", tekst: "Praktisch, toepasbaar en direct waardevol voor je organisatie." },
+      { titel: "Eerste analyse", tekst: "We brengen de kern van de uitdaging scherp in beeld." },
+      { titel: "Meest relevante lens", tekst: "We bepalen welke van de vijf lenzen de meeste aandacht verdient." },
+      { titel: "Concrete vervolgrichting", tekst: "Je ontvangt een helder advies voor de volgende stap." },
+      { titel: "Gebruikbare inzichten", tekst: "Praktisch, toepasbaar en direct waardevol voor je organisatie." },
     ],
     cta: { label: "Start jouw Impact Check →", href: "/impact-check" },
   },
@@ -49,12 +49,12 @@ const stappen: Stap[] = [
     kleur: "#3E8FA3",
     bg: "rgba(62,143,163,0.1)",
     body: "Vijf lenzen. Eén dynamiek. De IDS analyseert wat er onder de oppervlakte speelt door vijf lenzen tegelijk te combineren: Ik · Wij · Leiding · Organisatie · Wereld. Niet één stukje, maar het geheel.",
-    logo: "/logos/ids.jpeg",
+    foto: "/ids/achtergrond.jpg",
     benefits: [
-      { icon: "🧩", titel: "Vijf lenzen, één beeld", tekst: "Ik · Wij · Leiding · Organisatie · Wereld — in samenhang bekeken." },
-      { icon: "📊", titel: "Data + kwalitatief", tekst: "Cijfers gecombineerd met gesprekken en observaties uit de praktijk." },
-      { icon: "⚙️", titel: "Flexibel per vraagstuk", tekst: "Inzetbaar op individueel niveau, teamniveau of organisatiebreed." },
-      { icon: "🔗", titel: "Vertrekpunt voor Build Strong", tekst: "De uitkomsten bepalen direct welke interventies het meeste effect hebben." },
+      { titel: "Vijf lenzen, één beeld", tekst: "Ik · Wij · Leiding · Organisatie · Wereld — in samenhang bekeken." },
+      { titel: "Data + kwalitatief", tekst: "Cijfers gecombineerd met gesprekken en observaties uit de praktijk." },
+      { titel: "Flexibel per vraagstuk", tekst: "Inzetbaar op individueel niveau, teamniveau of organisatiebreed." },
+      { titel: "Vertrekpunt voor Build Strong", tekst: "De uitkomsten bepalen direct welke interventies het meeste effect hebben." },
     ],
     cta: { label: "Meer over IDS →", href: "/ids" },
   },
@@ -93,12 +93,12 @@ const stappen: Stap[] = [
         .
       </>
     ),
-    logo: "/logos/build-strong.jpeg",
+    foto: "/leiderschap/hero-achtergrond.jpg",
     benefits: [
-      { icon: "🧱", titel: "Op maat ontwikkeld", tekst: "Geen standaardpakket, maar interventies die aansluiten op jouw scan-uitkomsten." },
-      { icon: "🎓", titel: "Breed inzetbaar", tekst: "Voor onderwijs, leiderschap, teams, jongeren en persoonlijke ontwikkeling." },
-      { icon: "🤝", titel: "Samen ontwikkeld", tekst: "7LIFE-consultants en jouw organisatie bouwen het programma samen." },
-      { icon: "🚀", titel: "Direct in beweging", tekst: "Van inzicht naar concrete actie — geen los rapport, maar echte verandering." },
+      { titel: "Op maat ontwikkeld", tekst: "Geen standaardpakket, maar interventies die aansluiten op jouw scan-uitkomsten." },
+      { titel: "Breed inzetbaar", tekst: "Voor onderwijs, leiderschap, teams, jongeren en persoonlijke ontwikkeling." },
+      { titel: "Samen ontwikkeld", tekst: "7LIFE-consultants en jouw organisatie bouwen het programma samen." },
+      { titel: "Direct in beweging", tekst: "Van inzicht naar concrete actie — geen los rapport, maar echte verandering." },
     ],
   },
   {
@@ -110,12 +110,12 @@ const stappen: Stap[] = [
     kleur: "#3a7d5c",
     bg: "rgba(58,125,92,0.1)",
     body: "Impact meten, leren en verbeteren. Het Social Impact Dashboard integreert inzichten uit de Impact Check en IDS met real-time data, en vertaalt dat naar inzichten die richting geven aan keuzes.",
-    logo: "/logos/duurzame-impact.jpeg",
+    foto: "/sid/hero-achtergrond.jpg",
     benefits: [
-      { icon: "📡", titel: "Real-time zicht", tekst: "Dashboard toont voortgang en patronen zodra er nieuwe data binnenkomt." },
-      { icon: "🌍", titel: "5 Pijlers", tekst: "Fair Work · Money & Meaning · Human Development · Ethical Leadership · Diversiteit & Inclusie." },
-      { icon: "📋", titel: "ESG-rapportage", tekst: "Direct bruikbaar voor bestuur, toezichthouders en stakeholders." },
-      { icon: "🔁", titel: "Continu leren", tekst: "Geen eenmalig project — een lerende beweging richting blijvende impact." },
+      { titel: "Real-time zicht", tekst: "Dashboard toont voortgang en patronen zodra er nieuwe data binnenkomt." },
+      { titel: "5 Pijlers", tekst: "Fair Work · Money & Meaning · Human Development · Ethical Leadership · Diversiteit & Inclusie." },
+      { titel: "ESG-rapportage", tekst: "Direct bruikbaar voor bestuur, toezichthouders en stakeholders." },
+      { titel: "Continu leren", tekst: "Geen eenmalig project — een lerende beweging richting blijvende impact." },
     ],
     cta: { label: "Bekijk het Dashboard →", href: "/social-impact-dashboard" },
   },
@@ -183,13 +183,12 @@ export default function JourneySectie() {
           style={{ "--step-color": stap.kleur, "--step-bg": stap.bg } as React.CSSProperties}
           className="flex flex-col md:flex-row gap-0 bg-kaart border-[1.5px] border-black/[0.07] rounded-card overflow-hidden"
         >
-          <div className="md:w-2/5 relative bg-[#f5f5f3] min-h-[220px] flex items-center justify-center border-t-4 border-[var(--step-color)] p-8">
+          <div className="md:w-2/5 relative min-h-[220px] border-t-4 border-[var(--step-color)]">
             <Image
-              src={stap.logo}
+              src={stap.foto}
               alt={stap.naam}
-              width={280}
-              height={160}
-              className="w-full h-auto max-w-[240px] object-contain"
+              fill
+              className="object-cover"
             />
           </div>
           <div className="flex-1 p-8">
@@ -214,7 +213,12 @@ export default function JourneySectie() {
           <div className="md:w-1/3 border-t md:border-t-0 md:border-l border-black/[0.07] p-6 flex flex-col gap-5">
             {stap.benefits.map((b) => (
               <div key={b.titel} className="flex gap-3">
-                <div className="text-lg flex-shrink-0">{b.icon}</div>
+                <div
+                  className="text-base flex-shrink-0 font-bold"
+                  style={{ color: stap.kleur }}
+                >
+                  ✔
+                </div>
                 <div>
                   <div className="text-sm font-medium text-tekst mb-0.5">
                     {b.titel}
