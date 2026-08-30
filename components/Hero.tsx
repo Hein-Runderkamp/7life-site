@@ -1,10 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const stats = [
   { n: "9.000+", l: "assessments geanalyseerd" },
   { n: "20+", l: "jaar ervaring in ontwikkeling" },
   { n: "40+", l: "gecertificeerde coaches & trainers" },
   { n: "8 SDG's (Social Development Goals UN)", l: "geborgd in OJA & Dashboard" },
+];
+
+const paden = [
+  { naam: "7LIFE", href: "/methodiek", kleur: "#EE7E06" },
+  { naam: "Zakelijk & B2B", href: "/organisaties", kleur: "#3E8FA3" },
+  { naam: "Academie", href: "/academie", kleur: "#6B7B45" },
+  { naam: "7LIFE Foundation", href: "/foundation", kleur: "#2E7D52" },
 ];
 
 export default function Hero() {
@@ -40,31 +48,36 @@ export default function Hero() {
           {/* Tekst */}
           <div>
             <div className="inline-flex items-center gap-1.5 bg-oranje/10 border border-oranje/[0.22] text-oranje text-[11px] font-medium tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-6 uppercase before:content-[''] before:w-[5px] before:h-[5px] before:rounded-full before:bg-oranje">
-              Eén ecosysteem voor duurzame verandering
+              Eén ecosysteem, vier paden
             </div>
             <h1 className="font-serif text-[clamp(40px,6vw,72px)] font-light text-white leading-[1.06] tracking-[-1px] mb-[22px]">
-              Van inzicht
+              Weten wat er speelt.
               <br />
-              naar <em className="text-oranje not-italic italic">impact</em>
+              <em className="text-oranje not-italic italic">In beweging komen.</em>
             </h1>
-            <p className="text-white/60 text-base leading-[1.75] mb-9 max-w-[420px]">
-              7LIFE helpt mensen, teams en organisaties begrijpen wat er
-              werkelijk speelt — en in beweging komen. Niet incidenteel.
-              Structureel.
+            <p className="text-white/60 text-base leading-[1.75] mb-9 max-w-[440px]">
+              7LIFE combineert wetenschappelijk onderbouwde scans met
+              persoonlijke begeleiding — voor leiders, teams en
+              organisaties die verder willen dan een eenmalig advies.
             </p>
-            <div className="flex gap-2.5 flex-wrap">
-              <a
-                href="#vraag"
-                className="bg-oranje text-white border-none px-[26px] py-3 rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors"
-              >
-                Wat speelt er bij jou?
-              </a>
-              <a
-                href="#cta"
-                className="bg-transparent text-white border-[1.5px] border-white/[0.3] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/60 transition-colors"
-              >
-                Plan een gesprek
-              </a>
+            <div className="text-white/40 text-xs uppercase tracking-wide mb-2.5">
+              Waar wil je beginnen?
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-[520px]">
+              {paden.map((p) => (
+                <Link
+                  key={p.naam}
+                  href={p.href}
+                  className="text-center px-3 py-2.5 rounded-xl text-[13px] font-medium transition-all hover:-translate-y-0.5"
+                  style={{
+                    background: `${p.kleur}1F`,
+                    border: `1px solid ${p.kleur}66`,
+                    color: p.kleur,
+                  }}
+                >
+                  {p.naam}
+                </Link>
+              ))}
             </div>
           </div>
 

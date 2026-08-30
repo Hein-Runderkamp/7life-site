@@ -19,40 +19,43 @@ export default function Header() {
       </Link>
 
       <div className="hidden lg:flex gap-0.5 items-center">
-        {/* Onze aanpak */}
+        {/* 7LIFE */}
         <div className="relative group">
           <span className={navItem}>
-            Inzicht <span className="ml-1 text-[11px] opacity-50">▾</span>
-          </span>
-          <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
-            <DdLink href="/impact-check">Impact Check</DdLink>
-            <DdLink href="/ids">Impact Dynamics Scan</DdLink>
-          </div>
-        </div>
-
-        {/* Build Strong */}
-        <div className="relative group">
-          <span className={navItem}>
-            Build Strong <span className="ml-1 text-[11px] opacity-50">▾</span>
+            7LIFE <span className="ml-1 text-[11px] opacity-50">▾</span>
           </span>
           <div className="absolute top-full left-0 min-w-[240px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
-            <DdLink href="/build-strong-individueel">Build Strong Individueel</DdLink>
-            <DdLink href="/jongeren">Build Strong Jongeren</DdLink>
-            <DdLink href="/organisaties">Build Strong Organisaties</DdLink>
-            <DdLink href="/leiderschap">Build Strong Leiderschap</DdLink>
-            <DdLink href="/opleiden">Build Strong Trainers</DdLink>
+            <DdLink href="/onze-mensen" dotKleur="#EE7E06">Onze mensen</DdLink>
+            <DdLink href="/build-strong-individueel" dotKleur="#EE7E06">Build Strong Individueel</DdLink>
+            <DdLink href="/jongeren" dotKleur="#EE7E06">Build Strong Jongeren</DdLink>
+            <DdLink href="/organisaties" dotKleur="#EE7E06">Build Strong Organisaties</DdLink>
           </div>
         </div>
 
-        {/* Social Impact */}
+        {/* Zakelijk & B2B */}
         <div className="relative group">
           <span className={navItem}>
-            Social Impact <span className="ml-1 text-[11px] opacity-50">▾</span>
+            Zakelijk &amp; B2B <span className="ml-1 text-[11px] opacity-50">▾</span>
           </span>
-          <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
-            <DdLink href="/social-impact-dashboard">Social Impact Dashboard</DdLink>
-            <DdLink href="/oja">Open Job Architecture</DdLink>
-            <DdLink href="/social-impact-theater">Social Impact Theater</DdLink>
+          <div className="absolute top-full left-0 min-w-[220px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+            <DdLink href="/impact-check" dotKleur="#3E8FA3">Impact Check</DdLink>
+            <DdLink href="/ids" dotKleur="#3E8FA3">Impact Dynamics Scan</DdLink>
+            <DdLink href="/social-impact-dashboard" dotKleur="#3E8FA3">Social Impact Dashboard</DdLink>
+            <DdLink href="/oja" dotKleur="#3E8FA3">Open Job Architecture</DdLink>
+          </div>
+        </div>
+
+        {/* Academie */}
+        <div className="relative group">
+          <span className={navItem}>
+            Academie <span className="ml-1 text-[11px] opacity-50">▾</span>
+          </span>
+          <div className="absolute top-full left-0 min-w-[250px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+            <DdLink href="/leiderschap" dotKleur="#6B7B45">Academie voor Bestuur en Leiderschap</DdLink>
+            <DdLink href="/social-impact-theater" dotKleur="#6B7B45">Social Impact Theater</DdLink>
+            <DdLink href="/opleiden" dotKleur="#6B7B45">Trainer worden</DdLink>
+            <DdLink href="/opleidingsaanbod" dotKleur="#6B7B45">Opleidingsaanbod</DdLink>
+            <DdLink href="/agenda" dotKleur="#6B7B45">Opleidingsagenda</DdLink>
           </div>
         </div>
 
@@ -61,21 +64,14 @@ export default function Header() {
           <span className={navItem}>
             Over 7LIFE <span className="ml-1 text-[11px] opacity-50">▾</span>
           </span>
-          <div className="absolute top-full left-0 min-w-[210px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
-            <DdLink href="/wie-zijn-wij">Wie zijn wij</DdLink>
-            <DdLink href="/methodiek">7LIFE Methodiek</DdLink>
-            <DdLink href="/onze-mensen">Onze mensen</DdLink>
-            <DdLink href="/academie">Academie voor Bestuur en Leiderschap</DdLink>
-            <DdLink href="/foundation">7LIFE Foundation</DdLink>
+          <div className="absolute top-full left-0 min-w-[200px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+            <DdLink href="/wie-zijn-wij" dotKleur="#EE7E06">Wie zijn wij</DdLink>
+            <DdLink href="/methodiek" dotKleur="#EE7E06">7LIFE Methodiek</DdLink>
           </div>
         </div>
 
-        <Link href="/opleidingsaanbod" className={navItem}>
-          Opleidingsaanbod
-        </Link>
-
-        <Link href="/agenda" className={navItem}>
-          Opleidingsagenda
+        <Link href="/foundation" className={navItem}>
+          7LIFE Foundation
         </Link>
 
         <Link href="/#contact" className={navItem}>
@@ -93,29 +89,25 @@ export default function Header() {
   );
 }
 
-function DdLink({ href, children }: { href: string; children: React.ReactNode }) {
+function DdLink({
+  href,
+  children,
+  dotKleur = "#EE7E06",
+}: {
+  href: string;
+  children: React.ReactNode;
+  dotKleur?: string;
+}) {
   return (
     <Link
       href={href}
-      className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] text-tekst hover:bg-achtergrond transition-colors before:content-[''] before:w-[5px] before:h-[5px] before:rounded-full before:bg-oranje before:flex-shrink-0"
+      className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] text-tekst hover:bg-achtergrond transition-colors"
     >
+      <span
+        className="w-[5px] h-[5px] rounded-full flex-shrink-0"
+        style={{ background: dotKleur }}
+      />
       {children}
     </Link>
-  );
-}
-
-function DdLabel({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`text-[10px] font-semibold tracking-[1.2px] text-subtekst uppercase px-2.5 pt-1 pb-1 ${className}`}
-    >
-      {children}
-    </div>
   );
 }
