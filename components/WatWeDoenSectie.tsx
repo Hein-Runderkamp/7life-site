@@ -22,12 +22,15 @@ const gebouwd: {
     nr: "01",
     naam: "7LIFE",
     tekst: "De basis van alles: een methodiek, een netwerk, tools en trajecten waarmee mensen en teams zichzelf leren kennen.",
+    link: "/7life",
+    linkTekst: "Naar 7LIFE →",
     watermerk: "/wie-zijn-wij/watermerken/7life-oranje.png",
     items: [
-      { naam: "De 7LIFE-methodiek", link: "/methodiek" },
-      { naam: "Netwerk van 40+ gecertificeerde professionals", link: "/onze-mensen" },
-      { naam: "Tools & scans", link: "/build-strong-individueel#tools" },
-      { naam: "Trajecten", link: "/organisaties#sectoren" },
+      { naam: "Wie zijn wij", link: "/wie-zijn-wij" },
+      { naam: "7LIFE Methodiek", link: "/methodiek" },
+      { naam: "Onze mensen", link: "/onze-mensen" },
+      { naam: "Build Strong Individueel", link: "/build-strong-individueel" },
+      { naam: "Build Strong Jongeren", link: "/jongeren" },
     ],
   },
   {
@@ -35,8 +38,11 @@ const gebouwd: {
     nr: "02",
     naam: "Zakelijk & B2B",
     tekst: "Instrumenten die organisaties inzicht geven in mensen, structuur en impact — en ze helpen bewegen.",
+    link: "/zakelijk-b2b",
+    linkTekst: "Naar Zakelijk & B2B →",
     watermerk: "/wie-zijn-wij/watermerken/7life-blauw.png",
     items: [
+      { naam: "Build Strong Organisaties", link: "/organisaties" },
       { naam: "Impact Check", link: "/impact-check" },
       { naam: "Impact Dynamics Scan", link: "/ids" },
       { naam: "Social Impact Dashboard", link: "/social-impact-dashboard" },
@@ -46,17 +52,18 @@ const gebouwd: {
   {
     kleur: "#6B7B45",
     nr: "03",
-    naam: "Academie voor Bestuur & Leiderschap",
-    tekst: "Diepgaande ontwikkeling voor bestuurders en leidinggevenden — van scan tot coaching en leergang.",
-    link: "/bestuur-en-leiderschap",
+    naam: "Academie",
+    tekst: "Leiderschapsontwikkeling, masterclasses en opleidingen — voor bestuurders, leidinggevenden en (aankomend) trainers.",
+    link: "/academie",
     linkTekst: "Naar de Academie →",
     watermerk: "/wie-zijn-wij/watermerken/academie-olijf.png",
     items: [
-      { naam: "LeiderschapScan" },
-      { naam: "Coaching" },
-      { naam: "Consultancy" },
-      { naam: "Leiderschapstrajecten" },
+      { naam: "Build Strong Leiderschap", link: "/leiderschap" },
+      { naam: "Academie voor Bestuur & Leiderschap", link: "/bestuur-en-leiderschap" },
       { naam: "Social Impact Theater", link: "/social-impact-theater" },
+      { naam: "Trainer worden", link: "/opleiden" },
+      { naam: "Opleidingsaanbod", link: "/opleidingsaanbod" },
+      { naam: "Opleidingsagenda", link: "/agenda" },
     ],
   },
   {
@@ -80,15 +87,15 @@ const gebouwd: {
 
 export default function WatWeDoenSectie() {
   return (
-    <section className="bg-donker px-[5%] py-[88px]" id="wat-we-doen">
+    <section className="bg-achtergrond px-[5%] py-[88px]" id="wat-we-doen">
       <div className="max-w-[1100px] mx-auto">
-        <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
+        <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
           Wat we doen
         </div>
-        <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-2.5">
+        <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-2.5">
           Zo is 7LIFE opgebouwd.
         </h2>
-        <p className="text-white/50 text-[15px] leading-[1.7] max-w-[620px] mb-2">
+        <p className="text-subtekst text-[15px] leading-[1.7] max-w-[620px] mb-2">
           Vier onderdelen, één overtuiging: mensen en organisaties helpen
           begrijpen wat er speelt — en in beweging brengen. Kies hieronder
           waar je meer over wilt weten.
