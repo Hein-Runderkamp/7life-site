@@ -1,17 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const heroStijlen = [
-  { naam: "Pionier", kleur: "#1B3B6F", bg: "rgba(27,59,111,0.2)", tekst: "#7a9fd4" },
-  { naam: "Doener", kleur: "#8B3FA0", bg: "rgba(139,63,160,0.15)", tekst: "#c98fdb" },
-  { naam: "Zorger", kleur: "#D7263D", bg: "rgba(215,38,61,0.15)", tekst: "#e87085" },
-  { naam: "Verbinder", kleur: "#F2C12E", bg: "rgba(242,193,46,0.15)", tekst: "#d4ae1a" },
-  { naam: "Strateeg", kleur: "#3E8FA3", bg: "rgba(62,143,163,0.15)", tekst: "#7ec4d4" },
-  { naam: "Beheerder", kleur: "#8a8a8a", bg: "rgba(138,138,138,0.18)", tekst: "#b3b3b3" },
-  { naam: "Doordenker", kleur: "#2E7D52", bg: "rgba(46,125,82,0.15)", tekst: "#6ac090" },
-];
+import MensSectie from "@/components/MensSectie";
 
 const lagen = [
   { nr: "1", naam: "Identity", tekst: "Drijfveren, waarden, overtuigingen — wie iemand werkelijk ís", kleur: "#EE7E06", bg: "rgba(238,126,6,0.12)" },
@@ -72,18 +62,8 @@ const scanOnderdelen = [
   { nr: "1", tekst: "Communicatiestijlen — 7 dimensies, jouw unieke profiel" },
   { nr: "2", tekst: "Leerstijl — hoe jij het best groeit en ontwikkelt" },
   { nr: "3", tekst: "Veranderkracht — jouw vermogen om in beweging te komen" },
-  { nr: "4", tekst: "Open vragen — JA-gebied en NEE-gebied in kaart" },
+  { nr: "4", tekst: "Mindset — Open vragen over veranderkracht en motivatie" },
   { nr: "+", tekst: "Persoonlijke terugkoppeling door gecertificeerde trainer" },
-];
-
-const scanVoorbeeld = [
-  { naam: "Verbinder", kleur: "#F2C12E", pct: 79 },
-  { naam: "Zorger", kleur: "#D7263D", pct: 72 },
-  { naam: "Beheerder", kleur: "#8a8a8a", pct: 70 },
-  { naam: "Pionier", kleur: "#1B3B6F", pct: 66 },
-  { naam: "Strateeg", kleur: "#3E8FA3", pct: 61 },
-  { naam: "Doener", kleur: "#8B3FA0", pct: 55 },
-  { naam: "Doordenker", kleur: "#2E7D52", pct: 48 },
 ];
 
 export default function MethodiekPagina() {
@@ -92,16 +72,29 @@ export default function MethodiekPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker mx-4 mt-4 rounded-[28px] px-[6%] pt-[150px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/methodiek/hero-achtergrond.jpg"
+            alt="De 7LIFE-methodiek"
+            fill
+            priority
+            className="object-cover"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 55% at 88% 12%, rgba(238,126,6,0.15) 0%, transparent 60%), radial-gradient(ellipse 45% 60% at 5% 88%, rgba(123,94,167,0.08) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-14 items-center">
-            <div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="max-w-[620px]">
               <div className="inline-flex items-center gap-1.5 bg-oranje/10 border border-oranje/[0.22] text-oranje text-[11px] font-medium tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-6 uppercase">
                 De 7LIFE-methodiek
               </div>
@@ -131,27 +124,10 @@ export default function MethodiekPagina() {
                 </a>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {heroStijlen.map((s) => (
-                <div
-                  key={s.naam}
-                  className="rounded-full px-3.5 py-[7px] text-xs font-medium flex items-center gap-1.5"
-                  style={{ background: s.bg, color: s.tekst }}
-                >
-                  <span
-                    className="w-2 h-2 rounded-full flex-shrink-0"
-                    style={{ background: s.kleur }}
-                  />
-                  {s.naam}
-                </div>
-              ))}
-              <div className="rounded-full px-3.5 py-[7px] text-xs font-medium flex items-center gap-1.5 bg-white/[0.08] text-white/50">
-                <span className="w-2 h-2 rounded-full flex-shrink-0 bg-white/40" />
-                + Veranderkracht
-              </div>
-            </div>
           </div>
         </section>
+
+        <MensSectie />
 
         {/* OORSPRONG */}
         {/* GEEN TEST / HET MODEL */}
@@ -383,31 +359,14 @@ export default function MethodiekPagina() {
               <div className="text-[11px] font-bold tracking-[1.5px] text-oranje uppercase mb-5">
                 Voorbeeld communicatieprofiel
               </div>
-              {scanVoorbeeld.map((s, i) => (
-                <div
-                  key={s.naam}
-                  className={`flex items-center justify-between py-2.5 ${
-                    i < scanVoorbeeld.length - 1 ? "border-b border-white/[0.07]" : ""
-                  }`}
-                >
-                  <div className="text-[13px] text-white font-medium flex items-center gap-2 w-[110px] flex-shrink-0">
-                    <span
-                      className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ background: s.kleur }}
-                    />
-                    {s.naam}
-                  </div>
-                  <div className="flex-1 mx-3.5 h-1.5 bg-white/[0.08] rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full"
-                      style={{ background: s.kleur, width: `${s.pct}%` }}
-                    />
-                  </div>
-                  <div className="text-xs text-white/40 w-8 text-right">
-                    {s.pct}
-                  </div>
-                </div>
-              ))}
+              <div className="relative w-full aspect-[588/716] rounded-lg overflow-hidden">
+                <Image
+                  src="/methodiek/communicatieprofiel-voorbeeld.jpg"
+                  alt="Voorbeeld communicatieprofiel — communicatiestijl-scores"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <div className="mt-4 text-[11px] text-white/25 leading-[1.5]">
                 Illustratief voorbeeld. Elk profiel is uniek. De scan
                 wordt altijd begeleid door een gecertificeerde 7LIFE
@@ -436,12 +395,14 @@ export default function MethodiekPagina() {
             >
               Plan een gesprek
             </a>
-            <Link
-              href="/impact-check"
+            <a
+              href="/downloads/7life-fullscan-methodiek.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-transparent text-white border-[1.5px] border-white/[0.18] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/45 transition-colors"
             >
-              Start met een Impact Check
-            </Link>
+              Ontdek meer
+            </a>
           </div>
         </section>
       </main>

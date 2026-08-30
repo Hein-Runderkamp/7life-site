@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CommunicatiestijlenDiagram from "./CommunicatiestijlenDiagram";
 import StijlenIconenRij from "./StijlenIconenRij";
 
@@ -55,8 +56,18 @@ export default function MensSectie() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-9 items-stretch mt-16">
           {/* Quote */}
-          <div className="flex items-center justify-center text-center px-2.5 py-5 bg-kaart border-[1.5px] border-black/[0.07] rounded-card">
-            <blockquote className="font-serif text-[clamp(22px,2.6vw,30px)] font-light italic text-donker leading-[1.35]">
+          <div className="relative flex items-center justify-center text-center px-2.5 py-5 border-[1.5px] border-black/[0.07] rounded-card overflow-hidden">
+            <Image
+              src="/methodiek/quote-achtergrond.jpg"
+              alt=""
+              fill
+              className="object-cover"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "rgba(20,20,20,0.45)" }}
+            />
+            <blockquote className="relative z-10 font-serif text-[clamp(22px,2.6vw,30px)] font-light italic text-white leading-[1.35]">
               &ldquo;Ontdek wat mensen
               <br />
               in beweging brengt&rdquo;
@@ -91,7 +102,7 @@ export default function MensSectie() {
 
         <div className="text-center mt-11">
           <a
-            href="#flow"
+            href="#bouwblokken"
             className="text-oranje text-sm font-medium no-underline hover:underline"
           >
             Ontdek de 7LIFE-methodiek →

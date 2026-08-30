@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import MensSectie from "@/components/MensSectie";
 import AchterZitSectie from "@/components/AchterZitSectie";
 import VraagSectie from "@/components/VraagSectie";
 import JourneySectie from "@/components/JourneySectie";
@@ -18,7 +17,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <MensSectie />
         <AchterZitSectie />
         <VraagSectie />
         <JourneySectie />
