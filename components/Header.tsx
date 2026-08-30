@@ -30,7 +30,6 @@ export default function Header() {
             <DdLink href="/onze-mensen" dotKleur="#EE7E06">Onze mensen</DdLink>
             <DdLink href="/build-strong-individueel" dotKleur="#EE7E06">Build Strong Individueel</DdLink>
             <DdLink href="/jongeren" dotKleur="#EE7E06">Build Strong Jongeren</DdLink>
-            <DdLink href="/organisaties" dotKleur="#EE7E06">Build Strong Organisaties</DdLink>
           </div>
         </div>
 
@@ -40,6 +39,7 @@ export default function Header() {
             Zakelijk &amp; B2B <span className="ml-1 text-[11px] opacity-50">▾</span>
           </span>
           <div className="absolute top-full left-0 min-w-[220px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+            <DdLink href="/organisaties" dotKleur="#3E8FA3">Build Strong Organisaties</DdLink>
             <DdLink href="/impact-check" dotKleur="#3E8FA3">Impact Check</DdLink>
             <DdLink href="/ids" dotKleur="#3E8FA3">Impact Dynamics Scan</DdLink>
             <DdLink href="/social-impact-dashboard" dotKleur="#3E8FA3">Social Impact Dashboard</DdLink>
@@ -52,8 +52,9 @@ export default function Header() {
           <span className={navItem}>
             Academie <span className="ml-1 text-[11px] opacity-50">▾</span>
           </span>
-          <div className="absolute top-full left-0 min-w-[250px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
-            <DdLink href="/leiderschap" dotKleur="#6B7B45">Academie voor Bestuur en Leiderschap</DdLink>
+          <div className="absolute top-full left-0 min-w-[260px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+            <DdLink href="/leiderschap" dotKleur="#6B7B45">Build Strong Leiderschap</DdLink>
+            <DdLink href="/bestuur-en-leiderschap" dotKleur="#6B7B45">Academie voor Bestuur en Leiderschap</DdLink>
             <DdLink href="/social-impact-theater" dotKleur="#6B7B45">Social Impact Theater</DdLink>
             <DdLink href="/opleiden" dotKleur="#6B7B45">Trainer worden</DdLink>
             <DdLink href="/opleidingsaanbod" dotKleur="#6B7B45">Opleidingsaanbod</DdLink>

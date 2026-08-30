@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const paginas = [
+  { naam: "Build Strong Organisaties", tekst: "Sterke teams en gezonde organisaties bouwen.", href: "/organisaties" },
   { naam: "Impact Check", tekst: "Compacte analyse die de belangrijkste vraagstukken en ontwikkelkansen in kaart brengt.", href: "/impact-check" },
   { naam: "Impact Dynamics Scan", tekst: "Vijf lenzen, één dynamiek — wat er onder de oppervlakte speelt in je organisatie.", href: "/ids" },
   { naam: "Social Impact Dashboard", tekst: "Meet, leer en verbeter — maatschappelijke impact zichtbaar gemaakt.", href: "/social-impact-dashboard" },

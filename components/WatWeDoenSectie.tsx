@@ -48,7 +48,7 @@ const gebouwd: {
     nr: "03",
     naam: "Academie voor Bestuur & Leiderschap",
     tekst: "Diepgaande ontwikkeling voor bestuurders en leidinggevenden — van scan tot coaching en leergang.",
-    link: "/leiderschap",
+    link: "/bestuur-en-leiderschap",
     linkTekst: "Naar de Academie →",
     watermerk: "/wie-zijn-wij/watermerken/academie-olijf.png",
     items: [

@@ -9,10 +9,10 @@ const stats = [
 ];
 
 const paden = [
-  { naam: "7LIFE", tekst: "Methodiek, netwerk & trajecten", href: "/7life", kleur: "#EE7E06" },
-  { naam: "Zakelijk & B2B", tekst: "Scans & instrumenten", href: "/zakelijk-b2b", kleur: "#3E8FA3" },
-  { naam: "Academie", tekst: "Voor bestuur & leiderschap", href: "/academie", kleur: "#6B7B45" },
-  { naam: "Foundation", tekst: "Voor kwetsbare groepen", href: "/foundation", kleur: "#2E7D52" },
+  { naam: "7LIFE", href: "/7life", kleur: "#EE7E06" },
+  { naam: "Zakelijk & B2B", href: "/zakelijk-b2b", kleur: "#3E8FA3" },
+  { naam: "Academie", href: "/academie", kleur: "#6B7B45" },
+  { naam: "Foundation", href: "/foundation", kleur: "#2E7D52" },
 ];
 
 export default function Hero() {
@@ -68,19 +68,18 @@ export default function Hero() {
                 <Link
                   key={p.naam}
                   href={p.href}
-                  className="rounded-2xl px-5 py-4 transition-all hover:-translate-y-0.5"
+                  className="rounded-2xl px-5 py-4 flex items-center justify-center text-center transition-all hover:-translate-y-0.5"
                   style={{
                     background: `${p.kleur}1F`,
                     border: `1.5px solid ${p.kleur}66`,
                   }}
                 >
                   <div
-                    className="text-[15px] font-semibold mb-0.5"
+                    className="text-[15px] font-semibold"
                     style={{ color: p.kleur }}
                   >
                     {p.naam}
                   </div>
-                  <div className="text-white/50 text-xs">{p.tekst}</div>
                 </Link>
               ))}
             </div>

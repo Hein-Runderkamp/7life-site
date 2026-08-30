@@ -77,7 +77,7 @@ export default function LeiderschapPagina() {
               </p>
               <div className="flex gap-2.5 flex-wrap">
                 <a
-                  href="/academie#trajecten"
+                  href="/bestuur-en-leiderschap#trajecten"
                   className="bg-oranje text-white px-6 py-[11px] rounded-full text-sm font-medium hover:bg-[#d4710a] transition-colors"
                 >
                   Bekijk de trajecten
@@ -236,7 +236,7 @@ export default function LeiderschapPagina() {
                 </div>
                 <div className="flex gap-2.5 flex-wrap">
                   <Link
-                    href="/academie#trajecten"
+                    href="/bestuur-en-leiderschap#trajecten"
                     className="bg-blauw text-white px-6 py-[11px] rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
                   >
                     Bekijk ons aanbod →
@@ -314,7 +314,7 @@ export default function LeiderschapPagina() {
                 Bekijk de Academie
               </a>
               <Link
-                href="/academie"
+                href="/bestuur-en-leiderschap"
                 className="bg-transparent text-white border-[1.5px] border-white/20 px-6 py-[11px] rounded-full text-sm font-medium hover:border-white/50 transition-colors"
               >
                 Bekijk ons aanbod
