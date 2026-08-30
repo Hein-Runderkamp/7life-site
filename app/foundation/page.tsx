@@ -1,12 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const heroCards = [
-  { icon: "🌱", titel: "Persoonlijke ontwikkeling", tekst: "Inzicht in wie je bent, wat je drijft en wat je in beweging brengt — voor iedereen." },
-  { icon: "🧠", titel: "Mentale weerbaarheid", tekst: "Praktische tools en programma's die mensen helpen sterker in het leven te staan." },
-  { icon: "💚", titel: "Geestelijke groei", tekst: "Geïnspireerd door christelijke waarden, toegankelijk voor iedereen — ongeacht achtergrond of kerkgenootschap." },
-];
 
 const doelen = [
   { icon: "🌿", titel: "Persoonlijke ontwikkeling", tekst: "Mensen helpen ontdekken wie ze zijn, wat ze kunnen en wat ze in beweging brengt — via programma's, trainingen en 7LIFE-tools." },
@@ -40,16 +35,29 @@ export default function FoundationPagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker mx-4 mt-4 rounded-[28px] px-[6%] pt-[150px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/foundation/hero-achtergrond.jpg"
+            alt="7LIFE Foundation"
+            fill
+            priority
+            className="object-cover"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 55% at 85% 15%, rgba(46,125,82,0.18) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 5% 90%, rgba(238,126,6,0.07) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-14 items-center">
-            <div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
+            <div className="max-w-[620px]">
               <div className="inline-flex items-center gap-1.5 bg-[#2E7D52]/[0.15] border border-[#2E7D52]/30 text-[#5aad7e] text-[11px] font-medium tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-6 uppercase">
                 7LIFE Foundation
               </div>
@@ -74,28 +82,12 @@ export default function FoundationPagina() {
                   Onze doelstelling
                 </a>
                 <a
-                  href="#cta"
+                  href="mailto:info@7life.nl?subject=7LIFE Foundation"
                   className="bg-transparent text-white border-[1.5px] border-white/20 px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/50 transition-colors"
                 >
                   Neem contact op
                 </a>
               </div>
-            </div>
-            <div className="flex flex-col gap-3.5">
-              {heroCards.map((c) => (
-                <div
-                  key={c.titel}
-                  className="bg-white/5 border border-white/10 rounded-2xl px-6 py-[22px]"
-                >
-                  <div className="text-2xl mb-2.5">{c.icon}</div>
-                  <div className="text-sm font-medium text-white mb-1.5">
-                    {c.titel}
-                  </div>
-                  <div className="text-[13px] text-white/45 leading-[1.55]">
-                    {c.tekst}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -137,17 +129,36 @@ export default function FoundationPagina() {
                 </p>
               </div>
             </div>
-            <div className="bg-donker rounded-[20px] px-8 py-9 relative">
-              <div className="font-serif text-[80px] text-[#2E7D52]/35 leading-none absolute -top-2 left-6">
-                &ldquo;
+            <div className="bg-donker rounded-[20px] overflow-hidden">
+              <div className="relative w-full aspect-[16/10]">
+                <Image
+                  src="/foundation/lightlife-project.jpg"
+                  alt="The LightLife Project"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <blockquote className="font-serif text-xl font-light text-white leading-[1.5] italic mt-8">
-                Waarom zou je jezelf vergelijken met anderen? Niemand in
-                de hele wereld kan beter jou zijn dan jijzelf.
-              </blockquote>
-              <cite className="block mt-5 text-[13px] text-white/40 not-italic">
-                Maroesja van der Pols — oprichter 7LIFE Foundation
-              </cite>
+              <div className="px-8 py-8">
+                <div className="relative w-[150px] h-[52px] mb-5">
+                  <Image
+                    src="/wie-zijn-wij/watermerken/lightlife-goud.png"
+                    alt="The LightLife Project"
+                    fill
+                    className="object-contain object-left"
+                  />
+                </div>
+                <p className="font-serif text-xl font-light text-white leading-[1.5] mb-5">
+                  Welkom bij the LightLife Project.
+                </p>
+                <a
+                  href="https://www.lightlifeproject.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#5aad7e] hover:underline"
+                >
+                  Naar lightlifeproject.nl →
+                </a>
+              </div>
             </div>
           </div>
         </section>

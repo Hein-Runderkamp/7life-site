@@ -66,7 +66,7 @@ export default function Header() {
             <DdLink href="/methodiek">7LIFE Methodiek</DdLink>
             <DdLink href="/onze-mensen">Onze mensen</DdLink>
             <DdLink href="/academie">Academie voor Bestuur en Leiderschap</DdLink>
-            <DdLink href="/foundation">Foundation</DdLink>
+            <DdLink href="/foundation">7LIFE Foundation</DdLink>
           </div>
         </div>
 
