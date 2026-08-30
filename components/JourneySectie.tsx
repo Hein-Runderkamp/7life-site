@@ -164,7 +164,6 @@ export default function JourneySectie() {
               <div className="text-xs font-semibold text-subtekst mb-1.5">
                 {s.nr}
               </div>
-              <div className="text-xl mb-1.5">{s.icon}</div>
               <div className="text-[11px] uppercase tracking-wide text-subtekst mb-0.5">
                 {s.fase}
               </div>

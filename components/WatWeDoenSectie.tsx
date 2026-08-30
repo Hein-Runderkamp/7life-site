@@ -80,20 +80,18 @@ const gebouwd: {
 
 export default function WatWeDoenSectie() {
   return (
-    <section className="bg-donker mx-4 mt-6 mb-6 rounded-3xl px-[6%] py-[72px]" id="wat-we-doen">
+    <section className="bg-donker px-[5%] py-[88px]" id="wat-we-doen">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
           Wat we doen
         </div>
         <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-2.5">
-          Vanuit onze overtuiging
-          <br />
-          hebben we dit gebouwd.
+          Zo is 7LIFE opgebouwd.
         </h2>
         <p className="text-white/50 text-[15px] leading-[1.7] max-w-[620px] mb-2">
-          Wat we geloven, hebben we vertaald naar vier samenhangende
-          onderdelen — samen vormen ze wie 7LIFE is en wat we voor
-          jou kunnen betekenen.
+          Vier onderdelen, één overtuiging: mensen en organisaties helpen
+          begrijpen wat er speelt — en in beweging brengen. Kies hieronder
+          waar je meer over wilt weten.
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-8">
           {gebouwd.map((g) => (

@@ -24,7 +24,9 @@ export default function Header() {
           <span className={navItem}>
             7LIFE <span className="ml-1 text-[11px] opacity-50">▾</span>
           </span>
-          <div className="absolute top-full left-0 min-w-[240px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+          <div className="absolute top-full left-0 min-w-[250px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
+            <DdLink href="/wie-zijn-wij" dotKleur="#EE7E06">Wie zijn wij</DdLink>
+            <DdLink href="/methodiek" dotKleur="#EE7E06">7LIFE Methodiek</DdLink>
             <DdLink href="/onze-mensen" dotKleur="#EE7E06">Onze mensen</DdLink>
             <DdLink href="/build-strong-individueel" dotKleur="#EE7E06">Build Strong Individueel</DdLink>
             <DdLink href="/jongeren" dotKleur="#EE7E06">Build Strong Jongeren</DdLink>
@@ -56,17 +58,6 @@ export default function Header() {
             <DdLink href="/opleiden" dotKleur="#6B7B45">Trainer worden</DdLink>
             <DdLink href="/opleidingsaanbod" dotKleur="#6B7B45">Opleidingsaanbod</DdLink>
             <DdLink href="/agenda" dotKleur="#6B7B45">Opleidingsagenda</DdLink>
-          </div>
-        </div>
-
-        {/* Over 7LIFE */}
-        <div className="relative group">
-          <span className={navItem}>
-            Over 7LIFE <span className="ml-1 text-[11px] opacity-50">▾</span>
-          </span>
-          <div className="absolute top-full left-0 min-w-[200px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
-            <DdLink href="/wie-zijn-wij" dotKleur="#EE7E06">Wie zijn wij</DdLink>
-            <DdLink href="/methodiek" dotKleur="#EE7E06">7LIFE Methodiek</DdLink>
           </div>
         </div>
 

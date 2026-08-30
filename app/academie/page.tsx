@@ -239,6 +239,27 @@ export default function AcademiePagina() {
           </div>
         </section>
 
+        {/* MEER UIT DE ACADEMIE */}
+        <section className="bg-donker border-t border-white/[0.08] px-[5%] py-6">
+          <div className="max-w-[1100px] mx-auto flex flex-wrap items-center gap-x-8 gap-y-3">
+            <span className="text-white/40 text-xs uppercase tracking-wide">
+              Meer uit de Academie
+            </span>
+            <a href="/social-impact-theater" className="text-white/70 text-sm hover:text-olijf transition-colors">
+              Social Impact Theater
+            </a>
+            <a href="/opleiden" className="text-white/70 text-sm hover:text-olijf transition-colors">
+              Trainer worden
+            </a>
+            <a href="/opleidingsaanbod" className="text-white/70 text-sm hover:text-olijf transition-colors">
+              Opleidingsaanbod
+            </a>
+            <a href="/agenda" className="text-white/70 text-sm hover:text-olijf transition-colors">
+              Opleidingsagenda
+            </a>
+          </div>
+        </section>
+
         {/* UITGELICHT */}
         <section className="px-[5%] py-[72px] bg-achtergrond" id="academie">
           <div className="max-w-[1100px] mx-auto">

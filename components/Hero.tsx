@@ -9,10 +9,10 @@ const stats = [
 ];
 
 const paden = [
-  { naam: "7LIFE", href: "/methodiek", kleur: "#EE7E06" },
-  { naam: "Zakelijk & B2B", href: "/organisaties", kleur: "#3E8FA3" },
-  { naam: "Academie", href: "/academie", kleur: "#6B7B45" },
-  { naam: "7LIFE Foundation", href: "/foundation", kleur: "#2E7D52" },
+  { naam: "7LIFE", tekst: "Methodiek, netwerk & trajecten", href: "/7life", kleur: "#EE7E06" },
+  { naam: "Zakelijk & B2B", tekst: "Scans & instrumenten", href: "/zakelijk-b2b", kleur: "#3E8FA3" },
+  { naam: "Academie", tekst: "Voor bestuur & leiderschap", href: "/academie", kleur: "#6B7B45" },
+  { naam: "Foundation", tekst: "Voor kwetsbare groepen", href: "/foundation", kleur: "#2E7D52" },
 ];
 
 export default function Hero() {
@@ -55,27 +55,32 @@ export default function Hero() {
               <br />
               <em className="text-oranje not-italic italic">In beweging komen.</em>
             </h1>
-            <p className="text-white/60 text-base leading-[1.75] mb-9 max-w-[440px]">
+            <p className="text-white/60 text-base leading-[1.75] mb-8 max-w-[460px]">
               7LIFE combineert wetenschappelijk onderbouwde scans met
               persoonlijke begeleiding — voor leiders, teams en
               organisaties die verder willen dan een eenmalig advies.
             </p>
-            <div className="text-white/40 text-xs uppercase tracking-wide mb-2.5">
+            <div className="text-white/45 text-[13px] uppercase tracking-wide mb-3">
               Waar wil je beginnen?
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-[520px]">
+            <div className="grid grid-cols-2 gap-3 max-w-[540px]">
               {paden.map((p) => (
                 <Link
                   key={p.naam}
                   href={p.href}
-                  className="text-center px-3 py-2.5 rounded-xl text-[13px] font-medium transition-all hover:-translate-y-0.5"
+                  className="rounded-2xl px-5 py-4 transition-all hover:-translate-y-0.5"
                   style={{
                     background: `${p.kleur}1F`,
-                    border: `1px solid ${p.kleur}66`,
-                    color: p.kleur,
+                    border: `1.5px solid ${p.kleur}66`,
                   }}
                 >
-                  {p.naam}
+                  <div
+                    className="text-[15px] font-semibold mb-0.5"
+                    style={{ color: p.kleur }}
+                  >
+                    {p.naam}
+                  </div>
+                  <div className="text-white/50 text-xs">{p.tekst}</div>
                 </Link>
               ))}
             </div>
