@@ -64,7 +64,7 @@ Ik ben een bevlogen trainer en spreker die mensen helpt om zichzelf beter te ler
   { naam: "Annemieke Timmerman", slug: "annemieke-timmerman", org: "Trainer", foto: null, bio: [] },
   { naam: "Emily Homburg", slug: "emily-homburg", org: "Trainer", foto: "/team/emily-homburg.jpeg", bio: [] },
   { naam: "Joella Opraus", slug: "joella-opraus", org: "Trainer", foto: "/team/joella-opraus.jpeg", bio: [] },
-  { naam: "Elle Theunissen", slug: "elle-theunissen", org: "Trainer", foto: "/team/elle-theunissen.jpeg", bio: [] },
+  { naam: "Elleke Theunissen", slug: "elle-theunissen", org: "Trainer", foto: "/team/elle-theunissen.jpeg", bio: [] },
   { naam: "Hester van Houwelingen", slug: "hester-van-houwelingen", org: "Trainer", foto: null, bio: [] },
   { naam: "Suzanne Bot", slug: "suzanne-bot", org: "Trainer", foto: "/team/suzanne-bot.jpeg", bio: [] },
   { naam: "Maaike Woertink", slug: "maaike-woertink", org: "Trainer", foto: null, bio: [] },
