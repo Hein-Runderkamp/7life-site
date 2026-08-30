@@ -45,14 +45,15 @@ export default function AcademieHubPagina() {
                 Academie
               </div>
               <h1 className="font-serif text-[clamp(38px,5vw,64px)] font-light text-white leading-[1.1] tracking-[-1px] mb-4">
-                Leiderschap begint
+                Investeren in
                 <br />
-                bij jezelf.
+                ontwikkeling.
               </h1>
               <p className="text-white/50 text-base leading-[1.75] mb-2 max-w-[560px]">
-                Diepgaande ontwikkeling voor leidinggevenden, bestuurders,
-                coaches en professionals — van eerste inzicht tot
-                masterclass en certificering.
+                Van leiderschapstrajecten en masterclasses tot certificering
+                als 7LIFE Trainer — de Academie is de plek waar
+                leidinggevenden, bestuurders, coaches en (aankomend)
+                trainers zich verder ontwikkelen.
               </p>
             </div>
           </div>
