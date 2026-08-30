@@ -23,7 +23,6 @@ const hoeWeWerken = [
 
 const bestuur = [
   { letter: "M", naam: "Maroesja Runderkamp-van der Pols", rol: "Voorzitter", tekst: "Oprichter van 7LIFE en drijvende kracht achter de methodiek. Zij brengt meer dan 30 jaar ervaring in persoonlijke ontwikkeling en organisatiegroei mee naar de Foundation." },
-  { letter: "H", naam: "Hein Runderkamp", rol: "Secretaris & Penningmeester", tekst: "Operations director van 7LIFE Nederland. Als secretaris en penningmeester van de Foundation bewaakt hij de administratieve en financiële continuïteit van de stichting." },
 ];
 
 const samenwerkingPunten = [
@@ -237,7 +236,7 @@ export default function FoundationPagina() {
             </h2>
             <p className="text-[15px] text-subtekst leading-[1.7] max-w-[540px] mb-10">
               De Stichting 7LIFE Foundation wordt geleid door een
-              tweekoppig bestuur, gevestigd in Ermelo.
+              bestuur, gevestigd in Ermelo.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[680px]">
               {bestuur.map((b) => (
