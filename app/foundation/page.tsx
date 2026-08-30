@@ -185,13 +185,16 @@ export default function FoundationPagina() {
               {doelen.map((d) => (
                 <div
                   key={d.titel}
-                  className="bg-white/[0.045] border-[1.5px] border-white/10 rounded-2xl px-6 py-[26px] hover:border-[var(--hk)] hover:bg-[var(--hkbg)] transition-all"
-                  style={{ "--hk": d.kleur, "--hkbg": `${d.kleur}15` } as React.CSSProperties}
+                  className="bg-kaart border-[1.5px] border-black/[0.07] rounded-2xl px-6 py-[26px] hover:border-[var(--hk)] transition-colors"
+                  style={{ "--hk": d.kleur } as React.CSSProperties}
                 >
-                  <div className="text-base font-medium text-white mb-2">
+                  <div
+                    className="text-base font-semibold mb-2"
+                    style={{ color: d.kleur }}
+                  >
                     {d.titel}
                   </div>
-                  <p className="text-[13.5px] text-white/50 leading-[1.65]">
+                  <p className="text-[13.5px] text-tekst/70 leading-[1.65]">
                     {d.tekst}
                   </p>
                 </div>
@@ -239,8 +242,8 @@ export default function FoundationPagina() {
 
         {/* SAMENWERKING MET 7LIFE */}
         <section className="bg-donker border-t-4 border-[#2E7D52] px-[5%] py-[72px]">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-14">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr_0.9fr] gap-10 items-start">
               <div>
                 <div className="text-[11px] font-semibold tracking-[2px] text-[#5aad7e] uppercase mb-2.5">
                   Relatie met 7LIFE Nederland
@@ -271,7 +274,8 @@ export default function FoundationPagina() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col gap-3">
+
+              <div className="flex flex-col gap-3 lg:pt-9">
                 {samenwerkingPunten.map((p) => (
                   <div key={p} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#5aad7e] flex-shrink-0 mt-[7px]" />
@@ -281,32 +285,32 @@ export default function FoundationPagina() {
                   </div>
                 ))}
               </div>
-            </div>
 
-            <div className="border-t border-white/10 pt-12">
-              <div className="text-[11px] font-semibold tracking-[2px] text-[#5aad7e] uppercase mb-5">
-                Bestuur
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[680px]">
-                {bestuur.map((b) => (
-                  <div
-                    key={b.naam}
-                    className="bg-white/[0.045] border-[1.5px] border-white/10 rounded-2xl px-6 py-[26px] hover:border-[#5aad7e] transition-colors"
-                  >
-                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center font-serif text-xl font-semibold text-oranje mb-3.5">
-                      {b.letter}
+              <div className="lg:pt-9">
+                <div className="text-[11px] font-semibold tracking-[2px] text-[#5aad7e] uppercase mb-3">
+                  Bestuur
+                </div>
+                <div className="flex flex-col gap-4">
+                  {bestuur.map((b) => (
+                    <div
+                      key={b.naam}
+                      className="bg-white/[0.045] border-[1.5px] border-white/10 rounded-2xl px-6 py-[26px] hover:border-[#5aad7e] transition-colors"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center font-serif text-xl font-semibold text-oranje mb-3.5">
+                        {b.letter}
+                      </div>
+                      <div className="text-base font-medium text-white mb-1">
+                        {b.naam}
+                      </div>
+                      <div className="text-xs font-semibold tracking-wide text-[#5aad7e] uppercase mb-2.5">
+                        {b.rol}
+                      </div>
+                      <p className="text-[13.5px] text-white/50 leading-[1.6]">
+                        {b.tekst}
+                      </p>
                     </div>
-                    <div className="text-base font-medium text-white mb-1">
-                      {b.naam}
-                    </div>
-                    <div className="text-xs font-semibold tracking-wide text-[#5aad7e] uppercase mb-2.5">
-                      {b.rol}
-                    </div>
-                    <p className="text-[13.5px] text-white/50 leading-[1.6]">
-                      {b.tekst}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
