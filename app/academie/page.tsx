@@ -443,12 +443,6 @@ export default function AcademiePagina() {
               >
                 Bekijk de Academie
               </a>
-              <Link
-                href="/academie"
-                className="bg-transparent text-tekst border-[1.5px] border-black/[0.12] px-6 py-[11px] rounded-full text-sm font-medium hover:border-oranje hover:text-oranje transition-colors"
-              >
-                Bekijk ons aanbod
-              </Link>
             </div>
           </div>
         </section>
