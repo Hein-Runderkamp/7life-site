@@ -25,7 +25,7 @@ type Rol = {
 const rollen: Rol[] = [
   {
     key: "leider",
-    label: "🧭 Leidinggevenden & Bestuurders",
+    label: "Leidinggevenden & Bestuurders",
     kleur: "#6B7B45",
     intro:
       "Directeuren en bestuurders die leiderschap niet als positie zien, maar als verantwoordelijkheid. 7LIFE biedt individuele trajecten, leergroepen en de Academie voor Bestuur & Leiderschap voor wie écht het verschil wil maken.",
@@ -70,7 +70,7 @@ const rollen: Rol[] = [
   },
   {
     key: "teamleider",
-    label: "👥 Teamleiders",
+    label: "Teamleiders",
     kleur: "#6FB8DA",
     intro:
       "Teamleiders staan op de meest kritische plek in elke organisatie — tussen strategie en uitvoering. 7LIFE helpt teamleiders hun eigen stijl begrijpen en effectiever leidinggeven aan diverse teams.",
@@ -115,7 +115,7 @@ const rollen: Rol[] = [
   },
   {
     key: "coach",
-    label: "💬 Coaches & Adviseurs",
+    label: "Coaches & Adviseurs",
     kleur: "#CDA956",
     intro:
       "Coaches, adviseurs en HR-professionals die willen werken met een bewezen, wetenschappelijk onderbouwde methodiek. 7LIFE biedt de tools, het netwerk en de certificering om écht het verschil te maken bij jouw klanten.",

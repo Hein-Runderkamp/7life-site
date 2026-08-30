@@ -333,7 +333,7 @@ export default function OnzeMensenPagina() {
           </div>
         </section>
 
-        <StandaardCta />
+        <StandaardCta donker />
       </main>
       <Footer />
     </>
