@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,15 +17,28 @@ export default function ZevenLifePagina() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative bg-donker px-[5%] pt-[170px] pb-20 overflow-hidden">
+        <section className="relative flex items-end overflow-hidden bg-donker min-h-[520px] px-[5%] pt-[170px] pb-16">
+          <Image
+            src="/7life/hero-achtergrond.jpg"
+            alt="7LIFE"
+            fill
+            priority
+            className="object-cover"
+          />
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 85% 15%, rgba(238,126,6,0.16) 0%, transparent 60%), radial-gradient(ellipse 40% 60% at 5% 85%, rgba(238,126,6,0.08) 0%, transparent 60%)",
+                "linear-gradient(100deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.78) 40%, rgba(20,20,20,0.4) 70%, rgba(20,20,20,0.15) 100%)",
             }}
           />
-          <div className="max-w-[1100px] mx-auto relative z-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(0deg, rgba(20,20,20,0.5) 0%, transparent 40%)",
+            }}
+          />
+          <div className="max-w-[1100px] mx-auto relative z-10 w-full">
             <div className="max-w-[680px]">
               <div className="inline-flex items-center gap-1.5 bg-oranje/[0.12] border border-oranje/25 text-oranje text-[11px] font-medium tracking-[1.5px] px-3.5 py-[5px] rounded-full mb-5 uppercase">
                 7LIFE

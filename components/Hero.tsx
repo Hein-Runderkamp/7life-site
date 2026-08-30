@@ -57,8 +57,9 @@ export default function Hero() {
             </h1>
             <p className="text-white/60 text-base leading-[1.75] mb-8 max-w-[460px]">
               7LIFE combineert wetenschappelijk onderbouwde scans met
-              persoonlijke begeleiding — voor leiders, teams en
-              organisaties die verder willen dan een eenmalig advies.
+              persoonlijke begeleiding, innovatieve tools en
+              verandertrajecten — voor leiders, teams en organisaties die
+              verder willen dan een eenmalig advies.
             </p>
             <div className="text-white/45 text-[13px] uppercase tracking-wide mb-3">
               Waar wil je beginnen?

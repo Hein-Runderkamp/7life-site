@@ -21,9 +21,9 @@ export default function Header() {
       <div className="hidden lg:flex gap-0.5 items-center">
         {/* 7LIFE */}
         <div className="relative group">
-          <span className={navItem}>
+          <Link href="/7life" className={navItem}>
             7LIFE <span className="ml-1 text-[11px] opacity-50">▾</span>
-          </span>
+          </Link>
           <div className="absolute top-full left-0 min-w-[250px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/wie-zijn-wij" dotKleur="#EE7E06">Wie zijn wij</DdLink>
             <DdLink href="/methodiek" dotKleur="#EE7E06">7LIFE Methodiek</DdLink>
@@ -35,9 +35,9 @@ export default function Header() {
 
         {/* Zakelijk & B2B */}
         <div className="relative group">
-          <span className={navItem}>
+          <Link href="/zakelijk-b2b" className={navItem}>
             Zakelijk &amp; B2B <span className="ml-1 text-[11px] opacity-50">▾</span>
-          </span>
+          </Link>
           <div className="absolute top-full left-0 min-w-[220px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/organisaties" dotKleur="#3E8FA3">Build Strong Organisaties</DdLink>
             <DdLink href="/impact-check" dotKleur="#3E8FA3">Impact Check</DdLink>
@@ -49,9 +49,9 @@ export default function Header() {
 
         {/* Academie */}
         <div className="relative group">
-          <span className={navItem}>
+          <Link href="/academie" className={navItem}>
             Academie <span className="ml-1 text-[11px] opacity-50">▾</span>
-          </span>
+          </Link>
           <div className="absolute top-full left-0 min-w-[260px] bg-white rounded-b-xl p-2 pt-3 shadow-xl border border-black/5 border-t-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none group-hover:pointer-events-auto">
             <DdLink href="/leiderschap" dotKleur="#6B7B45">Build Strong Leiderschap</DdLink>
             <DdLink href="/bestuur-en-leiderschap" dotKleur="#6B7B45">Academie voor Bestuur en Leiderschap</DdLink>
@@ -74,7 +74,7 @@ export default function Header() {
       <div className="flex items-center gap-2">
         <Link
           href="/opleidingsaanbod"
-          className="hidden sm:inline-flex ml-3.5 bg-transparent text-white border-[1.5px] border-white/25 px-5 py-[7px] rounded-full text-[13px] font-medium hover:border-white/50 transition-colors whitespace-nowrap"
+          className="hidden sm:inline-flex ml-3.5 bg-oranje text-white border-none px-5 py-[7px] rounded-full text-[13px] font-medium hover:bg-[#d4710a] transition-colors whitespace-nowrap"
         >
           Trainer of partner worden?
         </Link>
