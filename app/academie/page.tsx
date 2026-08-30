@@ -24,7 +24,7 @@ export default function AcademieHubPagina() {
             alt="Academie"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-top"
           />
           <div
             className="absolute inset-0"
