@@ -7,7 +7,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 type Traject = {
-  icon: string;
   naam: string;
   sub: string;
   scan: string;
@@ -18,6 +17,7 @@ type Traject = {
 type Rol = {
   key: string;
   label: string;
+  kleur: string;
   intro: string;
   trajecten: Traject[];
 };
@@ -26,11 +26,11 @@ const rollen: Rol[] = [
   {
     key: "leider",
     label: "🧭 Leidinggevenden & Bestuurders",
+    kleur: "#6B7B45",
     intro:
       "Directeuren en bestuurders die leiderschap niet als positie zien, maar als verantwoordelijkheid. 7LIFE biedt individuele trajecten, leergroepen en de Academie voor Bestuur & Leiderschap voor wie écht het verschil wil maken.",
     trajecten: [
       {
-        icon: "🔍",
         naam: "LeiderschapsScan Traject",
         sub: "Inzicht als vertrekpunt",
         scan: "Backbone: LeiderschapScan",
@@ -43,7 +43,6 @@ const rollen: Rol[] = [
         ],
       },
       {
-        icon: "🚀",
         naam: "Leadership & Culture Transformation",
         sub: "Van intentie naar gedrag",
         scan: "Backbone: LeiderschapScan + CommunicatieScan",
@@ -56,7 +55,6 @@ const rollen: Rol[] = [
         ],
       },
       {
-        icon: "🏛",
         naam: "Academie voor Bestuur & Leiderschap",
         sub: "Diepgang voor beslissers",
         scan: "Programma's & Leergangen",
@@ -73,11 +71,11 @@ const rollen: Rol[] = [
   {
     key: "teamleider",
     label: "👥 Teamleiders",
+    kleur: "#6FB8DA",
     intro:
       "Teamleiders staan op de meest kritische plek in elke organisatie — tussen strategie en uitvoering. 7LIFE helpt teamleiders hun eigen stijl begrijpen en effectiever leidinggeven aan diverse teams.",
     trajecten: [
       {
-        icon: "🎯",
         naam: "Teamleider Traject",
         sub: "Leiderschap in de praktijk",
         scan: "Backbone: LeiderschapScan + CommunicatieScan",
@@ -90,7 +88,6 @@ const rollen: Rol[] = [
         ],
       },
       {
-        icon: "👥",
         naam: "Team Scan & Ontwikkeling",
         sub: "De teamleider als aanjager van teamgroei",
         scan: "Backbone: 7LIFE CommunicatieScan (team)",
@@ -103,7 +100,6 @@ const rollen: Rol[] = [
         ],
       },
       {
-        icon: "📈",
         naam: "Doorgroeien naar Leiderschap",
         sub: "Van professional naar leider",
         scan: "Backbone: TalentScan + LeiderschapScan",
@@ -120,11 +116,11 @@ const rollen: Rol[] = [
   {
     key: "coach",
     label: "💬 Coaches & Adviseurs",
+    kleur: "#CDA956",
     intro:
       "Coaches, adviseurs en HR-professionals die willen werken met een bewezen, wetenschappelijk onderbouwde methodiek. 7LIFE biedt de tools, het netwerk en de certificering om écht het verschil te maken bij jouw klanten.",
     trajecten: [
       {
-        icon: "🎓",
         naam: "Gecertificeerd 7LIFE Coach",
         sub: "De methodiek als fundament voor jouw werk",
         scan: "Certificering via 7LIFE Academie",
@@ -137,7 +133,6 @@ const rollen: Rol[] = [
         ],
       },
       {
-        icon: "🏆",
         naam: "LeiderschapScan Certificering",
         sub: "De meest complete leiderschapstool",
         scan: "Co-ontwikkeld door Maroesja van der Pols & Alex ten Cate",
@@ -149,7 +144,6 @@ const rollen: Rol[] = [
         ],
       },
       {
-        icon: "🤝",
         naam: "Innovatiepartner",
         sub: "Co-creëer nieuwe programma's",
         scan: "Build Strong Innovatie Partner Programma",
@@ -331,7 +325,7 @@ export default function AcademiePagina() {
         {/* DE TRAJECTEN */}
         <section className="bg-donker px-[5%] py-[72px] border-t border-white/[0.06]" id="trajecten">
           <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-paars uppercase mb-2.5">
+            <div className="text-[11px] font-semibold tracking-[2px] text-olijf uppercase mb-2.5">
               De trajecten
             </div>
             <h2 className="font-serif text-[clamp(26px,3.5vw,38px)] font-light text-white leading-[1.15] mb-3">
@@ -346,18 +340,22 @@ export default function AcademiePagina() {
                 <button
                   key={r.key}
                   onClick={() => setActief(r.key)}
-                  className={`px-5 py-2 rounded-full text-[13px] font-medium border transition-colors ${
+                  className="px-5 py-2 rounded-full text-[13px] font-medium border transition-colors"
+                  style={
                     actief === r.key
-                      ? "bg-paars border-paars text-white"
-                      : "bg-transparent border-white/15 text-white/55 hover:text-white hover:border-white/40"
-                  }`}
+                      ? { background: r.kleur, borderColor: r.kleur, color: "#fff" }
+                      : { background: "transparent", borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.55)" }
+                  }
                 >
                   {r.label}
                 </button>
               ))}
             </div>
 
-            <p className="text-white/50 text-[15px] leading-[1.7] max-w-[640px] mb-9 border-l-[3px] border-paars pl-[18px]">
+            <p
+              className="text-white/50 text-[15px] leading-[1.7] max-w-[640px] mb-9 pl-[18px]"
+              style={{ borderLeft: `3px solid ${rol.kleur}` }}
+            >
               {rol.intro}
             </p>
 
@@ -365,17 +363,23 @@ export default function AcademiePagina() {
               {rol.trajecten.map((t) => (
                 <div
                   key={t.naam}
-                  className="relative rounded-[18px] p-[26px] bg-white/5 border border-white/[0.09] hover:bg-white/[0.08] hover:border-paars transition-all overflow-hidden"
-                  style={{ borderTop: "3px solid #7B5EA7" }}
+                  className="relative rounded-[18px] p-[26px] bg-white/5 border border-white/[0.09] hover:bg-white/[0.08] transition-all overflow-hidden"
+                  style={{ borderTop: `3px solid ${rol.kleur}` }}
                 >
-                  <span className="text-[28px] mb-3 block">{t.icon}</span>
                   <div className="text-[17px] font-semibold text-white mb-1">
                     {t.naam}
                   </div>
                   <div className="text-xs text-white/35 italic mb-3.5">
                     {t.sub}
                   </div>
-                  <div className="inline-flex items-center gap-1.5 bg-paars/[0.15] border border-paars/30 text-paars text-[11px] font-semibold px-2.5 py-1 rounded-lg mb-3">
+                  <div
+                    className="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg mb-3"
+                    style={{
+                      background: `${rol.kleur}26`,
+                      border: `1px solid ${rol.kleur}4D`,
+                      color: rol.kleur,
+                    }}
+                  >
                     {t.scan}
                   </div>
                   <p className="text-[13px] text-white/50 leading-[1.65] mb-3">
@@ -385,10 +389,16 @@ export default function AcademiePagina() {
                     {t.items.map((li, j) => (
                       <li
                         key={li}
-                        className={`text-[13px] text-white/50 py-1 pl-3.5 relative before:content-['·'] before:absolute before:left-0 before:text-paars ${
+                        className={`text-[13px] text-white/50 py-1 pl-3.5 relative ${
                           j < t.items.length - 1 ? "border-b border-white/[0.05]" : ""
                         }`}
                       >
+                        <span
+                          className="absolute left-0"
+                          style={{ color: rol.kleur }}
+                        >
+                          ·
+                        </span>
                         {li}
                       </li>
                     ))}
@@ -400,21 +410,21 @@ export default function AcademiePagina() {
         </section>
 
         {/* CTA */}
-        <section className="relative bg-donker px-[5%] py-20 text-center overflow-hidden" id="cta">
+        <section className="relative bg-achtergrond px-[5%] py-20 text-center overflow-hidden" id="cta">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at 50% 110%, rgba(123,94,167,0.12) 0%, transparent 65%)",
+                "radial-gradient(ellipse 60% 80% at 50% 110%, rgba(123,94,167,0.1) 0%, transparent 65%)",
             }}
           />
           <div className="relative z-10">
-            <h2 className="font-serif text-[clamp(28px,4vw,48px)] font-light text-white leading-[1.1] mb-3">
+            <h2 className="font-serif text-[clamp(28px,4vw,48px)] font-light text-tekst leading-[1.1] mb-3">
               Klaar om verder te
               <br />
               <em className="text-oranje not-italic italic">groeien als leider?</em>
             </h2>
-            <p className="text-white/45 text-[15px] max-w-[440px] mx-auto mb-7 leading-[1.7]">
+            <p className="text-subtekst text-[15px] max-w-[440px] mx-auto mb-7 leading-[1.7]">
               Vertel ons waar je staat. We kijken samen welk traject het
               beste aansluit — individueel of als team.
             </p>
@@ -435,7 +445,7 @@ export default function AcademiePagina() {
               </a>
               <Link
                 href="/academie"
-                className="bg-transparent text-white border-[1.5px] border-white/20 px-6 py-[11px] rounded-full text-sm font-medium hover:border-white/50 transition-colors"
+                className="bg-transparent text-tekst border-[1.5px] border-black/[0.12] px-6 py-[11px] rounded-full text-sm font-medium hover:border-oranje hover:text-oranje transition-colors"
               >
                 Bekijk ons aanbod
               </Link>

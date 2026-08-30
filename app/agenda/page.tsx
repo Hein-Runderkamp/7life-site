@@ -56,7 +56,9 @@ export default function AgendaPagina() {
               Agenda 2026 – 2027
             </div>
             <h1 className="font-serif text-[clamp(32px,4.5vw,52px)] font-light text-white leading-[1.1] tracking-[-0.5px] mb-4">
-              Alle trainingen op een rij.
+              Alle trainingsdata.
+              <br />
+              <em className="text-oranje not-italic italic">Op een rij.</em>
             </h1>
             <p className="text-white/50 text-base leading-[1.75] max-w-[620px] mb-7">
               Alle trainingen, bijeenkomsten en evenementen voor het
