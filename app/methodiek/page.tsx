@@ -13,14 +13,6 @@ const heroStijlen = [
   { naam: "Doordenker", kleur: "#2E7D52", bg: "rgba(46,125,82,0.15)", tekst: "#6ac090" },
 ];
 
-const gelovenItems = [
-  "De kracht van communicatie — contact maken vanuit oprechte interesse en wederzijds respect.",
-  "Investeren in mensen die zichzelf willen ontdekken en vanuit eigen kracht willen groeien.",
-  "Het bouwen aan stabiele teams, sterke organisaties en veelkleurige netwerken.",
-  "Ontwikkelen van tools die de praktijk verrijken — niet meer complexiteit, maar meer helderheid.",
-  "Ieder mens is uniek, waardevol en heeft het recht om zichzelf te zijn.",
-];
-
 const lagen = [
   { nr: "1", naam: "Identity", tekst: "Drijfveren, waarden, overtuigingen — wie iemand werkelijk ís", kleur: "#EE7E06", bg: "rgba(238,126,6,0.12)" },
   { nr: "2", naam: "Choices", tekst: "Wat iemand wel of niet laat zien in interactie met anderen", kleur: "#7B5EA7", bg: "rgba(123,94,167,0.12)" },
@@ -94,24 +86,6 @@ const scanVoorbeeld = [
   { naam: "Doordenker", kleur: "#2E7D52", pct: 48 },
 ];
 
-const voorWie = [
-  {
-    icon: "👤",
-    titel: "Individuen & Professionals",
-    tekst: "Inzicht in jezelf als basis voor groei. Wat zijn jouw kwaliteiten? Hoe communiceer je? Wat brengt jou in beweging? De scan geeft antwoord — de trainer helpt je ermee aan de slag.",
-  },
-  {
-    icon: "🤝",
-    titel: "Teams & Organisaties",
-    tekst: "Een team dat elkaars stijlen kent, communiceert anders. Sneller. Eerlijker. Met minder misverstanden. 7LIFE maakt de dynamiek bespreekbaar — en brengt teams in beweging.",
-  },
-  {
-    icon: "🎓",
-    titel: "Onderwijs & Jongeren",
-    tekst: "Van basisschool tot HBO. 7LIFE helpt jongeren ontdekken wie ze zijn en wat ze kunnen — niet als label, maar als vertrekpunt voor studiekeuze, loopbaan en persoonlijke ontwikkeling.",
-  },
-];
-
 export default function MethodiekPagina() {
   return (
     <>
@@ -180,65 +154,6 @@ export default function MethodiekPagina() {
         </section>
 
         {/* OORSPRONG */}
-        <section className="px-[5%] py-[88px] bg-achtergrond">
-          <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <div className="text-[11px] font-semibold tracking-[2px] text-oranje uppercase mb-2.5">
-                Hoe het begon
-              </div>
-              <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light leading-[1.15] mb-6">
-                Een gemis als startpunt.
-                <br />
-                Overtuiging als fundament.
-              </h2>
-              <div className="text-[15px] text-subtekst leading-[1.85]">
-                <p className="mb-[18px]">
-                  Maroesja van der Pols zag het keer op keer. Mensen deden
-                  een assessment, kregen waardevol inzicht — en twee
-                  maanden later was er niets meer van over. Niet omdat het
-                  inzicht niet klopte. Maar omdat de brug naar dagelijks
-                  gedrag ontbrak.
-                </p>
-                <p className="mb-[18px]">
-                  Wat er miste, was een{" "}
-                  <strong className="text-tekst font-medium">
-                    gedeelde taal
-                  </strong>
-                  . Een taal waarmee mensen met elkaar kunnen praten over
-                  hoe ze communiceren, hoe ze leren en hoe ze in beweging
-                  komen. Niet als labels. Niet als vakjes. Maar als{" "}
-                  <em>levend gereedschap</em> voor echte samenwerking.
-                </p>
-                <p className="mb-6">
-                  Vanuit die overtuiging ontwikkelde Maroesja de
-                  7LIFE-methodiek — beschreven in haar boek{" "}
-                  <em>Communicatiekracht</em>. Een ontwikkelmodel dat
-                  vertrekt vanuit wie iemand werkelijk is, en dat inzicht
-                  vertaalt naar actie. Elke dag. In elk gesprek.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="bg-donker rounded-[20px] px-7 py-8">
-                <h3 className="font-serif text-xl font-normal text-oranje mb-5">
-                  Samen geloven wij in:
-                </h3>
-                {gelovenItems.map((it, i) => (
-                  <div
-                    key={it}
-                    className={`flex items-start gap-3 text-sm text-white/60 leading-[1.6] ${
-                      i < gelovenItems.length - 1 ? "mb-3.5" : ""
-                    }`}
-                  >
-                    <div className="w-[5px] h-[5px] rounded-full bg-oranje flex-shrink-0 mt-[7px]" />
-                    {it}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* GEEN TEST / HET MODEL */}
         <section className="bg-donker mx-4 rounded-3xl px-[6%] py-[72px]">
           <div className="max-w-[1100px] mx-auto">
@@ -502,49 +417,14 @@ export default function MethodiekPagina() {
           </div>
         </section>
 
-        {/* VOOR WIE */}
-        <section className="bg-donker mx-4 rounded-3xl px-[6%] py-[72px]" id="voor-wie">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-[11px] font-semibold tracking-[2px] text-oranje/85 uppercase mb-2.5">
-              Voor wie
-            </div>
-            <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-light text-white leading-[1.15] mb-3">
-              De methodiek werkt overal
-              <br />
-              waar mensen samenwerken.
-            </h2>
-            <p className="text-white/50 text-[15px] leading-[1.7] max-w-[600px] mb-9">
-              Van individuele coaching tot organisatiebrede transformatie
-              — de 7LIFE-methodiek is inzetbaar in elke context waar
-              gedrag, communicatie en samenwerking een rol spelen.
-            </p>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {voorWie.map((v) => (
-                <div
-                  key={v.titel}
-                  className="bg-white/[0.045] border-[1.5px] border-white/10 rounded-2xl px-[22px] py-[26px] hover:border-oranje hover:bg-oranje/[0.06] transition-all"
-                >
-                  <div className="text-[26px] mb-3.5">{v.icon}</div>
-                  <div className="text-[15px] font-medium text-white mb-2">
-                    {v.titel}
-                  </div>
-                  <p className="text-[13.5px] text-white/50 leading-[1.65]">
-                    {v.tekst}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
-        <section className="px-[5%] py-[88px] text-center bg-achtergrond" id="cta">
-          <h2 className="font-serif text-[clamp(28px,4vw,42px)] font-light leading-[1.15] mb-3.5">
+        <section className="px-[5%] py-[88px] text-center bg-donker" id="cta">
+          <h2 className="font-serif text-[clamp(28px,4vw,42px)] font-light text-white leading-[1.15] mb-3.5">
             Ontdek wat de methodiek
             <br />
             voor jou kan betekenen.
           </h2>
-          <p className="text-[15px] text-subtekst max-w-[480px] mx-auto mb-[30px] leading-[1.7]">
+          <p className="text-white/50 text-[15px] max-w-[480px] mx-auto mb-[30px] leading-[1.7]">
             Plan een kennismaking, doe de scan via een gecertificeerde
             trainer, of ontdek hoe je zelf onderdeel kunt worden van het
             7LIFE-netwerk.
@@ -558,7 +438,7 @@ export default function MethodiekPagina() {
             </a>
             <Link
               href="/impact-check"
-              className="bg-transparent text-tekst border-[1.5px] border-black/[0.07] px-[26px] py-3 rounded-full text-sm font-medium hover:border-oranje hover:text-oranje transition-colors"
+              className="bg-transparent text-white border-[1.5px] border-white/[0.18] px-[26px] py-3 rounded-full text-sm font-medium hover:border-white/45 transition-colors"
             >
               Start met een Impact Check
             </Link>
