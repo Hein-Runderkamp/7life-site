@@ -51,9 +51,9 @@ export default function Hero() {
               Eén ecosysteem, vier paden
             </div>
             <h1 className="font-serif text-[clamp(40px,6vw,72px)] font-light text-white leading-[1.06] tracking-[-1px] mb-[22px]">
-              Weten wat er speelt.
+              Van inzicht naar
               <br />
-              <em className="text-oranje not-italic italic">In beweging komen.</em>
+              <em className="text-oranje not-italic italic">Impact.</em>
             </h1>
             <p className="text-white/60 text-base leading-[1.75] mb-8 max-w-[460px]">
               7LIFE combineert wetenschappelijk onderbouwde scans met

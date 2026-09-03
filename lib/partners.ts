@@ -90,7 +90,7 @@ export const partnerDetails: PartnerDetail[] = [
   {
     slug: "jo-krill",
     programma: "Organisatieontwikkeling",
-    kleur: "#F2C12E",
+    kleur: "#FFFFFF",
     punten: [
       "Business strategist en partner bij 7LIFE Nederland",
       "Gericht op organisatieontwikkeling en strategie",
