@@ -132,6 +132,13 @@ export default function TrainingDetailPagina({
                   </div>
                 )}
 
+                <div className="flex gap-5">
+                  <div className="w-9 flex-shrink-0" />
+                  <div className="text-sm text-tekst font-medium">
+                    Dit is een opleiding op HBO niveau.
+                  </div>
+                </div>
+
                 <div className="flex gap-5 items-center">
                   <div className="w-9 flex-shrink-0" />
                   <div className="flex items-center gap-3">
