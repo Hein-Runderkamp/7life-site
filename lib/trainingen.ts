@@ -217,6 +217,7 @@ export const trainingen: Training[] = [
     voorwaarden: [
       "Volledige licentie 7LIFE",
       "Afgeronde basisaccreditatie",
+      "Minimaal hbo werk- en denkniveau",
       "Tijdig aanmelden — zie agenda",
     ],
     quote: "Je grootste groei zit vaak in wat een ander over je durft te zeggen.",
@@ -243,6 +244,7 @@ export const trainingen: Training[] = [
     voorwaarden: [
       "Volledige licentie 7LIFE",
       "Afgeronde basisaccreditatie",
+      "Minimaal hbo werk- en denkniveau",
       "Tijdig aanmelden — zie agenda",
     ],
     quote: "Kinderen luisteren niet naar wat je zegt. Ze voelen wat je bedoelt.",
@@ -269,6 +271,7 @@ export const trainingen: Training[] = [
     voorwaarden: [
       "Volledige licentie 7LIFE",
       "Afgeronde basisaccreditatie",
+      "Minimaal hbo werk- en denkniveau",
       "Tijdig aanmelden — zie agenda",
     ],
     quote:
