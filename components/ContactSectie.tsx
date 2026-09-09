@@ -62,13 +62,13 @@ export default function ContactSectie() {
                 <div className="text-xs font-semibold text-subtekst uppercase tracking-wide mb-1">
                   KvK-nummer
                 </div>
-                <div className="text-sm text-tekst">57783640</div>
+                <div className="text-sm text-tekst">80756638</div>
               </div>
               <div>
                 <div className="text-xs font-semibold text-subtekst uppercase tracking-wide mb-1">
                   BTW-nummer
                 </div>
-                <div className="text-sm text-tekst">NL002149728B44</div>
+                <div className="text-sm text-tekst">NL861788758B01</div>
               </div>
             </div>
 
