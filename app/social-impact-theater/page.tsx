@@ -12,7 +12,7 @@ const pijlers = [
 ];
 
 const programma = [
-  { tijd: "19:30", titel: "Ontvangst" },
+  { tijd: "19:00", titel: "Ontvangst" },
   { tijd: "19:30", titel: "Keynote" },
   { tijd: "21:00", titel: "Reflectie & interactie" },
   { tijd: "21:30", titel: "Ontmoeting" },
