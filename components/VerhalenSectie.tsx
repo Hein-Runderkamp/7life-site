@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const verhalen = [
   {
-    sector: "Onderwijs · Student Journey",
+    sector: "Onderwijs · Imabl App",
     quote: "\"Een middelbare school wilde jongeren voorbereiden op hun toekomst.\"",
-    tekst: "De echte uitdaging bleek niet hun toekomst, maar hun zelfbeeld. Via de Student Journey ontdekken jongeren niet alleen welke opleiding bij hen past, maar vooral wie zij zijn, wat hen beweegt en welke keuzes daarbij horen.",
-    link: "Naar Student Journey App →",
+    tekst: "De echte uitdaging bleek niet hun toekomst, maar hun zelfbeeld. Via de Imabl App ontdekken jongeren niet alleen welke opleiding bij hen past, maar vooral wie zij zijn, wat hen beweegt en welke keuzes daarbij horen.",
+    link: "Naar Imabl App →",
     href: "/jongeren",
     foto: "/verhalen/student-journey.png",
   },

@@ -34,11 +34,11 @@ const programmas = [
   },
   {
     kleur: "#3E8FA3",
-    slug: "student-journey-app",
+    slug: "imabl-app",
     leeftijd: "12 — 18 jaar · Middelbaar onderwijs",
-    naam: "Student Journey App",
+    naam: "Imabl App",
     sub: "Zelfkennis als basis voor studiekeuze",
-    body: "De Student Journey App begeleidt middelbare scholieren bij de belangrijkste keuzes in hun schoolcarrière — vanuit zelfkennis. Niet welke opleiding past bij een profiel, maar: wie ben jij, wat drijft jou, en vanuit welke kracht maak jij jouw keuze?",
+    body: "De Imabl App begeleidt middelbare scholieren bij de belangrijkste keuzes in hun schoolcarrière — vanuit zelfkennis. Niet welke opleiding past bij een profiel, maar: wie ben jij, wat drijft jou, en vanuit welke kracht maak jij jouw keuze?",
     items: [
       "Persoonlijk ontwikkelprofiel per leerling",
       "Inzicht in communicatiestijl, leerstijl en veranderkracht",
@@ -379,7 +379,7 @@ export default function JongerenPagina() {
                 makkelijker — en blijvender.&rdquo;
               </div>
               <p className="text-sm text-subtekst leading-[1.75]">
-                Via de Student Journey ontdekte hij niet welke opleiding
+                Via de Imabl App ontdekte hij niet welke opleiding
                 het best bij zijn profiel paste, maar vanuit welke kracht
                 hij überhaupt keuzes maakte. Dat inzicht veranderde niet
                 alleen zijn studiekeuze — het veranderde hoe hij naar
@@ -391,7 +391,7 @@ export default function JongerenPagina() {
                 ontstaan — meer verbinding, meer begrip, meer richting.
               </p>
               <p className="text-sm text-oranje italic mt-3">
-                — Student Journey, middelbare school
+                — Imabl App, middelbare school
               </p>
             </div>
           </div>

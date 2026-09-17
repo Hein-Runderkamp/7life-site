@@ -8,7 +8,7 @@ const paginas = [
   { naam: "7LIFE Methodiek", tekst: "De wetenschappelijke basis onder alles wat we doen.", href: "/methodiek" },
   { naam: "Onze mensen", tekst: "Landelijk netwerk van 40+ gecertificeerde trainers en partners.", href: "/onze-mensen" },
   { naam: "Build Strong Individueel", tekst: "Scans en trajecten voor persoonlijke ontwikkeling.", href: "/build-strong-individueel" },
-  { naam: "Build Strong Jongeren", tekst: "Student Journey, ExcelleerScan en begeleiding voor jongeren.", href: "/jongeren" },
+  { naam: "Build Strong Jongeren", tekst: "Imabl App, ExcelleerScan en begeleiding voor jongeren.", href: "/jongeren" },
 ];
 
 export default function ZevenLifePagina() {

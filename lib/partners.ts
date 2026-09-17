@@ -8,7 +8,7 @@ export const partnerProgrammas: PartnerProgramma[] = [
   { naam: "Kluis7", kleur: "#EE7E06", link: "/jongeren#kluis7" },
   { naam: "ExcelleerScan", kleur: "#3E8FA3", link: "/jongeren#excelleerscan" },
   { naam: "Academie voor Bestuur & Leiderschap", kleur: "#7B5EA7", link: "https://www.bestuurenleiderschap.nl" },
-  { naam: "Student Journey App", kleur: "#2E7D52", link: "/jongeren#student-journey-app" },
+  { naam: "Imabl App", kleur: "#2E7D52", link: "/jongeren#imabl-app" },
   { naam: "Geldscan", kleur: "#D7263D", link: "/build-strong-individueel#geldscan" },
   { naam: "MoneyValues", kleur: "#F2C12E", link: "/onze-mensen/marc-wilhelmus" },
 ];
@@ -56,10 +56,10 @@ export const partnerDetails: PartnerDetail[] = [
   },
   {
     slug: "tika-dobbelaar",
-    programma: "Student Journey App",
+    programma: "Imabl App",
     kleur: "#2E7D52",
     punten: [
-      "Partner in de ontwikkeling van de Student Journey App",
+      "Partner in de ontwikkeling van de Imabl App",
       "Gericht op begeleiding van studenten in het onderwijs",
       "Vertaalt zelfkennis naar concrete studie- en loopbaankeuzes",
       "Nauwe samenwerking met scholen in het voortgezet en beroepsonderwijs",
@@ -67,10 +67,10 @@ export const partnerDetails: PartnerDetail[] = [
   },
   {
     slug: "hugo-bot",
-    programma: "Student Journey App",
+    programma: "Imabl App",
     kleur: "#2E7D52",
     punten: [
-      "Adviseur bij de ontwikkeling van de Student Journey App",
+      "Adviseur bij de ontwikkeling van de Imabl App",
       "Eigenaar van BOTH Coaching",
       "Brengt jarenlange coachingservaring in bij de doorontwikkeling van de app",
       "Klankbord voor de aansluiting op de praktijk van studiebegeleiding",
